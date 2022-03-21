@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+ul {
+    font-family: 'Neucha', cursive;
+    font-weight: bolder;
+    color: hsl(189, 50%, 16%);
+    list-style-type: none;
+    background-color: #61dafb;
+    display: flex;
+    flex-basis: 550px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-container {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+nav {
+    width: 100%;
+    background-color: hsl(185, 60%, 67%);
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+.active-link {
+    border-bottom: 2px solid white;
+}
