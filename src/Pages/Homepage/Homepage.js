@@ -1,9 +1,11 @@
 import React from 'react';
+import mainbanner from "../../assets/hoofdbanner3.1.png"
+import "./Homepage.css"
 
 function HomePage() {
     return (
         <>
-            <h1>Home</h1>
+            <img src={mainbanner} className="homepage-banner" alt="superhero-background-city"/>
             <h2>Which Superpowers do you have?</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab commodi consequuntur doloremque dolorum
                 facilis in ipsa laudantium minus nobis pariatur perferendis placeat reiciendis, repellendus sed,
