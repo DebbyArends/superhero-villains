@@ -6,8 +6,18 @@ import HomePage from "./Pages/Homepage/Homepage";
 import Appearance from "./Pages/Appearance/Appearance";
 import Powerstats from "./Pages/Powerstats/Powerstats";
 import Characters from "./Pages/Characters/Characters";
+import axios from "axios";
 
 function App() {
+    async function getData(){
+        try{
+            const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
+            console.log(result.data)
+        }catch (e) {
+            console.error(e)
+        }
+    }
+    getData()
   return (
       <div>
           <Navigation/>
@@ -32,6 +42,7 @@ function App() {
               </Route>
           </Switch>
       </div>
+
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />

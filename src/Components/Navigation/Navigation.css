@@ -10,6 +10,7 @@ ul {
     flex-direction: row;
     justify-content: space-around;
     margin: 10px 0;
+    padding: 0;
 }
 
 .nav-container {
@@ -39,7 +40,8 @@ nav {
 }
 
 .logo-image {
-    width: 90px;
+    width: 100px;
+    margin-top: 10px;
 }
 
 a {

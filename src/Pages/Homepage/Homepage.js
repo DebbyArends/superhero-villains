@@ -1,6 +1,7 @@
 import React from 'react';
 import mainbanner from "../../assets/hoofdbanner3.1.png"
 import "./Homepage.css"
+import girlWithGlasses from "../../assets/girl-with-glasses.jpg"
 
 function HomePage() {
     return (
@@ -18,6 +19,17 @@ function HomePage() {
                 porro quo repellat. A adipisci aut commodi consequuntur culpa deleniti, dolor eaque illum ipsum itaque
                 labore libero, maxime necessitatibus neque nisi obcaecati quam quidem sequi similique sunt suscipit
                 totam voluptatem! At atque debitis dolor ex magnam molestias nam non nulla sint soluta?</p>
+            <article className="container-article1">
+                <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
+                <p id="title-article">Superhero or Villain</p>
+                <p id="description">Find out based on your</p>
+                <p>Appearance</p>
+                <button
+                type="button"
+                >
+                    Do the quiz!
+                </button>
+            </article>
         </>
     )
 }
