@@ -1,12 +1,17 @@
 import React from 'react';
-import mainbanner from "../../assets/hoofdbanner3.1.png"
 import "./Homepage.css"
 import girlWithGlasses from "../../assets/girl-with-glasses.jpg"
+import banner1 from "../../assets/banner_appearance_202204_1.0.png"
 
 function HomePage() {
     return (
         <>
-            <img src={mainbanner} className="homepage-banner" alt="superhero-background-city"/>
+            <div className="homepage-banner-outer-container">
+                <section className="homepage-banner-inner-container">
+                    <h2 id="banner-h2">Are you a</h2>
+                    <h1 id="banner-h1">Superhero?</h1>
+                </section>
+            </div>
             <h2>Which Superpowers do you have?</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab commodi consequuntur doloremque dolorum
                 facilis in ipsa laudantium minus nobis pariatur perferendis placeat reiciendis, repellendus sed,
@@ -19,17 +24,51 @@ function HomePage() {
                 porro quo repellat. A adipisci aut commodi consequuntur culpa deleniti, dolor eaque illum ipsum itaque
                 labore libero, maxime necessitatibus neque nisi obcaecati quam quidem sequi similique sunt suscipit
                 totam voluptatem! At atque debitis dolor ex magnam molestias nam non nulla sint soluta?</p>
-            <article className="container-article1">
-                <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
-                <p id="title-article">Superhero or Villain</p>
-                <p id="description">Find out based on your</p>
-                <p>Appearance</p>
-                <button
-                type="button"
-                >
-                    Do the quiz!
-                </button>
-            </article>
+            <section className="outer-container-article-1">
+                <article className="inner-container-article">
+                    <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
+                    <div className="container-article-text">
+                        <p id="title-article">Superhero or Villain</p>
+                        <p id="description">Find out based on your</p>
+                        <p>Appearance</p>
+                        <button
+                            type="button"
+                        >
+                            Do the quiz!
+                        </button>
+                    </div>
+                </article>
+            </section>
+            <section className="outer-container-article-2">
+                <article className="inner-container-article">
+                    <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
+                    <div className="container-article-text">
+                        <p id="title-article">Superhero or Villain</p>
+                        <p id="description">Find out based on your</p>
+                        <p>Appearance</p>
+                        <button
+                            type="button"
+                        >
+                            Do the quiz!
+                        </button>
+                    </div>
+                </article>
+            </section>
+            <section className="outer-container-article-3">
+                <article className="inner-container-article">
+                    <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
+                    <div className="container-article-text">
+                        <p id="title-article">Superhero or Villain</p>
+                        <p id="description">Find out based on your</p>
+                        <p>Appearance</p>
+                        <button
+                            type="button"
+                        >
+                            Do the quiz!
+                        </button>
+                    </div>
+                </article>
+            </section>
         </>
     )
 }
