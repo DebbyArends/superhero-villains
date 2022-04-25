@@ -6,15 +6,15 @@
     box-sizing: border-box;
 }
 body {
-
+    background-image: url("../../assets/background-blue-dots.jpg");
+    background-repeat: repeat-y;
+    background-size: contain;
 }
 
 .homepage-banner-outer-container {
-    width: 100%;
     display: flex;
     flex-direction: row;
-    height: 600px;
-    background-color: blue;
+    height: 550px;
     flex-shrink: 1;
 }
 .homepage-banner-inner-container {
@@ -24,6 +24,7 @@ body {
     align-items: flex-start;
     padding-left: 250px;
     background-image: url("../../assets/hoofdbanner3.1.png");
+    background-repeat: no-repeat;
     color: white;
     font-family: 'Neucha', cursive;
 
@@ -46,8 +47,9 @@ body {
 
 .image-appearance {
     width: 300px;
+    height: 300px;
     margin: 20px;
-    border: 1px solid #282c34;
+    border: 1px solid #14363C;
 }
 
 .outer-container-article-1 {
@@ -58,7 +60,7 @@ body {
     background-image: url("../../assets/banner_appearance_202204_1.0.png");
     background-position: center;
     background-size: cover;
-    margin: 40px;
+    margin: 50px;
     border: 5px solid whitesmoke;
 }
 .outer-container-article-2 {
@@ -68,7 +70,7 @@ body {
     background-image: url("../../assets/banner_2_powerstats.png");
     background-position: center;
     background-size: cover;
-    margin: 40px;
+    margin: 50px;
     border: 5px solid whitesmoke;
 }
 
@@ -79,7 +81,7 @@ body {
     background-image: url("../../assets/banner_3_characters.png");
     background-position: center;
     background-size: cover;
-    margin: 40px;
+    margin: 50px;
     border: 5px solid whitesmoke;
 }
 .inner-container-article {
@@ -89,7 +91,7 @@ body {
     align-items: center;
     background-color: white;
     margin: 20px;
-    border: 1px solid #282c34;
+    border: 1px solid #14363C;
 }
 
 .container-article-text {
@@ -101,4 +103,36 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #61dafb;
+}
+
+.button-banner {
+    color: white;
+    font-family: "Roboto Condensed", cursive;
+    font-size: 18px;
+    background-color: #14363C;
+    border-radius: 5px;
+    border-style: none;
+    height: 30px;
+    margin-top: 30px;
+}
+
+.title-article {
+    color: #14363C;
+    font-family: Neucha, cursive;
+    font-size: 28px;
+    padding-bottom: 50px;
+}
+
+.description {
+    color: #14363C;
+    font-family: Neucha, cursive;
+    font-size: 16px;
+}
+
+.page-title {
+    color: #14363C;
+    font-family: Roboto, cursive;
+    font-weight: bold;
+    font-size: 34px;
+    margin-bottom: 30px;
 }

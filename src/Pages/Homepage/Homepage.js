@@ -1,7 +1,8 @@
 import React from 'react';
 import "./Homepage.css"
 import girlWithGlasses from "../../assets/girl-with-glasses.jpg"
-import banner1 from "../../assets/banner_appearance_202204_1.0.png"
+import dcMarvelMultiverse from "../../assets/dc-marvel-multiverse.jpg"
+import powFist from "../../assets/pow-fist.jpg"
 
 function HomePage() {
     return (
@@ -28,11 +29,12 @@ function HomePage() {
                 <article className="inner-container-article">
                     <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
                     <div className="container-article-text">
-                        <p id="title-article">Superhero or Villain</p>
-                        <p id="description">Find out based on your</p>
-                        <p>Appearance</p>
+                        <h3 className="title-article">Superhero or Villain</h3>
+                        <h5 className="description">Find out based on your</h5>
+                        <h2 className="page-title">Appearance</h2>
                         <button
                             type="button"
+                            className="button-banner"
                         >
                             Do the quiz!
                         </button>
@@ -41,13 +43,14 @@ function HomePage() {
             </section>
             <section className="outer-container-article-2">
                 <article className="inner-container-article">
-                    <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
+                    <img src={powFist} alt="Pop art girl with glasses" className="image-appearance"/>
                     <div className="container-article-text">
-                        <p id="title-article">Superhero or Villain</p>
-                        <p id="description">Find out based on your</p>
-                        <p>Appearance</p>
+                        <h3 className="title-article">Superhero or Villain</h3>
+                        <h5 className="description">Find out based on your</h5>
+                        <h2 className="page-title">Appearance</h2>
                         <button
                             type="button"
+                            className="button-banner"
                         >
                             Do the quiz!
                         </button>
@@ -56,13 +59,14 @@ function HomePage() {
             </section>
             <section className="outer-container-article-3">
                 <article className="inner-container-article">
-                    <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
+                    <img src={dcMarvelMultiverse} alt="Pop art girl with glasses" className="image-appearance"/>
                     <div className="container-article-text">
-                        <p id="title-article">Superhero or Villain</p>
-                        <p id="description">Find out based on your</p>
-                        <p>Appearance</p>
+                        <h3 className="title-article">Superhero or Villain</h3>
+                        <h5 className="description">Find out based on your</h5>
+                        <h2 className="page-title">Appearance</h2>
                         <button
                             type="button"
+                            className="button-banner"
                         >
                             Do the quiz!
                         </button>
