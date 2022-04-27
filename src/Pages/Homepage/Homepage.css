@@ -1,16 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Neucha&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-body {
-    background-image: url("../../assets/background-blue-dots.jpg");
-    background-repeat: repeat-y;
-    background-size: contain;
-}
-
 .homepage-banner-outer-container {
     display: flex;
     flex-direction: row;
@@ -105,16 +95,23 @@ body {
     background-color: #61dafb;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .button-banner {
+    background-color: #14363C;
     color: white;
     font-family: "Roboto Condensed", cursive;
     font-size: 18px;
-    background-color: #14363C;
     border-radius: 5px;
-    border-style: none;
-    height: 30px;
+    border: none;
     margin-top: 30px;
+    padding: 10px 10px;
 }
+
 
 .title-article {
     color: #14363C;

@@ -3,8 +3,12 @@ import "./Homepage.css"
 import girlWithGlasses from "../../assets/girl-with-glasses.jpg"
 import dcMarvelMultiverse from "../../assets/dc-marvel-multiverse.jpg"
 import powFist from "../../assets/pow-fist.jpg"
+import {useHistory} from "react-router-dom";
+import Banner from "../../Components/Banner/Banner";
 
 function HomePage() {
+    const history = useHistory()
+
     return (
         <>
             <div className="homepage-banner-outer-container">
@@ -25,54 +29,36 @@ function HomePage() {
                 porro quo repellat. A adipisci aut commodi consequuntur culpa deleniti, dolor eaque illum ipsum itaque
                 labore libero, maxime necessitatibus neque nisi obcaecati quam quidem sequi similique sunt suscipit
                 totam voluptatem! At atque debitis dolor ex magnam molestias nam non nulla sint soluta?</p>
-            <section className="outer-container-article-1">
-                <article className="inner-container-article">
-                    <img src={girlWithGlasses} alt="Pop art girl with glasses" className="image-appearance"/>
-                    <div className="container-article-text">
-                        <h3 className="title-article">Superhero or Villain</h3>
-                        <h5 className="description">Find out based on your</h5>
-                        <h2 className="page-title">Appearance</h2>
-                        <button
-                            type="button"
-                            className="button-banner"
-                        >
-                            Do the quiz!
-                        </button>
-                    </div>
-                </article>
-            </section>
-            <section className="outer-container-article-2">
-                <article className="inner-container-article">
-                    <img src={powFist} alt="Pop art girl with glasses" className="image-appearance"/>
-                    <div className="container-article-text">
-                        <h3 className="title-article">Superhero or Villain</h3>
-                        <h5 className="description">Find out based on your</h5>
-                        <h2 className="page-title">Appearance</h2>
-                        <button
-                            type="button"
-                            className="button-banner"
-                        >
-                            Do the quiz!
-                        </button>
-                    </div>
-                </article>
-            </section>
-            <section className="outer-container-article-3">
-                <article className="inner-container-article">
-                    <img src={dcMarvelMultiverse} alt="Pop art girl with glasses" className="image-appearance"/>
-                    <div className="container-article-text">
-                        <h3 className="title-article">Superhero or Villain</h3>
-                        <h5 className="description">Find out based on your</h5>
-                        <h2 className="page-title">Appearance</h2>
-                        <button
-                            type="button"
-                            className="button-banner"
-                        >
-                            Do the quiz!
-                        </button>
-                    </div>
-                </article>
-            </section>
+
+            <Banner
+                classname="outer-container-article-1"
+                image={girlWithGlasses}
+                alternateText="Pop art girl with glasses"
+                title="Superhero or Villain"
+                description="Find out based on your"
+                pageTitle="Appearance"
+                location={"/appearance"}
+                buttonTitle="Do the quiz"
+            />
+            <Banner
+                classname="outer-container-article-2"
+                image={powFist}
+                alternateText="Power fist"
+                title="Superhero or Villain"
+                description="Find out based on your"
+                pageTitle="Powerstats"
+                location={"/powerstats"}
+                buttonTitle="Do the quiz"
+            />
+            <Banner
+                classname="outer-container-article-3"
+                image={dcMarvelMultiverse}
+                alternateText="Dc and Marvel characters"
+                description="Search a specific"
+                pageTitle="Character"
+                location={"/characters"}
+                buttonTitle="Search"
+            />
         </>
     )
 }
