@@ -3,11 +3,9 @@ import "./Homepage.css"
 import girlWithGlasses from "../../assets/girl-with-glasses.jpg"
 import dcMarvelMultiverse from "../../assets/dc-marvel-multiverse.jpg"
 import powFist from "../../assets/pow-fist.jpg"
-import {useHistory} from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 
 function HomePage() {
-    const history = useHistory()
 
     return (
         <>

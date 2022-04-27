@@ -7,7 +7,6 @@ function Navigation() {
 
     return(
         <nav>
-
             <div className="nav-container">
                 <div className="image-container">
                     <img src={logoSuper} className="logo-image" alt="logo"/>
