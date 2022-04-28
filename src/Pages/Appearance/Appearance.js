@@ -1,12 +1,13 @@
 import React from 'react';
 import AppearanceQuiz from "../../Components/AppearanceQuiz/AppearanceQuiz";
+import "./Appearance.css"
 
 function Appearance() {
     return (
         <>
-            <h1>Appearance</h1>
-            <h2>Looks Quiz</h2>
-            <AppearanceQuiz/>
+            <div className="container-appearance-quiz">
+                <AppearanceQuiz/>
+            </div>
         </>
     )
 }
