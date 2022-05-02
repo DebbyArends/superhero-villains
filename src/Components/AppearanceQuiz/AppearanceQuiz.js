@@ -1,6 +1,50 @@
 import React, {useState} from "react";
 import superwoman from "../../assets/superwoman.jpg"
 import superhero from "../../assets/supehero-male.jpg"
+import femaleAuburn from "../../assets/hairColors/female-auburn.png"
+import femaleBlack from "../../assets/hairColors/female-black.png"
+import femaleBlond from "../../assets/hairColors/female-blond.png"
+import femaleBlue from "../../assets/hairColors/female-blue.png"
+import femaleBrown from "../../assets/hairColors/female-brown.png"
+import femaleBrownWhite from "../../assets/hairColors/female-brown-white.png"
+import femaleGold from "../../assets/hairColors/female-gold.png"
+import femaleGreen from "../../assets/hairColors/female-green.png"
+import femaleGrey from "../../assets/hairColors/female-grey.png"
+import femaleIndigo from "../../assets/hairColors/female-indigo.png"
+import femaleMagenta from "../../assets/hairColors/female-magenta.png"
+import femaleOrange from "../../assets/hairColors/female-orange.png"
+import femaleOrangeRed from "../../assets/hairColors/female-orange-red.png"
+import femaleOrangeWhite from "../../assets/hairColors/female-orange-white.png"
+import femalePink from "../../assets/hairColors/female-pink.png"
+import femalePurple from "../../assets/hairColors/female-purple.png"
+import femaleRed from "../../assets/hairColors/female-red.png"
+import femaleSilver from "../../assets/hairColors/female-silver.png"
+import femaleStrawberryBlond from "../../assets/hairColors/female-strawberry-blond.png"
+import femaleWhite from "../../assets/hairColors/female-white.png"
+import femaleYellow from "../../assets/hairColors/female-yellow.png"
+import maleAuburn from "../../assets/hairColors/male-auburn.png"
+import maleBlack from "../../assets/hairColors/blackM.png"
+import maleBlond from "../../assets/hairColors/male-blond.png"
+import maleBlue from "../../assets/hairColors/male-blue.png"
+import maleBrown from "../../assets/hairColors/male-brown.png"
+import maleBrownWhite from "../../assets/hairColors/male-brown-white.png"
+import maleGold from "../../assets/hairColors/male-gold.png"
+import maleGreen from "../../assets/hairColors/male-green.png"
+import maleGrey from "../../assets/hairColors/male-grey.png"
+import maleIndigo from "../../assets/hairColors/male-indigo.png"
+import maleMagenta from "../../assets/hairColors/male-magenta.png"
+import maleOrange from "../../assets/hairColors/male-orange.png"
+import maleOrangeRed from "../../assets/hairColors/male-red-orange.png"
+import maleOrangeWhite from "../../assets/hairColors/male-orang-white.png"
+import malePink from "../../assets/hairColors/male-pink.png"
+import malePurple from "../../assets/hairColors/male-purple.png"
+import maleRed from "../../assets/hairColors/male-red.png"
+import maleSilver from "../../assets/hairColors/male-silver.png"
+import maleStrawberryBlond from "../../assets/hairColors/male-strawberry-blond.png"
+import maleWhite from "../../assets/hairColors/male-white.png"
+import maleYellow from "../../assets/hairColors/male-yellow.png"
+
+
 import {useForm} from "react-hook-form";
 import "./AppearanceQuiz.css"
 
@@ -14,42 +58,107 @@ function AppearanceQuiz() {
             questionText: 'What is your gender?',
             answerOptions: [
                 {answerText: 'Male', image: <img src={superhero} alt="superhero male pop art" className="gender-image"/>},
-                {answerText: 'Female',image: <img src={superwoman} alt="superhero female pop art"className="gender-image"/>},
+                {answerText: 'Female',image: <img src={superwoman} alt="superhero female pop art" className="gender-image"/>},
             ]
         },
         {
             questionText: 'What is your height?',
             answerOptions: [
-                { answerText: "cm"},
-                { answerText: "inch"},
+                {answerText: "cm"},
+                {answerText: "inch"},
             ]
         },
         {
             questionText: 'What is your hair color?',
             answerOptions: [
-                {answerText: 'No Hair'},
-                {answerText: 'Black'},
-                {answerText: 'Blond'},
-                {answerText: 'Brown'},
-                {answerText: 'White'},
-                {answerText: 'Purple'},
-                {answerText: 'Orange'},
-                {answerText: 'Pink'},
-                {answerText: 'Red'},
-                {answerText: 'Auburn'},
-                {answerText: 'Strawberry Blond'},
-                {answerText: 'Blue'},
-                {answerText: 'Green'},
-                {answerText: 'Magenta'},
-                {answerText: 'Silver'},
-                {answerText: 'Grey'},
-                {answerText: 'Orange / White'},
-                {answerText: 'Brown / White'},
-                {answerText: 'Yellow'},
-                {answerText: '-'},
-                {answerText: 'Gold'},
-                {answerText: 'Red / Orange'},
-                {answerText: 'indigo'},
+                {answerText: '-'
+                },
+                {answerText: 'No Hair'
+                },
+                {answerText: 'Black',
+                    image: <img src={femaleBlack} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleBlack} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Blond',
+                    image: <img src={femaleBlond} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleBlond} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Brown',
+                    image: <img src={femaleBrown} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleBrown} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'White',
+                    image: <img src={femaleWhite} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleWhite} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Purple',
+                    image: <img src={femalePurple} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={malePurple} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Orange',
+                    image: <img src={femaleOrange} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleOrange} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Pink',
+                    image: <img src={femalePink} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={malePink} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Red',
+                    image: <img src={femaleRed} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleRed} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Auburn',
+                    image: <img src={femaleAuburn} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleAuburn} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Strawberry Blond',
+                    image: <img src={femaleStrawberryBlond} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleStrawberryBlond} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Blue',
+                    image: <img src={femaleBlue} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleBlue} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Green',
+                    image: <img src={femaleGreen} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleGreen} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Magenta',
+                    image: <img src={femaleMagenta} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleMagenta} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Silver',
+                    image: <img src={femaleSilver} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleSilver} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Grey',
+                    image: <img src={femaleGrey} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleGrey} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Orange / White',
+                    image: <img src={femaleOrangeWhite} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleOrangeWhite} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Brown / White',
+                    image: <img src={femaleBrownWhite} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleBrownWhite} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Yellow',
+                    image: <img src={femaleYellow} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleYellow} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Gold',
+                    image: <img src={femaleGold} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleGold} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'Red / Orange',
+                    image: <img src={femaleOrangeRed} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleOrangeRed} alt="Hairstyle black male silhouette" className="hair"/>
+                },
+                {answerText: 'indigo',
+                    image: <img src={femaleIndigo} alt="Hairstyle black female silhouette" className="hair"/>,
+                    image1: <img src={maleIndigo} alt="Hairstyle black male silhouette" className="hair"/>
+                },
             ]
         },
         {
@@ -104,6 +213,7 @@ function getQuestions(){
                                 {answerOption.answerText}
                                 <div>
                                     {answerOption.image}
+                                    {answerOption.image1}
                                 </div>
                             </label>
                         )}
