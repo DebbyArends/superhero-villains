@@ -49,5 +49,5 @@
 body {
   background-image: url("../src/assets/background-blue-dots.jpg");
   background-repeat: repeat-y;
-  background-size: contain;
+  background-size: cover;
 }

@@ -1,8 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import './Characters.css'
+import{ BiLeftArrow, BiRightArrow } from 'react-icons/bi'
+import {useForm} from "react-hook-form";
+import {logDOM} from "@testing-library/react";
 
 function Characters() {
     const [characters, setCharacters]=useState('')
+    const {register}= useForm()
+    // const [currentCharacter, setCurrentCharacter] = useState(0)
+    // const length = characters.length
 
 useEffect(()=> {
     async function getData(){
@@ -14,28 +21,43 @@ useEffect(()=> {
             console.error(e)
         }
     }
-    getData(characters)
+    getData()
 }, [])
 
     return (
         <>
-            <h1>Characters</h1>
-            <h2>Searching characters</h2>
-            <article className="outer-container-characters">
-                {characters && characters.map((character)=> {
-                    return(
-                        <ul key={character.id}>
-                            <li>
-                                <img src={character.images.lg} alt={character.name}/>
-                                <h5>{character.name}</h5>
-                                <h6>Naam: {character.biography.fullName}</h6>
-                                <h6>Publisher:{character.biography.publisher}</h6>
-                            </li>
-                        </ul>
-                    )
-                })}
-            </article>
+            <section className="slider">
+                <h1>Marvel characters</h1>
+                <form>
+                    <label htmlFor="search-character">
+                        <input type="text"
+                               {...register("search-character")}
+                        />
+                    </label>
+                    <button
+                    type="submit">
+                        Search..
+                    </button>
+                </form>
+                <BiLeftArrow classname="left-arrow" />
+                <article className="character-container">
+                    {characters && characters.map((character)=> {
+                        return(
+                                <ul key={character.id}>
+                                    <li className="character-list">
+                                        <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                        <h5>{character.name}</h5>
+                                        <h6>Naam: {character.biography.fullName}</h6>
+                                        <h6>Publisher:{character.biography.publisher}</h6>
+                                    </li>
+                                </ul>
+                        )
+                    })}
+                </article>
+                <BiRightArrow classname="right-arrow" />
+            </section>
         </>
+
     )
 }
 
