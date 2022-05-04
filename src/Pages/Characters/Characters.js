@@ -49,7 +49,7 @@ useEffect(()=> {
     return (
         <>
             <section className="slider">
-                <h1>Marvel characters</h1>
+                <h1>Characters</h1>
                 <form onSubmit={handleSubmit(onFormSubmit)}>
                     <label htmlFor="search-character">
                         <input type="text"
