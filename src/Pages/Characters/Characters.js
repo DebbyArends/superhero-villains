@@ -66,16 +66,16 @@ useEffect(()=> {
                         {characters && characters.map((character)=> {
                         return(
                             [
-                                <ul key={character.id}>
-                                    <li className="character-list">
-                                        <div className="character-white">
-                                            <img src={character.images.lg} alt={character.name} className="image-character"/>
-                                            <h5>{character.name}</h5>
-                                            <h6>Naam: {character.biography.fullName}</h6>
-                                            <h6>Publisher: {character.biography.publisher}</h6>
-                                        </div>
-                                    </li>
-                                </ul>
+                                    <ul key={character.id}>
+                                        <li className="character-list">
+                                            <div className="character-white">
+                                                <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                                <h5>{character.name}</h5>
+                                                <h6>Naam: {character.biography.fullName}</h6>
+                                                <h6>Publisher: {character.biography.publisher}</h6>
+                                            </div>
+                                        </li>
+                                    </ul>
                             ]
                         )
                     })}
