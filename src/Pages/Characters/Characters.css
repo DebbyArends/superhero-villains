@@ -61,3 +61,25 @@
     cursor: pointer;
     user-select: none;
 }
+
+.left-arrow-dc {
+    position: absolute;
+    top: 80%;
+    left: 20px;
+    font-size: 3rem;
+    color: #000000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.right-arrow-dc {
+    position: absolute;
+    top: 80%;
+    right: 20px;
+    font-size: 3rem;
+    color: #000000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}

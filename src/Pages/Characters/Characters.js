@@ -8,11 +8,12 @@ import { useForm} from "react-hook-form";
 function Characters() {
     const [characters, setCharacters]=useState('')
     const {register, handleSubmit}= useForm()
-    const [currentCharacter, setCurrentCharacter] = useState(5)
+    const [currentCharacterMarvel, setCurrentCharacterMarvel] = useState(7)
+    const [indexMarvel, setIndexMarvel] = useState(0)
+    const [currentCharacterDC, setCurrentCharacterDC] = useState(7)
+    const [indexDC, setIndexDC] = useState(0)
     const [searchCharacter, setSearchCharacter] = useState( '')
     const length = characters.length
-
-    const [index, setIndex] = useState(0)
 
     useEffect(()=> {
         async function getData(){
@@ -27,6 +28,7 @@ function Characters() {
         getData()
     }, [])
 
+
     // find methode naar
 
 
@@ -34,25 +36,34 @@ function Characters() {
         return null;
     }
 
-    const characterSearch = characters && characters.map((character)=> {
-        return (
-            [
-                            <h5>{character.name}</h5>
-            ]
-        )
-    }
-    )
+    const charactersMarvel = characters.filter((character) => {
+        return character.biography.publisher === "Marvel Comics"
+    })
 
+    const charactersDC = characters.filter((character) => {
+        return character.biography.publisher === "DC Comics"
+    })
 
-    function nextSlide() {
-        setCurrentCharacter(currentCharacter + 5)
-        setIndex(index + 5)
+    function nextSlideMarvelCharacters() {
+        setCurrentCharacterMarvel(currentCharacterMarvel + 1)
+        setIndexMarvel(indexMarvel + 1)
 
     }
 
-    function prevSlide() {
-        setCurrentCharacter(currentCharacter -5)
-        setIndex(index- 5)
+    function prevSlideMarvelCharacters() {
+        setCurrentCharacterMarvel(  currentCharacterMarvel - 1)
+        setIndexMarvel (indexMarvel - 1)
+    }
+
+    function nextSlideDCCharacters() {
+        setCurrentCharacterDC(currentCharacterDC + 1)
+        setIndexDC(indexDC + 1)
+
+    }
+
+    function prevSlideDCCharacters() {
+        setCurrentCharacterDC(  currentCharacterDC - 1)
+        setIndexDC (indexDC - 1)
     }
 
 
@@ -61,6 +72,8 @@ function Characters() {
         e.preventDefault()
         console.log(searchCharacter)
         }
+
+
 
     return (
         <>
@@ -83,28 +96,50 @@ function Characters() {
                 </form>
             </section>
                 <section className="slider">
-                        <BiLeftArrow className="left-arrow" onClick={prevSlide}/>
+                    <button
+                        onClick={prevSlideMarvelCharacters}
+                    >
+                        <BiLeftArrow className="left-arrow"/>
+                    </button>
                         <article className="character-container">
-                            {characters && characters.slice(index, currentCharacter).map((character)=> (
-                                // <div className={index === currentCharacter  ? 'slide active' : 'slide'} key=
-                                //     {index}>
-                                //     {index === currentCharacter && (
+                            {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
                                 [
-                                <ul key={character.id}>
-                                <li className="character-list">
-                                <div className="character-white">
-                                <img src={character.images.lg} alt={character.name} className="image-character"/>
-                                <h5>{character.name}</h5>
-                                <h6>Naam: {character.biography.fullName}</h6>
-                                <h6>Publisher: {character.biography.publisher}</h6>
-                                </div>
-                                </li>
-                                </ul>
+                                    <ul key={character.id}>
+                                        <li className="character-list">
+                                            <div className="character-white">
+                                                <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                                <h5>{character.name}</h5>
+                                                <h6>Naam: {character.biography.fullName}</h6>
+                                                <h6>Publisher: {character.biography.publisher}</h6>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 ]
                             ))}
-                            {/*// </div>*/}
                         </article>
-                        <BiRightArrow className="right-arrow" onClick={nextSlide} />
+                        <BiRightArrow className="right-arrow" onClick={nextSlideMarvelCharacters} />
+                    <button
+                        onClick={prevSlideDCCharacters}
+                    >
+                        <BiLeftArrow className="left-arrow-dc"/>
+                    </button>
+                    <article className="character-container">
+                        {charactersDC && charactersDC.slice(indexDC, currentCharacterDC).map((character)=> (
+                            [
+                                <ul key={character.id}>
+                                    <li className="character-list">
+                                        <div className="character-white">
+                                            <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                            <h5>{character.name}</h5>
+                                            <h6>Naam: {character.biography.fullName}</h6>
+                                            <h6>Publisher: {character.biography.publisher}</h6>
+                                        </div>
+                                    </li>
+                                </ul>
+                            ]
+                        ))}
+                    </article>
+                    <BiRightArrow className="right-arrow-dc" onClick={nextSlideDCCharacters} />
                 </section>
         </>
 
