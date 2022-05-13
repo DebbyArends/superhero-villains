@@ -5,8 +5,7 @@ import HomePage from "./Pages/Homepage/Homepage";
 import Appearance from "./Pages/Appearance/Appearance";
 import Powerstats from "./Pages/Powerstats/Powerstats";
 import Characters from "./Pages/Characters/Characters";
-import ImageSlider from "./Components/ImageSlider";
-import SliderData from "./Components/SliderData";
+import CharacterBiography from "./Pages/CharacterBiography/CharacterBiography";
 
 
 function App() {
@@ -34,8 +33,8 @@ function App() {
               </Route>
           </Switch>
           <Switch>
-              <Route path="/imageslider">
-                  <ImageSlider slides={SliderData}/>
+              <Route exact path="/character-biography">
+                  <CharacterBiography/>
               </Route>
           </Switch>
       </div>

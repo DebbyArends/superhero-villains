@@ -3,6 +3,7 @@ import axios from "axios";
 import './Characters.css'
 import{ BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 import { useForm} from "react-hook-form";
+import { useHistory } from 'react-router-dom'
 
 
 function Characters() {
@@ -13,6 +14,7 @@ function Characters() {
     const [currentCharacterDC, setCurrentCharacterDC] = useState(7)
     const [indexDC, setIndexDC] = useState(0)
     const [searchCharacter, setSearchCharacter] = useState( '')
+    const history = useHistory()
     const length = characters.length
 
     useEffect(()=> {
@@ -47,12 +49,11 @@ function Characters() {
     function nextSlideMarvelCharacters() {
         setCurrentCharacterMarvel(currentCharacterMarvel + 1)
         setIndexMarvel(indexMarvel + 1)
-
     }
 
     function prevSlideMarvelCharacters() {
-        setCurrentCharacterMarvel(  currentCharacterMarvel - 1)
-        setIndexMarvel (indexMarvel - 1)
+        setCurrentCharacterMarvel(  currentCharacterMarvel > 7 ? currentCharacterMarvel - 1: currentCharacterMarvel (7))
+        setIndexMarvel (indexMarvel > 0 ? indexMarvel - 1: indexMarvel (0))
     }
 
     function nextSlideDCCharacters() {
@@ -62,10 +63,13 @@ function Characters() {
     }
 
     function prevSlideDCCharacters() {
-        setCurrentCharacterDC(  currentCharacterDC - 1)
-        setIndexDC (indexDC - 1)
+        setCurrentCharacterDC(  currentCharacterDC > 7 ? currentCharacterDC - 1: currentCharacterDC(7))
+        setIndexDC (indexDC > 0 ? indexDC - 1: indexDC(0))
     }
 
+    function handleClick() {
+        history.push("/character-biography")
+    }
 
 
     function onFormSubmit(e) {
@@ -101,17 +105,18 @@ function Characters() {
                     >
                         <BiLeftArrow className="left-arrow"/>
                     </button>
+                    <h2>MARVEL Characters</h2>
                         <article className="character-container">
                             {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
                                 [
                                     <ul key={character.id}>
-                                        <li className="character-list">
-                                            <div className="character-white">
-                                                <img src={character.images.lg} alt={character.name} className="image-character"/>
-                                                <h5>{character.name}</h5>
-                                                <h6>Naam: {character.biography.fullName}</h6>
-                                                <h6>Publisher: {character.biography.publisher}</h6>
-                                            </div>
+                                        <li className="character-list" onClick={handleClick}>
+                                                <div className="character-white">
+                                                    <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                                    <h5>{character.name}</h5>
+                                                    <h6>Naam: {character.biography.fullName}</h6>
+                                                    <h6>Publisher: {character.biography.publisher}</h6>
+                                                </div>
                                         </li>
                                     </ul>
                                 ]
@@ -123,11 +128,12 @@ function Characters() {
                     >
                         <BiLeftArrow className="left-arrow-dc"/>
                     </button>
+                    <h2>DC Characters</h2>
                     <article className="character-container">
                         {charactersDC && charactersDC.slice(indexDC, currentCharacterDC).map((character)=> (
                             [
                                 <ul key={character.id}>
-                                    <li className="character-list">
+                                    <li className="character-list" onClick={handleClick}>
                                         <div className="character-white">
                                             <img src={character.images.lg} alt={character.name} className="image-character"/>
                                             <h5>{character.name}</h5>

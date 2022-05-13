@@ -42,7 +42,7 @@
 
 .left-arrow {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 20px;
     font-size: 3rem;
     color: #000000;
@@ -53,7 +53,7 @@
 
 .right-arrow {
     position: absolute;
-    top: 60%;
+    top: 50%;
     right: 20px;
     font-size: 3rem;
     color: #000000;
@@ -64,7 +64,7 @@
 
 .left-arrow-dc {
     position: absolute;
-    top: 80%;
+    top: 100%;
     left: 20px;
     font-size: 3rem;
     color: #000000;
@@ -75,7 +75,7 @@
 
 .right-arrow-dc {
     position: absolute;
-    top: 80%;
+    top: 100%;
     right: 20px;
     font-size: 3rem;
     color: #000000;
