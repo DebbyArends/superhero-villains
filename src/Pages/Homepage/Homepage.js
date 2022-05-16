@@ -1,11 +1,39 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./Homepage.css"
 import girlWithGlasses from "../../assets/girl-with-glasses.jpg"
 import dcMarvelMultiverse from "../../assets/dc-marvel-multiverse.jpg"
 import powFist from "../../assets/pow-fist.jpg"
 import Banner from "../../Components/Banner/Banner";
+import axios from "axios";
+import {useParams} from "react-router-dom";
 
 function HomePage() {
+const apiKey = "10228880912034222"
+// let id = 0
+//     for (let i = 0; i <=731; i++) {
+//         console.log(i)
+//         id= id + i
+//     }
+//  const id = useParams()
+//     const id = 1 ,2
+const id = [1&& 2]
+
+    useEffect(()=> {
+        async function getData(){
+
+            try{
+                const result = await axios.get(`https://superheroapi.com/api/${apiKey}/${id}`, {
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                })
+                console.log(result.data)
+            }catch (e) {
+                console.error(e)
+            }
+        }
+        getData()
+    }, [])
 
     return (
         <>
