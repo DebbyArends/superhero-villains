@@ -6,6 +6,7 @@ import Appearance from "./Pages/Appearance/Appearance";
 import Powerstats from "./Pages/Powerstats/Powerstats";
 import Characters from "./Pages/Characters/Characters";
 import CharacterBiography from "./Pages/CharacterBiography/CharacterBiography";
+import SearchCharacter from "./Pages/SearchCharacter/SearchCharacter";
 
 
 function App() {
@@ -33,8 +34,8 @@ function App() {
               </Route>
           </Switch>
           <Switch>
-              <Route exact path="/character-biography">
-                  <CharacterBiography/>
+              <Route exact path="/search-character">
+                  <SearchCharacter/>
               </Route>
           </Switch>
       </div>

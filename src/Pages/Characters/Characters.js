@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './Characters.css'
 import{ BiLeftArrow, BiRightArrow } from 'react-icons/bi'
-import { useForm} from "react-hook-form";
 import { useHistory } from 'react-router-dom'
+import{BiSearchAlt2} from 'react-icons/bi'
 
 
 function Characters() {
+    const apiKey = "10228880912034222"
     const [characters, setCharacters]=useState('')
-    const {register, handleSubmit}= useForm()
     const [currentCharacterMarvel, setCurrentCharacterMarvel] = useState(7)
     const [indexMarvel, setIndexMarvel] = useState(0)
     const [currentCharacterDC, setCurrentCharacterDC] = useState(7)
@@ -30,6 +30,21 @@ function Characters() {
         getData()
     }, [])
 
+    useEffect(()=> {
+        async function fetchCharacterData(){
+            try{
+                const result = await axios.get(`https://superheroapi.com/api/${apiKey}/search/ironman}`, {
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                })
+                console.log(result.data)
+            }catch (e) {
+                console.error(e)
+            }
+        }
+        fetchCharacterData()
+    }, [])
 
     // find methode naar
 
@@ -71,6 +86,9 @@ function Characters() {
         history.push("/character-biography")
     }
 
+    function handleSubmit(e){
+        setSearchCharacter(e.target.value)
+    }
 
     function onFormSubmit(e) {
         e.preventDefault()
@@ -86,7 +104,7 @@ function Characters() {
                 <form onSubmit={(onFormSubmit)}>
                     <label htmlFor="search-character">
                         <input type="text"
-                               placeholder="Type the name of a superhero or villain..."
+                               placeholder="Search on the name of your superhero or villain.."
                                name="search-character"
                                className={!searchCharacter === characters.name ? 'input-error' : 'input-normal'}
                                value={searchCharacter}
@@ -94,8 +112,9 @@ function Characters() {
                         />
                     </label>
                     <button
-                        type="submit">
-                        Search..
+                        type="submit"
+                        onClick={handleSubmit}>
+                        <BiSearchAlt2 className="icon"/>
                     </button>
                 </form>
             </section>
