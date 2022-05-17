@@ -6,7 +6,7 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import{ReactComponent as Marvel} from "../../assets/Marvel_Logo.svg";
 import {ReactComponent as DC} from "../../assets/DC_Comics_logo.svg";
 import {ReactComponent as Divider} from "../../assets/Decorative-Border-Divider.svg";
-
+import SearchCharacter from "../../Components/SearchCharacter/SearchCharacter";
 
 function Characters() {
     const apiKey = "10228880912034222"
@@ -92,6 +92,7 @@ function Characters() {
             <div className="title">
                 <h1>Characters</h1>
             </div>
+            <SearchCharacter/>
             <section className="slider">
                 <IoIosArrowBack
                     className="left-arrow"
@@ -121,7 +122,6 @@ function Characters() {
                 <span className="divider-container">
                     <Divider className="divider-line"/>
                 </span>
-
                 <IoIosArrowBack
                     className="left-arrow-dc"
                     onClick={prevSlideDCCharacters}

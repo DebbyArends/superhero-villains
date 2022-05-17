@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-email-share-link": "^1.0.3",
     "react-hook-form": "^7.30.0",
     "react-icons": "^4.3.1",
     "react-multi-carousel": "^2.8.0",

@@ -25,9 +25,6 @@ function Navigation() {
                     <li>
                         <NavLink to="/characters" activeClassName="active-link">Characters</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/search-character" activeClassName="active-link">Search character</NavLink>
-                    </li>
                 </ul>
             </div>
         </nav>

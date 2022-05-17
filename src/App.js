@@ -5,7 +5,7 @@ import HomePage from "./Pages/Homepage/Homepage";
 import Appearance from "./Pages/Appearance/Appearance";
 import Powerstats from "./Pages/Powerstats/Powerstats";
 import Characters from "./Pages/Characters/Characters";
-import SearchCharacter from "./Pages/SearchCharacter/SearchCharacter";
+import SearchCharacter from "./Components/SearchCharacter/SearchCharacter";
 import Footer from "./Components/Footer/Footer";
 
 
@@ -31,11 +31,6 @@ function App() {
           <Switch>
               <Route exact path="/characters">
                   <Characters/>
-              </Route>
-          </Switch>
-          <Switch>
-              <Route exact path="/search-character">
-                  <SearchCharacter/>
               </Route>
           </Switch>
           <Footer/>
