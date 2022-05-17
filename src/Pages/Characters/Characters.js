@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './Characters.css'
-import{ BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 import { useHistory } from 'react-router-dom'
-import{BiSearchAlt2} from 'react-icons/bi'
+import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
+import{ReactComponent as Marvel} from "../../assets/Marvel_Logo.svg";
+import {ReactComponent as DC} from "../../assets/DC_Comics_logo.svg";
+import {ReactComponent as Divider} from "../../assets/Decorative-Border-Divider.svg";
 
 
 function Characters() {
@@ -13,7 +15,6 @@ function Characters() {
     const [indexMarvel, setIndexMarvel] = useState(0)
     const [currentCharacterDC, setCurrentCharacterDC] = useState(7)
     const [indexDC, setIndexDC] = useState(0)
-    const [searchCharacter, setSearchCharacter] = useState( '')
     const history = useHistory()
     const length = characters.length
 
@@ -86,86 +87,65 @@ function Characters() {
         history.push("/character-biography")
     }
 
-    function handleSubmit(e){
-        setSearchCharacter(e.target.value)
-    }
-
-    function onFormSubmit(e) {
-        e.preventDefault()
-        console.log(searchCharacter)
-        }
-
-
-
     return (
         <>
-            <section className="slider">
+            <div className="title">
                 <h1>Characters</h1>
-                <form onSubmit={(onFormSubmit)}>
-                    <label htmlFor="search-character">
-                        <input type="text"
-                               placeholder="Search on the name of your superhero or villain.."
-                               name="search-character"
-                               className={!searchCharacter === characters.name ? 'input-error' : 'input-normal'}
-                               value={searchCharacter}
-                               onChange={(e) => setSearchCharacter(e.target.value)}
-                        />
-                    </label>
-                    <button
-                        type="submit"
-                        onClick={handleSubmit}>
-                        <BiSearchAlt2 className="icon"/>
-                    </button>
-                </form>
+            </div>
+            <section className="slider">
+                <IoIosArrowBack
+                    className="left-arrow"
+                    onClick={prevSlideMarvelCharacters}
+                />
+                <span className="marvel-characters">
+                    <Marvel className="logo-marvel"/>
+                </span>
+                <article className="character-container">
+                    {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
+                        [
+                            <ul key={character.id}>
+                                <li className="character-list-marvel" onClick={handleClick}>
+                                    <div className="character-white">
+                                        <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                        <h5>{character.name}</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        ]
+                    ))}
+                </article>
+                <IoIosArrowForward
+                    className="right-arrow"
+                    onClick={nextSlideMarvelCharacters}
+                />
+                <span className="divider-container">
+                    <Divider className="divider-line"/>
+                </span>
+
+                <IoIosArrowBack
+                    className="left-arrow-dc"
+                    onClick={prevSlideDCCharacters}
+                />
+                <DC className="logo-dc"/>
+                <article className="character-container">
+                    {charactersDC && charactersDC.slice(indexDC, currentCharacterDC).map((character)=> (
+                        [
+                            <ul key={character.id}>
+                                <li className="character-list-dc" onClick={handleClick}>
+                                    <div className="character-white">
+                                        <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                        <h5>{character.name}</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        ]
+                    ))}
+                </article>
+                <IoIosArrowForward
+                    className="right-arrow-dc"
+                    onClick={nextSlideDCCharacters}
+                />
             </section>
-                <section className="slider">
-                    <button
-                        onClick={prevSlideMarvelCharacters}
-                    >
-                        <BiLeftArrow className="left-arrow"/>
-                    </button>
-                    <h2>MARVEL Characters</h2>
-                        <article className="character-container">
-                            {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
-                                [
-                                    <ul key={character.id}>
-                                        <li className="character-list" onClick={handleClick}>
-                                                <div className="character-white">
-                                                    <img src={character.images.lg} alt={character.name} className="image-character"/>
-                                                    <h5>{character.name}</h5>
-                                                    <h6>Naam: {character.biography.fullName}</h6>
-                                                    <h6>Publisher: {character.biography.publisher}</h6>
-                                                </div>
-                                        </li>
-                                    </ul>
-                                ]
-                            ))}
-                        </article>
-                        <BiRightArrow className="right-arrow" onClick={nextSlideMarvelCharacters} />
-                    <button
-                        onClick={prevSlideDCCharacters}
-                    >
-                        <BiLeftArrow className="left-arrow-dc"/>
-                    </button>
-                    <h2>DC Characters</h2>
-                    <article className="character-container">
-                        {charactersDC && charactersDC.slice(indexDC, currentCharacterDC).map((character)=> (
-                            [
-                                <ul key={character.id}>
-                                    <li className="character-list" onClick={handleClick}>
-                                        <div className="character-white">
-                                            <img src={character.images.lg} alt={character.name} className="image-character"/>
-                                            <h5>{character.name}</h5>
-                                            <h6>Naam: {character.biography.fullName}</h6>
-                                            <h6>Publisher: {character.biography.publisher}</h6>
-                                        </div>
-                                    </li>
-                                </ul>
-                            ]
-                        ))}
-                    </article>
-                    <BiRightArrow className="right-arrow-dc" onClick={nextSlideDCCharacters} />
-                </section>
         </>
 
     )

@@ -1,0 +1,21 @@
+.main-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: hsl(185, 60%, 67%);
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.list-unstyled {
+    display: flex;
+    flex-basis: 30px;
+    color: #ffffff;
+}

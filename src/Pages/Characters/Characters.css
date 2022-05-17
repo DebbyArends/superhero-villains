@@ -4,13 +4,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 5%;
     flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.button {
+    border-style: none;
 }
 .image-character {
     height: 200px;
     width: 100px;
-    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .character-container {
@@ -18,8 +22,8 @@
     flex-direction: row;
 }
 
-.character-list {
-    background-image: url("../../assets/blue-character-banner-no-shadow.png");
+.character-list-marvel {
+    background-image: url("../../assets/red-banner.png");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -27,7 +31,21 @@
     margin: 0 5px 0 5px;
     padding: 15px 15px 15px 15px;
     position: relative;
+    box-shadow: black;
 }
+
+.character-list-dc {
+    background-image: url("../../assets/blue-banner.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    margin: 0 5px 0 5px;
+    padding: 15px 15px 15px 15px;
+    position: relative;
+    box-shadow: black;
+}
+
 
 .character-white {
     display: flex;
@@ -35,17 +53,18 @@
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
+    width: auto;
     flex-wrap: wrap;
     margin: 10px 10px 10px 10px;
-    padding: 0 10px 0 10px;
+    padding: 20px 10px 10px 10px;
 }
 
 .left-arrow {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 20px;
     font-size: 3rem;
-    color: #000000;
+    color: hsl(189, 50%, 16%);
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -53,10 +72,10 @@
 
 .right-arrow {
     position: absolute;
-    top: 50%;
+    top: 55%;
     right: 20px;
     font-size: 3rem;
-    color: #000000;
+    color: hsl(189, 50%, 16%);
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -64,10 +83,10 @@
 
 .left-arrow-dc {
     position: absolute;
-    top: 100%;
+    top: 132%;
     left: 20px;
     font-size: 3rem;
-    color: #000000;
+    color: hsl(189, 50%, 16%);
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -75,10 +94,10 @@
 
 .right-arrow-dc {
     position: absolute;
-    top: 100%;
+    top: 132%;
     right: 20px;
     font-size: 3rem;
-    color: #000000;
+    color: hsl(189, 50%, 16%);
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -87,4 +106,50 @@
 .icon {
     width: 50px;
     height: 50px;
+}
+
+.logo-marvel {
+    width: 100px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.logo-dc {
+    width: 100px;
+    height: 60px;
+}
+
+.marvel-characters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Roboto Condensed", cursive;
+    color: hsl(189, 50%, 16%);
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+h5 {
+    font-family: Neucha,cursive;
+    color: hsl(189, 50%, 16%);
+    font-size: 16px;
+}
+
+.divider-line {
+    width:400px;
+    height: 50px;
+    margin:20px 0 20px 0;
+    color: hsl(189, 50%, 16%);
+}
+
+.divider-container {
+    display: flex;
+    flex-direction: row;
 }

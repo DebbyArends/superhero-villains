@@ -5,8 +5,8 @@ import HomePage from "./Pages/Homepage/Homepage";
 import Appearance from "./Pages/Appearance/Appearance";
 import Powerstats from "./Pages/Powerstats/Powerstats";
 import Characters from "./Pages/Characters/Characters";
-import CharacterBiography from "./Pages/CharacterBiography/CharacterBiography";
 import SearchCharacter from "./Pages/SearchCharacter/SearchCharacter";
+import Footer from "./Components/Footer/Footer";
 
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
                   <SearchCharacter/>
               </Route>
           </Switch>
+          <Footer/>
       </div>
   );
 }
