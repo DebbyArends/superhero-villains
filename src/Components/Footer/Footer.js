@@ -25,7 +25,8 @@ function Footer() {
                             <div>
                                 <ul className="list-unstyled">
                                     <li>
-                                        <IoIosArrowForward/>
+                                        <IoIosArrowForward
+                                        className="arrow-forward"/>
                                         <a href="mailto:debby_arends@live.nl?subject=Contact Debby Arends" target="_blank" rel="noreferrer" className="list-items">Mail me !</a>
                                     </li>
                                 </ul>
@@ -33,15 +34,18 @@ function Footer() {
                             <div className="list-links-social">
                                 <ul className="list-unstyled">
                                     <li>
-                                        <IoIosArrowForward/>
+                                        <IoIosArrowForward
+                                            className="arrow-forward"/>
                                         <a href="https://www.linkedin.com/in/debby-arends-92a97b55/" target="_blank" rel="noreferrer" className="list-items">LinkedIn</a>
                                     </li>
                                     <li>
-                                        <IoIosArrowForward/>
+                                        <IoIosArrowForward
+                                            className="arrow-forward"/>
                                         <a href="https://www.instagram.com/kinnaris_manohara/" target="_blank" rel="noreferrer" className="list-items">Instagram</a>
                                     </li>
                                     <li>
-                                        <IoIosArrowForward/>
+                                        <IoIosArrowForward
+                                            className="arrow-forward"/>
                                         <a href="https://www.facebook.com/debby.arends/" target="_blank" rel="noreferrer" className="list-items">Facebook</a>
                                     </li>
                                 </ul>

@@ -31,7 +31,7 @@
     width: 450px;
     font-family: 'Neucha', cursive;
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 14px;
     list-style-type: none;
     padding: 0;
 }
@@ -66,6 +66,7 @@
 .list-items {
     color: white;
     padding: 10px;
+    font-size: 12px;
 }
 
 
@@ -84,6 +85,71 @@
 
 .logo-superhero-vs-villains {
     margin-bottom: 20px;
-    width: 300px;
+    width: 200px;
     display: flex;
+}
+
+.arrow-forward {
+    width: 11px;
+    height: 11px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .logo-superhero-vs-villains {
+        margin-bottom: 20px;
+        width: 250px;
+        display: flex;
+    }
+    .list-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-basis: 550px;
+        width: 450px;
+        font-family: 'Neucha', cursive;
+        font-weight: bolder;
+        font-size: 16px;
+        list-style-type: none;
+        padding: 0;
+    }
+    .list-items {
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .arrow-forward {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .logo-superhero-vs-villains {
+        margin-bottom: 20px;
+        width: 300px;
+        display: flex;
+    }
+    .list-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-basis: 550px;
+        width: 450px;
+        font-family: 'Neucha', cursive;
+        font-weight: bolder;
+        font-size: 18px;
+        list-style-type: none;
+        padding: 0;
+    }
+    .list-items {
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .arrow-forward {
+        width: 15px;
+        height: 15px;
+    }
 }
