@@ -5,38 +5,39 @@
     width: 100%;
     position: relative;
 }
+
 #banner-h1 {
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bolder;
     position: absolute;
     left: 38px;
-    top: 25.5%;
+    top: 26%;
 }
 
 #banner-h2 {
     color: white;
     font-family: 'Neucha', cursive;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 200;
-    left: 60px;
+    left: 55px;
     top: 23%;
     position: absolute;
 }
 
 
 .image-appearance {
-    width: 300px;
-    height: 300px;
-    margin: 20px;
+    width: 250px;
+    height: 250px;
+    margin: 20px 20px 0 20px;
     border: 1px solid #14363C;
 }
 
 .outer-container-article-1 {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     background-image: url("../../assets/banner_appearance_202204_1.0.png");
     background-position: center;
@@ -48,6 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-image: url("../../assets/banner_2_powerstats.png");
     background-position: center;
     background-size: cover;
@@ -58,7 +60,7 @@
 .outer-container-article-3 {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     background-image: url("../../assets/banner_3_characters.png");
     background-position: center;
     background-size: cover;
@@ -67,11 +69,11 @@
 }
 .inner-container-article {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-basis: auto;
     align-items: center;
     background-color: white;
-    margin: 20px;
+    margin: 15px;
     border: 1px solid #14363C;
 }
 
@@ -96,33 +98,77 @@
     background-color: #14363C;
     color: white;
     font-family: "Roboto Condensed", cursive;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 5px;
     border: none;
     margin-top: 30px;
     padding: 10px 10px;
 }
-
-
-.title-article {
-    color: #14363C;
-    font-family: Neucha, cursive;
-    font-size: 28px;
-    padding-bottom: 50px;
-}
-
 .description {
     color: #14363C;
     font-family: Neucha, cursive;
-    font-size: 16px;
+    font-size: 14px;
+    padding-left: 20px;
+    margin-bottom: 10px;
 }
 
 .page-title {
     color: #14363C;
     font-family: Roboto, cursive;
     font-weight: bold;
-    font-size: 34px;
-    margin-bottom: 30px;
+    font-size: 30px;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+.main-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.title-article {
+    color: #14363C;
+    font-family: Neucha, cursive;
+    padding: 10px 0;
+}
+
+.description-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #14363C;
+}
+
+p {
+    font-family: Roboto,cursive;
+    font-size: 12px;
+}
+
+h2 {
+    color: #14363C;
+    font-family: Neucha, cursive;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+h4 {
+    font-family: Neucha,cursive;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.quote-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.quote-icon {
+    width: 9px;
+    height: 9px;
 }
 
 @media screen and (min-width: 768px) {
@@ -135,38 +181,273 @@
         left: 45px;
         top: 29%;
     }
-
     #banner-h2 {
         color: white;
         font-family: 'Neucha', cursive;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 200;
-        left: 65px;
+        left: 73px;
         top: 26%;
         position: absolute;
     }
+    .inner-container-article {
+        display: flex;
+        flex-direction: row;
+        flex-basis: auto;
+        align-items: center;
+        background-color: white;
+        margin: 20px;
+        border: 1px solid #14363C;
+    }
+    .image-appearance {
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        border: 1px solid #14363C;
+    }
+    .container-article-text {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
 
+    .outer-container-article-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-image: url("../../assets/banner_appearance_202204_1.0.png");
+        background-position: center;
+        background-size: cover;
+        margin: 50px;
+        border: 5px solid whitesmoke;
+    }
+    .outer-container-article-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("../../assets/banner_2_powerstats.png");
+        background-position: center;
+        background-size: cover;
+        margin: 50px;
+        border: 5px solid whitesmoke;
+    }
 
+    .outer-container-article-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background-image: url("../../assets/banner_3_characters.png");
+        background-position: center;
+        background-size: cover;
+        margin: 50px;
+        border: 5px solid whitesmoke;
+    }
+    .description {
+        color: #14363C;
+        font-family: Neucha, cursive;
+        font-size: 16px;
+    }
+
+    .page-title {
+        color: #14363C;
+        font-family: Roboto, cursive;
+        font-weight: bold;
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    .button-banner {
+        background-color: #14363C;
+        color: white;
+        font-family: "Roboto Condensed", cursive;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 30px;
+        padding: 10px 10px;
+    }
+    .title-article {
+        color: #14363C;
+        font-family: Neucha, cursive;
+        font-size: 26px;
+        padding: 12px 0;
+    }
+    .description-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #14363C;
+    }
+
+    .main-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h4 {
+        font-family: Neucha,cursive;
+        font-size: 18px;
+        padding: 0 10px;
+    }
+    .quote-container {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+    }
+    .quote-icon {
+        width: 11px;
+        height: 11px;
+    }
+    p {
+        font-family: Roboto,cursive;
+        font-size: 14px;
+    }
+    h2 {
+        font-size: 20px;
+    }
 }
 
 @media screen and (min-width: 992px) {
     #banner-h1 {
         color: white;
         font-family: 'Roboto', sans-serif;
-        font-size: 60px;
+        font-size: 54px;
         font-weight: bolder;
         position: absolute;
         left: 80px;
-        top: 34%;
+        top: 33%;
     }
-
     #banner-h2 {
         color: white;
         font-family: 'Neucha', cursive;
-        font-size: 36px;
+        font-size: 27px;
         font-weight: 200;
-        left: 140px;
+        left: 118px;
         top: 29%;
         position: absolute;
+    }
+    .inner-container-article {
+        display: flex;
+        flex-direction: row;
+        flex-basis: auto;
+        align-items: center;
+        background-color: white;
+        margin: 20px;
+        border: 1px solid #14363C;
+    }
+    .image-appearance {
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        border: 1px solid #14363C;
+    }
+    .container-article-text {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .outer-container-article-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-image: url("../../assets/banner_appearance_202204_1.0.png");
+        background-position: center;
+        background-size: cover;
+        margin: 50px;
+        border: 5px solid whitesmoke;
+    }
+    .outer-container-article-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("../../assets/banner_2_powerstats.png");
+        background-position: center;
+        background-size: cover;
+        margin: 50px;
+        border: 5px solid whitesmoke;
+    }
+
+    .outer-container-article-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background-image: url("../../assets/banner_3_characters.png");
+        background-position: center;
+        background-size: cover;
+        margin: 50px;
+        border: 5px solid whitesmoke;
+    }
+    .title-article {
+        color: #14363C;
+        font-family: Neucha, cursive;
+        font-size: 28px;
+        padding-bottom: 50px;
+    }
+
+    .description {
+        color: #14363C;
+        font-family: Neucha, cursive;
+        font-size: 16px;
+    }
+
+    .page-title {
+        color: #14363C;
+        font-family: Roboto, cursive;
+        font-weight: bold;
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    .button-banner {
+        background-color: #14363C;
+        color: white;
+        font-family: "Roboto Condensed", cursive;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 30px;
+        padding: 10px 10px;
+    }
+    .title-article {
+        display: flex;
+        justify-content: center;
+        padding: 15px 0;
+    }
+    h2 {
+        font-size: 27px;
+    }
+    .description-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #14363C;
+    }
+    .main-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h4 {
+        font-family: Neucha,cursive;
+        font-size: 20px;
+        padding: 0 10px;
+    }
+    .quote-container {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+    }
+    .quote-icon {
+        width: 13px;
+        height: 13px;
+    }
+    p {
+        font-family: Roboto,cursive;
+        font-size: 16px;
     }
 }

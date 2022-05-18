@@ -1,15 +1,16 @@
 import React, {useEffect} from 'react';
-import "./Homepage.css"
-import girlWithGlasses from "../../assets/girl-with-glasses.jpg"
-import dcMarvelMultiverse from "../../assets/dc-marvel-multiverse.jpg"
-import powFist from "../../assets/pow-fist.jpg"
+import "./Homepage.css";
+import girlWithGlasses from "../../assets/girl-with-glasses.jpg";
+import dcMarvelMultiverse from "../../assets/dc-marvel-multiverse.jpg";
+import powFist from "../../assets/pow-fist.jpg";
 import Banner from "../../Components/Banner/Banner";
 import axios from "axios";
-import headbanner from "../../assets/hoofdbanner3.1.png"
+import headbanner from "../../assets/hoofdbanner3.1.png";
 import {useParams} from "react-router-dom";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
 
 function HomePage() {
-const apiKey = "10228880912034222"
+    const apiKey = "10228880912034222";
 // let id = 0
 //     for (let i = 0; i <=731; i++) {
 //         console.log(i)
@@ -17,24 +18,25 @@ const apiKey = "10228880912034222"
 //     }
 //  const id = useParams()
 //     const id = 1 ,2
-const id = [1&& 2]
+    const id = [1 && 2];
 
-    useEffect(()=> {
-        async function getData(){
+    useEffect(() => {
+        async function getData() {
 
-            try{
+            try {
                 const result = await axios.get(`https://superheroapi.com/api/${apiKey}/${id}`, {
                     headers: {
                         "Content-Type": "application/json",
                     }
-                })
-                console.log(result.data)
-            }catch (e) {
-                console.error(e)
+                });
+                console.log(result.data);
+            } catch (e) {
+                console.error(e);
             }
         }
-        getData()
-    }, [])
+
+        getData();
+    }, []);
 
     return (
         <>
@@ -43,19 +45,27 @@ const id = [1&& 2]
                 <h2 id="banner-h2">Are you a</h2>
                 <h1 id="banner-h1">Superhero?</h1>
             </div>
-            <h2>Which Superpowers do you have?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab commodi consequuntur doloremque dolorum
-                facilis in ipsa laudantium minus nobis pariatur perferendis placeat reiciendis, repellendus sed,
-                tempora. Corporis enim odio repellat! Aspernatur consequuntur debitis doloremque, doloribus in ipsam
-                ipsum laudantium maiores modi neque numquam odio perspiciatis, qui sint tempore temporibus, vitae
-                voluptatum? A aliquid consequatur consequuntur corporis dolor doloremque, eaque hic incidunt, ipsa, modi
-                natus nemo nisi quae quasi quidem quo quod quos rem repellendus repudiandae rerum temporibus velit?
-                Consequatur ducimus est facilis fugiat hic id iusto, laudantium magnam modi nostrum, odit quae, unde.
-                Aliquid debitis eius eligendi nemo numquam quis veniam. Dolorem doloremque harum illo ipsum neque omnis
-                porro quo repellat. A adipisci aut commodi consequuntur culpa deleniti, dolor eaque illum ipsum itaque
-                labore libero, maxime necessitatibus neque nisi obcaecati quam quidem sequi similique sunt suscipit
-                totam voluptatem! At atque debitis dolor ex magnam molestias nam non nulla sint soluta?</p>
-
+            <article className="main-article">
+                <div className="title-article">
+                    <h2>Which Superpowers do you have?</h2>
+                </div>
+                <div className="description-article">
+                    <p>Are you also <strong>'Geeking-out'</strong> when a new superhero movie or series is coming out?</p>
+                    <span className="quote-container">
+                        <FaQuoteLeft
+                            className="quote-icon"
+                        />
+                        <h4 className="quote">Me, too!</h4>
+                        <FaQuoteRight
+                            className="quote-icon"
+                        />
+                    </span>
+                    <p>Personally, I'm a real <strong>'Geek'</strong> and I love to experience the different universes through the
+                        movies, series or comics.</p>
+                    <p>Would you like to know which superhero or villain you would be in the
+                        multiverse? Let's find out...!</p>
+                </div>
+            </article>
             <Banner
                 classname="outer-container-article-1"
                 image={girlWithGlasses}
@@ -86,7 +96,7 @@ const id = [1&& 2]
                 buttonTitle="Search"
             />
         </>
-    )
+    );
 }
 
-export default HomePage
+export default HomePage;
