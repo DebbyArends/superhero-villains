@@ -1,7 +1,7 @@
 import React from "react";
 import './Footer.css'
 import superheroVsVillainsLogo from "../../assets/superhero-vs-villains.png"
-import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
+import { IoIosArrowForward } from 'react-icons/io'
 
 function Footer() {
     return(
@@ -21,27 +21,28 @@ function Footer() {
                 </div>
                 <div className="outer-container-links">
                     <div className="inner-container-links">
-                        <div className="row">
+                        <div className="list-links">
                             <div>
                                 <ul className="list-unstyled">
                                     <li>
-                                        <IoIosArrowForward/><a href="mailto:debby_arends@live.nl?subject=Contact Debby Arends" target="_blank">Mail me !</a>
+                                        <IoIosArrowForward/>
+                                        <a href="mailto:debby_arends@live.nl?subject=Contact Debby Arends" target="_blank" rel="noreferrer" className="list-items">Mail me !</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div className="col">
+                            <div className="list-links-social">
                                 <ul className="list-unstyled">
                                     <li>
                                         <IoIosArrowForward/>
-                                        <a href="https://www.linkedin.com/in/debby-arends-92a97b55/" target="_blank">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/debby-arends-92a97b55/" target="_blank" rel="noreferrer" className="list-items">LinkedIn</a>
                                     </li>
                                     <li>
                                         <IoIosArrowForward/>
-                                        <a href="https://www.instagram.com/kinnaris_manohara/" target="_blank">Instagram</a>
+                                        <a href="https://www.instagram.com/kinnaris_manohara/" target="_blank" rel="noreferrer" className="list-items">Instagram</a>
                                     </li>
                                     <li>
                                         <IoIosArrowForward/>
-                                        <a href="https://www.facebook.com/debby.arends/" target="_blank">Facebook</a>
+                                        <a href="https://www.facebook.com/debby.arends/" target="_blank" rel="noreferrer" className="list-items">Facebook</a>
                                     </li>
                                 </ul>
                             </div>
