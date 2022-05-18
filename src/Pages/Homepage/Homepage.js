@@ -5,6 +5,7 @@ import dcMarvelMultiverse from "../../assets/dc-marvel-multiverse.jpg"
 import powFist from "../../assets/pow-fist.jpg"
 import Banner from "../../Components/Banner/Banner";
 import axios from "axios";
+import headbanner from "../../assets/hoofdbanner3.1.png"
 import {useParams} from "react-router-dom";
 
 function HomePage() {
@@ -37,11 +38,10 @@ const id = [1&& 2]
 
     return (
         <>
-            <div className="homepage-banner-outer-container">
-                <section className="homepage-banner-inner-container">
-                    <h2 id="banner-h2">Are you a</h2>
-                    <h1 id="banner-h1">Superhero?</h1>
-                </section>
+            <div>
+                <img src={headbanner} alt="Banner superhero in front of city" className="homepage-banner"/>
+                <h2 id="banner-h2">Are you a</h2>
+                <h1 id="banner-h1">Superhero?</h1>
             </div>
             <h2>Which Superpowers do you have?</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab commodi consequuntur doloremque dolorum

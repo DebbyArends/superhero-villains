@@ -1,39 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Neucha&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.homepage-banner-outer-container {
-    display: flex;
-    flex-direction: row;
-    height: 550px;
-    flex-shrink: 1;
+.homepage-banner {
+    width: 100%;
+    position: relative;
 }
-.homepage-banner-inner-container {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    align-items: flex-start;
-    padding-left: 250px;
-    background-image: url("../../assets/hoofdbanner3.1.png");
-    background-repeat: no-repeat;
+#banner-h1 {
     color: white;
-    font-family: 'Neucha', cursive;
-
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    position: absolute;
+    left: 38px;
+    top: 25.5%;
 }
 
 #banner-h2 {
     color: white;
     font-family: 'Neucha', cursive;
-    font-size: 36px;
-    font-weight: lighter;
-    padding: 10px 0 0 200px;
+    font-size: 20px;
+    font-weight: 200;
+    left: 60px;
+    top: 23%;
+    position: absolute;
 }
 
-#banner-h1 {
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 72px;
-    font-weight: bolder;
-}
 
 .image-appearance {
     width: 300px;
@@ -132,4 +123,50 @@
     font-weight: bold;
     font-size: 34px;
     margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    #banner-h1 {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 40px;
+        font-weight: bolder;
+        position: absolute;
+        left: 45px;
+        top: 29%;
+    }
+
+    #banner-h2 {
+        color: white;
+        font-family: 'Neucha', cursive;
+        font-size: 24px;
+        font-weight: 200;
+        left: 65px;
+        top: 26%;
+        position: absolute;
+    }
+
+
+}
+
+@media screen and (min-width: 992px) {
+    #banner-h1 {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 60px;
+        font-weight: bolder;
+        position: absolute;
+        left: 80px;
+        top: 34%;
+    }
+
+    #banner-h2 {
+        color: white;
+        font-family: 'Neucha', cursive;
+        font-size: 36px;
+        font-weight: 200;
+        left: 140px;
+        top: 29%;
+        position: absolute;
+    }
 }
