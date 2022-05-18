@@ -20,6 +20,7 @@
 .character-container {
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .character-list-marvel {
@@ -30,7 +31,6 @@
     flex-direction: row;
     margin: 0 5px 0 5px;
     padding: 15px 15px 15px 15px;
-    position: relative;
     box-shadow: black;
 }
 
@@ -42,7 +42,6 @@
     flex-direction: row;
     margin: 0 5px 0 5px;
     padding: 15px 15px 15px 15px;
-    position: relative;
     box-shadow: black;
 }
 
@@ -61,8 +60,7 @@
 
 .left-arrow {
     position: absolute;
-    top: 55%;
-    left: 20px;
+    left: 5%;
     font-size: 3rem;
     color: hsl(189, 50%, 16%);
     z-index: 10;
@@ -72,30 +70,7 @@
 
 .right-arrow {
     position: absolute;
-    top: 55%;
-    right: 20px;
-    font-size: 3rem;
-    color: hsl(189, 50%, 16%);
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-}
-
-.left-arrow-dc {
-    position: absolute;
-    top: 132%;
-    left: 20px;
-    font-size: 3rem;
-    color: hsl(189, 50%, 16%);
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-}
-
-.right-arrow-dc {
-    position: absolute;
-    top: 132%;
-    right: 20px;
+    right: 5%;
     font-size: 3rem;
     color: hsl(189, 50%, 16%);
     z-index: 10;
@@ -117,6 +92,7 @@
 .logo-dc {
     width: 100px;
     height: 60px;
+    margin-bottom: 10px;
 }
 
 .marvel-characters {
@@ -149,7 +125,8 @@ h5 {
     color: hsl(189, 50%, 16%);
 }
 
-.divider-container {
+.container-logos {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }

@@ -70,24 +70,25 @@ function Characters() {
         history.push("/character-biography")
     }
 
+
     return (
         <>
             <div className="title">
                 <h1>Characters</h1>
             </div>
             <SearchCharacter/>
+            <div className="container-logos">
+                <Marvel className="logo-marvel"/>
+            </div>
             <section className="slider">
                 <IoIosArrowBack
                     className="left-arrow"
                     onClick={prevSlideMarvelCharacters}
                 />
-                <span className="marvel-characters">
-                    <Marvel className="logo-marvel"/>
-                </span>
                 <article className="character-container">
                     {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
                         [
-                            <ul key={character.id}>
+                            <ul key={character.id} className="list-items-marvel">
                                 <li className="character-list-marvel" onClick={handleClick}>
                                     <div className="character-white">
                                         <img src={character.images.lg} alt={character.name} className="image-character"/>
@@ -102,14 +103,21 @@ function Characters() {
                     className="right-arrow"
                     onClick={nextSlideMarvelCharacters}
                 />
-                <span className="divider-container">
-                    <Divider className="divider-line"/>
-                </span>
+            </section>
+
+            <div className="container-logos">
+                <Divider className="divider-line"/>
+            </div>
+
+            <div className="container-logos">
+                <DC className="logo-dc"/>
+            </div>
+
+            <section className="slider">
                 <IoIosArrowBack
-                    className="left-arrow-dc"
+                    className="left-arrow"
                     onClick={prevSlideDCCharacters}
                 />
-                <DC className="logo-dc"/>
                 <article className="character-container">
                     {charactersDC && charactersDC.slice(indexDC, currentCharacterDC).map((character)=> (
                         [
@@ -125,7 +133,7 @@ function Characters() {
                     ))}
                 </article>
                 <IoIosArrowForward
-                    className="right-arrow-dc"
+                    className="right-arrow"
                     onClick={nextSlideDCCharacters}
                 />
             </section>

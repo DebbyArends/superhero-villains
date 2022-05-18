@@ -3,7 +3,7 @@
 .main-header {
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 160px;
     justify-content: flex-start;
     background-color: hsl(185, 60%, 67%);
     color:  hsl(189, 50%, 16%);
@@ -25,10 +25,9 @@
 
 .logo-superhero-vs-villains-nav {
     margin: 10px 0 10px 0;
-    width: 250px;
+    width: 200px;
     display: flex;
 }
-
 
 .outer-container-nav-links {
     background: rgba(255,255,255,0.5);
@@ -50,8 +49,8 @@
 .list-nav-links {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    flex-basis: 550px;
+    justify-content: space-around;
+    flex-basis: 350px;
     width: 450px;
     margin: 0 10px 0 10px;
     font-family: 'Neucha', cursive;
@@ -65,7 +64,7 @@ a:hover {
 }
 
 a {
-    font-size: 18px;
+    font-size: 14px;
     color: hsl(189, 50%, 16%);
     border-bottom: hsl(189, 50%, 16%);
     text-decoration: none
@@ -73,6 +72,82 @@ a {
 
 .active-link {
     color: hsl(189, 50%, 16%);
-    text-decoration: underline 4px solid hsl(0, 100%, 45%);
+    text-decoration: underline 2px solid hsl(0, 100%, 45%);
 }
 
+
+@media screen and (min-width: 768px) {
+    a {
+        font-size: 16px;
+        color: hsl(189, 50%, 16%);
+        border-bottom: hsl(189, 50%, 16%);
+        text-decoration: none
+    }
+    .active-link {
+        color: hsl(189, 50%, 16%);
+        text-decoration: underline 3px solid hsl(0, 100%, 45%);
+    }
+    .list-nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-basis: 450px;
+        width: 450px;
+        margin: 0 10px 0 10px;
+        font-family: 'Neucha', cursive;
+        font-weight: bolder;
+        list-style-type: none;
+        padding: 0;
+    }
+    .logo-superhero-vs-villains-nav {
+        margin: 10px 0 10px 0;
+        width: 225px;
+        display: flex;
+    }
+    .main-header {
+        display: flex;
+        flex-direction: column;
+        height: 180px;
+        justify-content: flex-start;
+        background-color: hsl(185, 60%, 67%);
+        color:  hsl(189, 50%, 16%);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    a {
+        font-size: 18px;
+        color: hsl(189, 50%, 16%);
+        border-bottom: hsl(189, 50%, 16%);
+        text-decoration: none
+    }
+    .active-link {
+        color: hsl(189, 50%, 16%);
+        text-decoration: underline 4px solid hsl(0, 100%, 45%);
+    }
+    .list-nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-basis: 550px;
+        width: 450px;
+        margin: 0 10px 0 10px;
+        font-family: 'Neucha', cursive;
+        font-weight: bolder;
+        list-style-type: none;
+        padding: 0;
+    }
+    .logo-superhero-vs-villains-nav {
+        margin: 10px 0 10px 0;
+        width: 250px;
+        display: flex;
+    }
+    .main-header {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        justify-content: flex-start;
+        background-color: hsl(185, 60%, 67%);
+        color:  hsl(189, 50%, 16%);
+    }
+}

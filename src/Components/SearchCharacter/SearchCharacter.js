@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from "axios";
+import "./SearchCharacter.css"
 
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
