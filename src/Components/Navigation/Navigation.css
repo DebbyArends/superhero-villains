@@ -1,50 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 
-ul {
-    font-family: 'Neucha', cursive;
-    font-weight: bolder;
-    color: hsl(189, 50%, 16%);
-    list-style-type: none;
+.main-header {
     display: flex;
-    flex-basis: 550px;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 10px 0;
-    padding: 0;
-}
-
-.nav-container {
-    width: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-nav {
-    width: 100%;
+    flex-direction: column;
+    height: 200px;
+    justify-content: flex-start;
     background-color: hsl(185, 60%, 67%);
-    display: flex;
-    justify-content: center;
-    height: 80px;
-}
-
-.active-link {
-    border-bottom: 2px solid white;
+    color:  hsl(189, 50%, 16%);
 }
 
 .image-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.logo-image {
-    width: 100px;
-    margin-top: 10px;
+.inner-container-image {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-superhero-vs-villains-nav {
+    margin: 10px 0 10px 0;
+    width: 250px;
+    display: flex;
+}
+
+
+.outer-container-nav-links {
+    background: rgba(255,255,255,0.5);
+    color:  hsl(189, 50%, 16%);
+    display: flex;
+    flex-direction: row;
+    flex-basis: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container-nav-links{
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 550px;
+    width: 450px;
+    margin: 0 10px 0 10px;
+    font-family: 'Neucha', cursive;
+    font-weight: bolder;
+    list-style-type: none;
+    padding: 0;
+}
+
+a:hover {
+    color:hsl(189, 50%, 35%);
 }
 
 a {
-    text-decoration: none;
-    color: #fff
+    font-size: 18px;
+    color: hsl(189, 50%, 16%);
+    border-bottom: hsl(189, 50%, 16%);
+    text-decoration: none
 }
+
+.active-link {
+    color: hsl(189, 50%, 16%);
+    text-decoration: underline 4px solid hsl(0, 100%, 45%);
+}
+

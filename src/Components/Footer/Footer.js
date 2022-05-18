@@ -7,8 +7,8 @@ function Footer() {
     return(
         <>
             <div className="main-footer">
-                <div className="title-footer">
-                    <div className="test">
+                <div className="outer-container-title">
+                    <div className="inner-container-title">
                         <ul className="list-title">
                             <li>
                                 <h4>Get in touch</h4>
@@ -48,7 +48,9 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <img src={superheroVsVillainsLogo} alt="Logo superhero vs villains" className="logo-superhero-vs-villains"/>
+                <div className="container-logo">
+                    <img src={superheroVsVillainsLogo} alt="Logo superhero vs villains" className="logo-superhero-vs-villains"/>
+                </div>
             </div>
         </>
     );

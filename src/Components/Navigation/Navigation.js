@@ -1,32 +1,47 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import './Navigation.css'
-import logoSuper from "../../assets/Logo 500x500 px_quiz2.png"
+import superheroVsVillainsLogo from "../../assets/superhero-vs-villains.png"
 
 
 
 function Navigation() {
     return(
-        <nav>
-            <div className="nav-container">
+        <nav className="main-header">
                 <div className="image-container">
-                    <img src={logoSuper} className="logo-image" alt="logo"/>
+                    <div className="inner-container-image">
+                        <NavLink exact to="/" activeClassName="active-link">
+                            <img src={superheroVsVillainsLogo} className="logo-superhero-vs-villains-nav" alt="logo"/>
+                        </NavLink>
+                    </div>
                 </div>
-                <ul>
-                    <li>
-                        <NavLink to="/" activeClassName="active-link">Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/appearance" activeClassName="active-link">Appearance</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/powerstats" activeClassName="active-link">Powerstats</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/characters" activeClassName="active-link">Characters</NavLink>
-                    </li>
-                </ul>
-            </div>
+                <div className="outer-container-nav-links">
+                    <div className="inner-container-nav-links">
+                        <ul className="list-nav-links">
+                            <li>
+                                <NavLink exact to="/" activeClassName="active-link">Home</NavLink>
+                            </li>
+                            <li>
+                                |
+                            </li>
+                            <li>
+                                <NavLink to="/appearance" activeClassName="active-link">Appearance</NavLink>
+                            </li>
+                            <li>
+                                |
+                            </li>
+                            <li>
+                                <NavLink to="/powerstats" activeClassName="active-link">Powerstats</NavLink>
+                            </li>
+                            <li>
+                                |
+                            </li>
+                            <li>
+                                <NavLink to="/characters" activeClassName="active-link">Characters</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
         </nav>
 
     );

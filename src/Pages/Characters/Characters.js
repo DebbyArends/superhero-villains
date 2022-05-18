@@ -31,28 +31,11 @@ function Characters() {
         getData()
     }, [])
 
-    useEffect(()=> {
-        async function fetchCharacterData(){
-            try{
-                const result = await axios.get(`https://superheroapi.com/api/${apiKey}/search/ironman}`, {
-                    headers: {
-                        "Content-Type": "application/json",
-                    }
-                })
-                console.log(result.data)
-            }catch (e) {
-                console.error(e)
-            }
-        }
-        fetchCharacterData()
-    }, [])
-
-    // find methode naar
-
 
     if (!Array.isArray(characters) || length <= 0) {
         return null;
     }
+
 
     const charactersMarvel = characters.filter((character) => {
         return character.biography.publisher === "Marvel Comics"
