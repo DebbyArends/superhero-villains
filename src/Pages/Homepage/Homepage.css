@@ -103,6 +103,7 @@
     border: none;
     margin-top: 30px;
     padding: 10px 10px;
+    cursor: pointer;
 }
 .description {
     color: #14363C;
@@ -150,9 +151,9 @@ p {
 
 h2 {
     color: #14363C;
-    font-family: Neucha, cursive;
+    font-family: "Roboto Condensed",cursive;
+    font-size: 26px;
     padding: 10px 0;
-    font-size: 18px;
 }
 
 h4 {
@@ -305,7 +306,8 @@ h4 {
         font-size: 14px;
     }
     h2 {
-        font-size: 20px;
+        font-family: "Roboto Condensed",cursive;
+        font-size: 30px;
     }
 }
 
@@ -417,7 +419,8 @@ h4 {
         padding: 15px 0;
     }
     h2 {
-        font-size: 27px;
+        font-family: "Roboto Condensed",cursive;
+        font-size: 32px;
     }
     .description-article {
         display: flex;

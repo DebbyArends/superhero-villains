@@ -21,10 +21,11 @@ function SearchCharacter() {
         if (searchTerm.length === 0) {
             setSuperheroData([]);
         }
-        else if (searchTerm.length > 3) {
+        else if (searchTerm.length > 2) {
             searchSuperHeroes();
         }
     }
+
     return(
         <>
             <div className="main">
@@ -42,23 +43,62 @@ function SearchCharacter() {
                                 <div className="outer-image-stats-container">
                                     <div className="inner-image-stats-container">
                                         <img src={oneCharacter.image.url} alt={oneCharacter.name} className="image"/>
-                                        <p>Intelligence: {oneCharacter.powerstats.intelligence}</p>
-                                        <p>Strength: {oneCharacter.powerstats.strength}</p>
-                                        <p>Speed: {oneCharacter.powerstats.speed}</p>
-                                        <p>Durability: {oneCharacter.powerstats.durability}</p>
-                                        <p>Power: {oneCharacter.powerstats.power}</p>
-                                        <p>Combat: {oneCharacter.powerstats.combat}</p>
+                                        <table className="table">
+                                            <tr>
+                                                <td className="data-center">Intelligence: </td>
+                                                <td>{oneCharacter.powerstats.intelligence}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="data-center">Strength: </td>
+                                                <td>{oneCharacter.powerstats.strength}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="data-center">Speed: </td>
+                                                <td>{oneCharacter.powerstats.speed}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="data-center">Durability: </td>
+                                                <td>{oneCharacter.powerstats.durability}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="data-center">Power: </td>
+                                                <td>{oneCharacter.powerstats.power}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="data-center">Combat: </td>
+                                                <td>{oneCharacter.powerstats.combat}</td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                                 <div className="right">
-                                    <h1>{oneCharacter.name}</h1>
-                                    <span style={{ color:'gray', marginBottom: 5 }}>{oneCharacter.biography['full-name']}</span>
-                                    <div className="biography">
-                                        <p>Aliases: {oneCharacter.biography.aliases}</p>
-                                        <p>Place of birth: {oneCharacter.biography["place-of-birth"]}</p>
-                                        <p>First comic book appearance: {oneCharacter.biography["first-appearance"]}</p>
-                                        <p>Publisher: {oneCharacter.biography.publisher} </p>
-                                        <p>Relatives: {oneCharacter.connections.relatives}</p>
+                                    <div className="inner-container-biography">
+                                        <h1>{oneCharacter.name}</h1>
+                                        <span className="full-name">{oneCharacter.biography['full-name']}</span>
+                                        <div className="biography">
+                                            <table className="table-biography">
+                                                <tr>
+                                                    <td className="data-biography">Aliases: </td>
+                                                    <td>{oneCharacter.biography.aliases}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="data-biography">Place of birth: </td>
+                                                    <td>{oneCharacter.biography["place-of-birth"]}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="data-biography">Relatives: </td>
+                                                    <td>{oneCharacter.connections.relatives}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="data-biography">First appearance: </td>
+                                                    <td>{oneCharacter.biography["first-appearance"]}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="data-biography">Publisher: </td>
+                                                    <td>{oneCharacter.biography.publisher}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
