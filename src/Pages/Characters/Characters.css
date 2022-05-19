@@ -70,7 +70,7 @@
 
 .right-arrow {
     position: absolute;
-    right: 5%;
+    right: 2%;
     font-size: 3rem;
     color: hsl(189, 50%, 16%);
     z-index: 10;
@@ -152,6 +152,25 @@ h5 {
         height: 50px;
         margin-bottom: 2px;
     }
+    .left-arrow {
+        position: absolute;
+        left: 0;
+        font-size: 3rem;
+        color: hsl(189, 50%, 16%);
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .right-arrow {
+        position: absolute;
+        right: 0;
+        font-size: 3rem;
+        color: hsl(189, 50%, 16%);
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -170,5 +189,24 @@ h5 {
         width: 100px;
         height: 60px;
         margin-bottom: 5px;
+    }
+    .left-arrow {
+        position: absolute;
+        left: 1%;
+        font-size: 3rem;
+        color: hsl(189, 50%, 16%);
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .right-arrow {
+        position: absolute;
+        right: 0;
+        font-size: 3rem;
+        color: hsl(189, 50%, 16%);
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
     }
 }

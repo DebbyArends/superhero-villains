@@ -10,9 +10,9 @@ import SearchCharacter from "../../Components/SearchCharacter/SearchCharacter";
 
 function Characters() {
     const [characters, setCharacters]=useState('')
-    const [currentCharacterMarvel, setCurrentCharacterMarvel] = useState(7)
+    const [currentCharacterMarvel, setCurrentCharacterMarvel] = useState(5)
     const [indexMarvel, setIndexMarvel] = useState(0)
-    const [currentCharacterDC, setCurrentCharacterDC] = useState(7)
+    const [currentCharacterDC, setCurrentCharacterDC] = useState(5)
     const [indexDC, setIndexDC] = useState(0)
     const history = useHistory()
     const length = characters.length
@@ -29,6 +29,30 @@ function Characters() {
         }
         getData()
     }, [])
+
+    React.useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth > 992) {
+                setCurrentCharacterMarvel(5);
+                setCurrentCharacterDC(5);
+            }
+            else if (window.innerWidth > 768) {
+                setCurrentCharacterMarvel(4);
+                setCurrentCharacterDC(4);
+            }
+            else {
+                setCurrentCharacterMarvel(2);
+                setCurrentCharacterDC(2);
+            }
+        }
+
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
 
 
     if (!Array.isArray(characters) || length <= 0) {
@@ -49,9 +73,19 @@ function Characters() {
         setIndexMarvel(indexMarvel + 1)
     }
 
-    function prevSlideMarvelCharacters() {
-        setCurrentCharacterMarvel(  currentCharacterMarvel > 7 ? currentCharacterMarvel - 1: currentCharacterMarvel (7))
-        setIndexMarvel (indexMarvel > 0 ? indexMarvel - 1: indexMarvel (0))
+   function prevSlideMarvelCharacters() {
+        if (window.innerWidth> 992) {
+            setCurrentCharacterMarvel(currentCharacterMarvel > 5 ? currentCharacterMarvel - 1 : currentCharacterMarvel(5))
+            setIndexMarvel(indexMarvel > 0 ? indexMarvel - 1 : indexMarvel(0))
+        }
+        else if (window.innerWidth > 768) {
+            setCurrentCharacterMarvel(currentCharacterMarvel > 4 ? currentCharacterMarvel - 1 : currentCharacterMarvel(4))
+            setIndexMarvel(indexMarvel > 0 ? indexMarvel - 1 : indexMarvel(0))
+       }
+       else {
+            setCurrentCharacterMarvel(currentCharacterMarvel > 2 ? currentCharacterMarvel - 1 : currentCharacterMarvel(2))
+            setIndexMarvel(indexMarvel > 0 ? indexMarvel - 1 : indexMarvel(0))
+       }
     }
 
     function nextSlideDCCharacters() {
@@ -61,8 +95,18 @@ function Characters() {
     }
 
     function prevSlideDCCharacters() {
-        setCurrentCharacterDC(  currentCharacterDC > 7 ? currentCharacterDC - 1: currentCharacterDC(7))
-        setIndexDC (indexDC > 0 ? indexDC - 1: indexDC(0))
+        if (window.innerWidth> 992) {
+            setCurrentCharacterDC(  currentCharacterDC > 5 ? currentCharacterDC - 1: currentCharacterDC(5))
+            setIndexDC (indexDC > 0 ? indexDC - 1: indexDC(0))
+        }
+        else if (window.innerWidth > 768) {
+            setCurrentCharacterDC(  currentCharacterDC > 4 ? currentCharacterDC - 1: currentCharacterDC(4))
+            setIndexDC (indexDC > 0 ? indexDC - 1: indexDC(0))
+        }
+        else {
+            setCurrentCharacterDC(  currentCharacterDC > 2 ? currentCharacterDC - 1: currentCharacterDC(2))
+            setIndexDC (indexDC > 0 ? indexDC - 1: indexDC(0))
+        }
     }
 
     function handleClick() {
