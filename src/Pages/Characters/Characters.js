@@ -9,7 +9,6 @@ import {ReactComponent as Divider} from "../../assets/Decorative-Border-Divider.
 import SearchCharacter from "../../Components/SearchCharacter/SearchCharacter";
 
 function Characters() {
-    const apiKey = "10228880912034222"
     const [characters, setCharacters]=useState('')
     const [currentCharacterMarvel, setCurrentCharacterMarvel] = useState(7)
     const [indexMarvel, setIndexMarvel] = useState(0)

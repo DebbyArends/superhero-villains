@@ -26,6 +26,14 @@ function SearchCharacter() {
         }
     }
 
+    // function aliases() {
+    //     superheroData.map.split(',')((oneCharacter) =>
+    //         <div className="search-result" key={oneCharacter.id}>
+    //             <td>{oneCharacter.biography.aliases}</td>
+    //         </div>)
+    //     }
+
+
     return(
         <>
             <div className="main">
@@ -79,7 +87,8 @@ function SearchCharacter() {
                                             <table className="table-biography">
                                                 <tr>
                                                     <td className="data-biography">Aliases: </td>
-                                                    <td>{oneCharacter.biography.aliases}</td>
+                                                    <td>{oneCharacter.biography.aliases.split(", ")}</td>
+                                                    {/*<td>{aliases()}</td>*/}
                                                 </tr>
                                                 <tr>
                                                     <td className="data-biography">Place of birth: </td>

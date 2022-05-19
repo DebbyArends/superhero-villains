@@ -52,9 +52,15 @@ import "./AppearanceQuiz.css"
 function AppearanceQuiz() {
     // const[{gender, setGender}]=useState()
     const [currentQuestion, setCurrentQuestion] = useState(0)
+    const [responseGender, setResponseGender] = useState( [])
+    const [responseHeight, setResponseHeight] = useState( 0)
+    const [responseHairColor, setResponseHairColor] = useState( [])
+    const [responseWeight, setResponseWeight] = useState( 0)
+    const [responseEyeColor, setResponseEyeColor] = useState( [])
     const { register, handleSubmit } = useForm();
     const questions = [
         {
+            id: 1,
             questionText: 'What is your gender?',
             answerOptions: [
                 {answerText: 'Male', image: <img src={superhero} alt="superhero male pop art" className="gender-image"/>},
@@ -62,6 +68,7 @@ function AppearanceQuiz() {
             ]
         },
         {
+            id: 2,
             questionText: 'What is your height?',
             answerOptions: [
                 {answerText: "cm"},
@@ -69,6 +76,7 @@ function AppearanceQuiz() {
             ]
         },
         {
+            id: 3,
             questionText: 'What is your hair color?',
             answerOptions: [
                 {answerText: '-'
@@ -162,6 +170,7 @@ function AppearanceQuiz() {
             ]
         },
         {
+            id: 4,
             questionText: 'What is your weight?',
             answerOptions: [
                 { answerText: "kg"},
@@ -169,6 +178,7 @@ function AppearanceQuiz() {
             ]
         },
         {
+            id: 5,
             questionText: 'What is your eye color?',
             answerOptions: [
                 { answerText: "-"},
@@ -198,25 +208,31 @@ function AppearanceQuiz() {
         },
     ]
 
+    //functie onclick
+
 function getQuestions(){
         if (questions[currentQuestion].questionText === 'What is your gender?' ||
                 questions[currentQuestion].questionText === 'What is your hair color?' ||
                 questions[currentQuestion].questionText === 'What is your eye color?') {
             return(
                     <>
-                        {questions[currentQuestion].answerOptions.map((answerOption)=>
-                            <label htmlFor="gender">
-                                <input
-                                    type="radio"
-                                    {...register("gender")}
-                                />
-                                {answerOption.answerText}
-                                <div>
-                                    {answerOption.image}
-                                    {answerOption.image1}
-                                </div>
-                            </label>
-                        )}
+                        <div className="inner-container-gender">
+                            {questions[currentQuestion].answerOptions.map((answerOption)=>
+                                <>
+                                    <label htmlFor="gender">
+                                        <input
+                                            type="radio"
+                                            {...register("gender", {value: answerOption.answerText, onChange: (e) => console.log(e.target.value) })}
+                                        />
+                                        {answerOption.answerText}
+                                        <div>
+                                            {answerOption.image}
+                                            {answerOption.image1}
+                                        </div>
+                                    </label>
+                                </>
+                            )}
+                        </div>
                     </>
             )}
 
@@ -226,7 +242,9 @@ function getQuestions(){
                     <label htmlFor="height-in-cm">
                         <input
                             type="numbers"
-                            {...register("height-in-cm")}
+                            {...register("height-in-cm", {
+                                valueAsNumber: true
+                            })}
                         /> cm
                     </label>
                     <label htmlFor="height-in-inch">
@@ -258,9 +276,12 @@ function getQuestions(){
         }
     }
 
-    function handleAnswerInput() {
+    function handleAnswerInput(e) {
         const nextQuestion = currentQuestion + 1
         setCurrentQuestion(nextQuestion)
+        console.log(e.target.checked);
+        // console.log({answerOption.answerText});
+        console.log(setResponseGender)
     }
     
     return (
@@ -301,20 +322,30 @@ function getQuestions(){
                 {/*        </button>*/}
                 {/*    </section>*/}
                 {/*</form>*/}
-            <div className="question-section">
-                <div className="question-count">
-                    <span>{questions.length}</span>
+            <div className="shadow-box-quiz">
+                <div className="container-quiz">
+                    <div className="inner-container-quiz">
+                        <div className="quiz-title">
+                            <h4>Do the quiz to find out which superhero or villain has your looks!</h4>
+                        </div>
+                    </div>
+                    <div className="question-section">
+                        <div className="question-text">{questions[currentQuestion].questionText}</div>
+                    </div>
+                    <div className="answer-section">
+                        <form onSubmit={handleSubmit(handleAnswerInput)}>
+                            {getQuestions()}
+                            <div className="button-container-quiz">
+                                <button
+                                    type="submit"
+                                    className="button-banner-quiz"
+                                >
+                                    Next
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div className="question-text">{questions[currentQuestion].questionText}</div>
-            </div>
-            <div className="answer-section">
-                <form onSubmit={handleSubmit(handleAnswerInput)}>
-                    {getQuestions()}
-                    <button
-                        type="submit">
-                        Next
-                    </button>
-                </form>
             </div>
         </>
 
