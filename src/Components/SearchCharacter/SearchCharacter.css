@@ -28,12 +28,13 @@
 .outer-image-stats-container {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    align-items: center;
+    width: 330px;
     /*background-image: url("../../assets/blue-banner.png");*/
     /*background-position: center;*/
     /*background-size: cover;*/
-    margin: 5px;
-    padding: 15px 15px 15px 15px;
+    /*margin: 5px;*/
+    padding: 15px 15px 0 15px;
     position: relative;
 }
 
@@ -42,7 +43,7 @@
     flex-direction: column;
     align-items: center;
     height: 570px;
-    width: 300px;
+    width: 280px;
     padding-top: 15px;
     /*padding: 10px 0 10px 0;*/
     background-color: #ffffff;
@@ -51,7 +52,8 @@
 .search-result {
     margin: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-image: url("../../assets/banner_3_characters.png");
     background-position: center;
@@ -73,11 +75,14 @@
 }
 
 .inner-container-biography {
-    width: 500px;
-    height: 570px;
-    margin-right: 20px;
+    width: 280px;
+    height: auto;
+    margin-bottom: 20px;
     padding: 10px 20px;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 table {
@@ -90,6 +95,7 @@ td{
     padding: 5px;
     font-family: "Roboto Condensed",cursive;
     color: #14363C;
+    font-size: 14px;
 }
 
 .data-center {
@@ -98,12 +104,14 @@ td{
     font-family: Neucha, cursive;
     font-weight: bolder;
     color: #14363C;
+    font-size: 14px;
 }
 
 .data-biography {
     font-family: Neucha, cursive;
     font-weight: bolder;
     color: #14363C;
+    font-size: 14px;
 }
 
 h1  {
@@ -111,7 +119,7 @@ h1  {
 }
 
 .table-biography {
-    width: 450px;
+    width: 250px;
     margin-top: 20px;
 }
 
@@ -135,6 +143,117 @@ h1  {
         font-size: 16px;
         margin-bottom: 30px;
     }
+    .outer-container-character {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .outer-container-one-character {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .outer-image-stats-container {
+        display: flex;
+        flex-direction: column;
+        width: 330px;
+        /*background-image: url("../../assets/blue-banner.png");*/
+        /*background-position: center;*/
+        /*background-size: cover;*/
+        /*margin: 5px;*/
+        padding: 15px 15px 15px 15px;
+        position: relative;
+    }
+
+    .inner-image-stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 570px;
+        width: 280px;
+        padding-top: 15px;
+        /*padding: 10px 0 10px 0;*/
+        background-color: #ffffff;
+    }
+
+    .search-result {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../../assets/banner_3_characters.png");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .image {
+        width: 250px;
+        height: 340px;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inner-container-biography {
+        width: 280px;
+        height: 570px;
+        margin: 0 20px 0 0;
+        padding: 10px 20px;
+        background-color: #ffffff;
+    }
+
+    table {
+        width: 250px;
+        margin-top: 5px;
+    }
+
+    td{
+        border: 1px solid lightgray;
+        padding: 5px;
+        font-family: "Roboto Condensed",cursive;
+        color: #14363C;
+        font-size: 15px;
+    }
+
+    .data-center {
+        display: flex;
+        justify-content: center;
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+        font-size: 15px;
+    }
+
+    .data-biography {
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+        font-size: 15px;
+    }
+
+    h1  {
+        font-family: "Roboto Condensed", cursive;
+    }
+
+    .table-biography {
+        width: 250px;
+        margin-top: 20px;
+    }
+
+    .full-name {
+        color: grey;
+        font-family: "Roboto Condensed",cursive;
+        font-size: 16px;
+        margin: 1px;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -149,5 +268,114 @@ h1  {
         padding-left: 10px;
         font-size: 18px;
         margin-bottom: 30px;
+    }
+    .outer-container-character {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .outer-container-one-character {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .outer-image-stats-container {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        /*background-image: url("../../assets/blue-banner.png");*/
+        /*background-position: center;*/
+        /*background-size: cover;*/
+        margin: 5px;
+        padding: 15px 15px 15px 15px;
+        position: relative;
+    }
+
+    .inner-image-stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 570px;
+        width: 300px;
+        padding-top: 15px;
+        /*padding: 10px 0 10px 0;*/
+        background-color: #ffffff;
+    }
+
+    .search-result {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-image: url("../../assets/banner_3_characters.png");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .image {
+        width: 250px;
+        height: 340px;
+    }
+
+    .right {
+        /*width: 500px;*/
+        /*margin-left: 10px;*/
+        /*border-radius: 5px;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inner-container-biography {
+        width: 500px;
+        height: 570px;
+        margin-right: 20px;
+        padding: 10px 20px;
+        background-color: #ffffff;
+    }
+
+    table {
+        width: 250px;
+        margin-top: 5px;
+    }
+
+    td{
+        border: 1px solid lightgray;
+        padding: 5px;
+        font-family: "Roboto Condensed",cursive;
+        color: #14363C;
+    }
+
+    .data-center {
+        display: flex;
+        justify-content: center;
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+    }
+
+    .data-biography {
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+    }
+
+    h1  {
+        font-family: "Roboto Condensed", cursive;
+    }
+
+    .table-biography {
+        width: 450px;
+        margin-top: 20px;
+    }
+
+    .full-name {
+        color: grey;
+        font-family: "Roboto Condensed",cursive;
+        font-size: 16px;
+        margin: 1px;
     }
 }

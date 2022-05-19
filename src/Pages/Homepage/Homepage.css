@@ -42,7 +42,7 @@
     background-image: url("../../assets/banner_appearance_202204_1.0.png");
     background-position: center;
     background-size: cover;
-    margin: 50px;
+    margin: 40px;
     border: 5px solid whitesmoke;
 }
 .outer-container-article-2 {
@@ -53,7 +53,7 @@
     background-image: url("../../assets/banner_2_powerstats.png");
     background-position: center;
     background-size: cover;
-    margin: 50px;
+    margin: 40px;
     border: 5px solid whitesmoke;
 }
 
@@ -64,7 +64,7 @@
     background-image: url("../../assets/banner_3_characters.png");
     background-position: center;
     background-size: cover;
-    margin: 50px;
+    margin: 40px;
     border: 5px solid whitesmoke;
 }
 .inner-container-article {
@@ -73,7 +73,7 @@
     flex-basis: auto;
     align-items: center;
     background-color: white;
-    margin: 15px;
+    margin: 15px 0;
     border: 1px solid #14363C;
 }
 
@@ -160,6 +160,7 @@ h4 {
     font-family: Neucha,cursive;
     font-size: 16px;
     padding: 0 10px;
+    color: #14363C;
 }
 
 .quote-container {
@@ -291,6 +292,7 @@ h4 {
         font-family: Neucha,cursive;
         font-size: 18px;
         padding: 0 10px;
+        color: #14363C;
     }
     .quote-container {
         display: flex;
@@ -439,6 +441,7 @@ h4 {
         font-family: Neucha,cursive;
         font-size: 20px;
         padding: 0 10px;
+        color: #14363C;
     }
     .quote-container {
         display: flex;

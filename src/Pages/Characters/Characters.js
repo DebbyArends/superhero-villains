@@ -30,7 +30,7 @@ function Characters() {
         getData()
     }, [])
 
-    React.useEffect(() => {
+    useEffect(() => {
         function handleResize() {
             if (window.innerWidth > 992) {
                 setCurrentCharacterMarvel(5);
@@ -52,7 +52,6 @@ function Characters() {
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
 
 
     if (!Array.isArray(characters) || length <= 0) {

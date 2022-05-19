@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import "./SearchCharacter.css"
 
@@ -7,12 +7,15 @@ function SearchCharacter() {
     const [superheroData, setSuperheroData] = useState([]);
     const apiKey="10228880912034222"
 
-    async function searchSuperHeroes () {
-        const response = await axios.get(`https://www.superheroapi.com/api.php/${apiKey}/search/${searchText}`);
-        console.log(response.data.results)
-
-        setSuperheroData(response.data.results);
-    }
+    async function searchSuperHeroes(){
+            try{
+                const response = await axios.get(`https://www.superheroapi.com/api.php/${apiKey}/search/${searchText}`);
+                console.log(response.data.results)
+                setSuperheroData(response.data.results);
+            }catch (e) {
+                console.error(e)
+            }
+        }
 
     function handleChange (e) {
         const searchTerm = e.target.value;
@@ -87,7 +90,7 @@ function SearchCharacter() {
                                             <table className="table-biography">
                                                 <tr>
                                                     <td className="data-biography">Aliases: </td>
-                                                    <td>{oneCharacter.biography.aliases.split(", ")}</td>
+                                                    <td>{oneCharacter.biography.aliases}</td>
                                                     {/*<td>{aliases()}</td>*/}
                                                 </tr>
                                                 <tr>
