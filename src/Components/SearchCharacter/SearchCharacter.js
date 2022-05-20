@@ -40,13 +40,18 @@ function SearchCharacter() {
     return(
         <>
             <div className="main">
+                <form action="">
                     <input
                         id="search-bar"
                         type="search"
                         placeholder="Search your superhero or villain..."
                         onChange={handleChange}
                         value={searchText}
+                        autoComplete="off"
+                        required="true"
+                        minLength="value: 3"
                     />
+                </form>
             </div>
             <div className="outer-container-character" >
                 {superheroData.map((oneCharacter) =>
@@ -90,7 +95,7 @@ function SearchCharacter() {
                                             <table className="table-biography">
                                                 <tr>
                                                     <td className="data-biography">Aliases: </td>
-                                                    <td>{oneCharacter.biography.aliases}</td>
+                                                    <td>{oneCharacter.biography.aliases.join(', ')}</td>
                                                     {/*<td>{aliases()}</td>*/}
                                                 </tr>
                                                 <tr>
