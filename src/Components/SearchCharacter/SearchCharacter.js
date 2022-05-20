@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import axios from "axios";
 import "./SearchCharacter.css"
+import {useForm} from "react-hook-form";
 
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
     const [superheroData, setSuperheroData] = useState([]);
     const apiKey="10228880912034222"
+    const {register} = useForm()
 
     async function searchSuperHeroes(){
             try{
@@ -40,18 +42,16 @@ function SearchCharacter() {
     return(
         <>
             <div className="main">
-                <form action="">
                     <input
                         id="search-bar"
                         type="search"
                         placeholder="Search your superhero or villain..."
-                        onChange={handleChange}
-                        value={searchText}
                         autoComplete="off"
-                        required="true"
-                        minLength="value: 3"
+                        {...register("search-bar",
+                            {onChange:(e) => handleChange(e),
+                                value:searchText,
+                            })}
                     />
-                </form>
             </div>
             <div className="outer-container-character" >
                 {superheroData.map((oneCharacter) =>
@@ -60,6 +60,7 @@ function SearchCharacter() {
                                     <div className="inner-image-stats-container">
                                         <img src={oneCharacter.image.url} alt={oneCharacter.name} className="image"/>
                                         <table className="table">
+                                            <tbody>
                                             <tr>
                                                 <td className="data-center">Intelligence: </td>
                                                 <td>{oneCharacter.powerstats.intelligence}</td>
@@ -84,6 +85,7 @@ function SearchCharacter() {
                                                 <td className="data-center">Combat: </td>
                                                 <td>{oneCharacter.powerstats.combat}</td>
                                             </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -93,6 +95,7 @@ function SearchCharacter() {
                                         <span className="full-name">{oneCharacter.biography['full-name']}</span>
                                         <div className="biography">
                                             <table className="table-biography">
+                                                <tbody>
                                                 <tr>
                                                     <td className="data-biography">Aliases: </td>
                                                     <td>{oneCharacter.biography.aliases.join(', ')}</td>
@@ -114,6 +117,7 @@ function SearchCharacter() {
                                                     <td className="data-biography">Publisher: </td>
                                                     <td>{oneCharacter.biography.publisher}</td>
                                                 </tr>
+                                                </tbody>
                                             </table>
                                         </div>
                                     </div>

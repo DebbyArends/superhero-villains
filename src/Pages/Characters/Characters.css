@@ -135,6 +135,23 @@ h5 {
     justify-content: center;
 }
 
+a.back-link {
+    font-family: "Roboto",cursive;
+    font-size: 12px;
+    border-bottom: 1px solid #14363C;
+    font-weight: bold;
+}
+
+.container-link-back {
+    display: flex;
+    justify-content: center;
+}
+
+#link-back {
+    color: #14363C;
+    margin-top: 40px;
+}
+
 @media screen and (min-width: 768px) {
     h1 {
         color: #14363C;
@@ -170,6 +187,20 @@ h5 {
         z-index: 10;
         cursor: pointer;
         user-select: none;
+    }
+    a.back-link {
+        font-family: "Roboto",cursive;
+        font-size: 14px;
+        border-bottom: 1px solid #14363C;
+        font-weight: bold;
+    }
+    .container-link-back {
+        display: flex;
+        justify-content: center;
+    }
+    #link-back {
+        color: #14363C;
+        margin-top: 40px;
     }
 }
 
@@ -208,5 +239,19 @@ h5 {
         z-index: 10;
         cursor: pointer;
         user-select: none;
+    }
+    a.back-link {
+        font-family: "Roboto",cursive;
+        font-size: 16px;
+        border-bottom: 1px solid #14363C;
+        font-weight: bold;
+    }
+    .container-link-back {
+        display: flex;
+        justify-content: center;
+    }
+    #link-back {
+        color: #14363C;
+        margin-top: 40px;
     }
 }

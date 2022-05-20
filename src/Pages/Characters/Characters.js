@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './Characters.css'
-import { useHistory } from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import{ReactComponent as Marvel} from "../../assets/Marvel_Logo.svg";
 import {ReactComponent as DC} from "../../assets/DC_Comics_logo.svg";
@@ -14,7 +14,6 @@ function Characters() {
     const [indexMarvel, setIndexMarvel] = useState(0)
     const [currentCharacterDC, setCurrentCharacterDC] = useState(5)
     const [indexDC, setIndexDC] = useState(0)
-    const history = useHistory()
     const length = characters.length
 
     useEffect(()=> {
@@ -108,9 +107,9 @@ function Characters() {
         }
     }
 
-    function handleClick() {
-        history.push("/character-biography")
-    }
+    // function handleClick() {
+    //     history.push("/character-biography")
+    // }
 
 
     return (
@@ -119,9 +118,13 @@ function Characters() {
                 <h1>Characters</h1>
             </div>
             <SearchCharacter/>
+
             <div className="container-logos">
-                <Marvel className="logo-marvel"/>
+                <a href="https://www.marvel.com/" target="_blank" rel="noreferrer">
+                    <Marvel className="logo-marvel"/>
+                </a>
             </div>
+
             <section className="slider">
                 <IoIosArrowBack
                     className="left-arrow"
@@ -131,7 +134,8 @@ function Characters() {
                     {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
                         [
                             <ul key={character.id} className="list-items-marvel">
-                                <li className="character-list-marvel" onClick={handleClick}>
+                                <li className="character-list-marvel">
+                                    {/*<li className="character-list-marvel" onClick={handleClick}>*/}
                                     <div className="character-white">
                                         <img src={character.images.lg} alt={character.name} className="image-character"/>
                                         <h5>{character.name}</h5>
@@ -152,7 +156,7 @@ function Characters() {
             </div>
 
             <div className="container-logos">
-                <DC className="logo-dc"/>
+                <a href="https://www.dccomics.com/" target="_blank" rel="noreferrer"><DC className="logo-dc"/></a>
             </div>
 
             <section className="slider">
@@ -164,7 +168,8 @@ function Characters() {
                     {charactersDC && charactersDC.slice(indexDC, currentCharacterDC).map((character)=> (
                         [
                             <ul key={character.id}>
-                                <li className="character-list-dc" onClick={handleClick}>
+                                <li className="character-list-dc">
+                                    {/*<li className="character-list-dc" onClick={handleClick}>*/}
                                     <div className="character-white">
                                         <img src={character.images.lg} alt={character.name} className="image-character"/>
                                         <h5>{character.name}</h5>
@@ -179,8 +184,11 @@ function Characters() {
                     onClick={nextSlideDCCharacters}
                 />
             </section>
-        </>
 
+            <div className="container-link-back">
+                <p id="link-back">Go <Link to="/" className="back-link">back</Link> to homepage</p>
+            </div>
+        </>
     )
 }
 
