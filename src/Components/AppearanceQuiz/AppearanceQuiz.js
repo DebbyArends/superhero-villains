@@ -9,29 +9,44 @@ function AppearanceQuiz() {
     const {handleSubmit} = useForm();
     const [showResult, setShowResult] = useState("")
     const [response, setResponse] = useState("")
-    const [height, setHeight] = useState(0)
-    // const [heightInch, setHeightInch] = useState(0)
+    // const [height, setHeight] = useState(0)
+    const [heightCm, setHeightCm]= useState(0)
+    const [heightInch, setHeightInch] = useState(0)
+    const [gender, setGender] = useState("")
+    const [hairColor, setHairColor]=useState("")
 
+
+// function heightSwitch(height) {
+//     switch (height) {
+//         case 'cm': heightCm
+//         case 'inch':heightInch
+//     }
+// }
+
+// function setHeightSwitch(e) {
+//         switch (e) {
+//             case 'cm': setHeightCm(e.target.value)
+//             case 'inch':setHeightInch(e.target.value)
+//         }
+// }
 
 
 function getQuestions(){
-        if (questions[currentQuestion].questionText === 'What is your gender?' ||
-                questions[currentQuestion].questionText === 'What is your hair color?' ||
-                questions[currentQuestion].questionText === 'What is your eye color?') {
+        if (questions[currentQuestion].questionText === 'What is your gender?') {
             return(
                     <>
                         <div className="inner-container-gender">
                             <div className="inner-container-gender">
                                 {questions[currentQuestion].answerOptions.map((answerOption) =>
                                     <>
-                                        <label>
+                                        <label htmlFor={answerOption.answerText}>
                                             <input
                                                 type="radio"
                                                 id={answerOption.answerText}
                                                 name={answerOption.answerText}
-                                                onChange={(e) => setResponse(e.target.value)}
+                                                onChange={(e) => setGender(e.target.value)}
                                                 value={answerOption.answerText}
-                                                checked={response === answerOption.answerText}
+                                                checked={gender === answerOption.answerText}
                                             />
                                             {answerOption.answerText}
                                             <div>
@@ -50,19 +65,69 @@ function getQuestions(){
             return(
                     questions[currentQuestion].answerOptions.map((answerOption) =>
                         <>
-                            <label htmlFor="height">
+                            <label htmlFor={answerOption.answerText1}>
                                 <input
                                     type="numbers"
-                                    id={answerOption.answerText}
-                                    name={answerOption.answerText}
-                                    onChange={(e) => setHeight(e.target.value)}
-                                    value={height}
-                                    checked={response === answerOption.answerText}
+                                    id={answerOption.answerText1}
+                                    name={answerOption.answerText1}
+                                    onChange={(e) => setHeightCm(e.target.value)}
+                                    value={heightCm}
+                                    checked={heightCm === answerOption.answerText1}
                                 />
-                                {answerOption.answerText}
+                                {answerOption.answerText1}
+                            </label >
+                            <label htmlFor={answerOption.answerText2}>
+                                <input
+                                    type="numbers"
+                                    id={answerOption.answerText2}
+                                    name={answerOption.answerText2}
+                                    onChange={(e) => setHeightInch(e.target.value)}
+                                    value={heightInch}
+                                    checked={heightInch === answerOption.answerText2}
+                                />
+                                {answerOption.answerText2}
                             </label>
                         </>
                     )
+            )}
+
+        else if (questions[currentQuestion].questionText === 'What is your hair color?') {
+            return(
+                <>
+                    <div className="outer-container-hair">
+                        {questions[currentQuestion].answerOptions.map((answerOption) =>
+                            <>
+                                <div className="container-hair-color">
+                                    <div className="inner-container-hair-color">
+                                        <table className="table-hair-color">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label htmlFor={answerOption.answerText1}>
+                                                        <input
+                                                            type="radio"
+                                                            id={answerOption.answerText}
+                                                            name={answerOption.answerText}
+                                                            onChange={(e) => setHairColor(e.target.value)}
+                                                            value={answerOption.answerText}
+                                                            checked={hairColor === answerOption.answerText}
+                                                        />
+                                                        {answerOption.answerText}
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    {answerOption.image}
+                                                    {answerOption.image1}
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </>
+                        )}
+                    </div>
+                </>
             )}
 
         else if (questions[currentQuestion].questionText === "What is your weight?"){
@@ -101,9 +166,8 @@ function getQuestions(){
     function handleAnswerInput(e) {
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1)
-            setResponse(response + 1)
-            console.log(response);
-            console.log(height);
+            // setResponse(response + 1)
+            console.log(gender,heightCm, heightInch, hairColor);
             // setResponse(response+1)
         }
         else{

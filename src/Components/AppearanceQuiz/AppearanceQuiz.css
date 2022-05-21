@@ -63,7 +63,7 @@
 }
 
 .hair {
-    height: 200px;
+    height: 100px;
 }
 
 .container-quiz {
@@ -136,4 +136,32 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+.outer-container-hair {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-hair-color {
+    display: flex;
+}
+
+.inner-container-hair-color {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    width: 300px;
+}
+
+.table-hair-color {
+    width: 350px;
+}
+
+td{
+    border: 1px solid lightgray;
+    padding: 5px;
+    font-family: "Roboto Condensed",cursive;
+    color: #14363C;
+    font-size: 15px;
 }

@@ -55,8 +55,8 @@ import React from "react";
         {
             questionText: 'What is your height?',
             answerOptions: [
-                {id: 3, answerText: "cm"},
-                {id: 4, answerText: "inch"},
+                {id: 3, answerText1: "cm"},
+                {id: 4, answerText2: "inch"},
             ]
         },
         {
