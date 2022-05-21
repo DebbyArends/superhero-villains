@@ -62,10 +62,6 @@ import React from "react";
         {
             questionText: 'What is your hair color?',
             answerOptions: [
-                {id: 5, answerText: '-'
-                },
-                {answerText: 'No Hair'
-                },
                 {answerText: 'Black',
                     image: <img src={femaleBlack} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleBlack} alt="Hairstyle black male silhouette" className="hair"/>
@@ -150,14 +146,18 @@ import React from "react";
                     image: <img src={femaleIndigo} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleIndigo} alt="Hairstyle black male silhouette" className="hair"/>
                 },
+                {answerText: '-'
+                },
+                {answerText: 'No Hair'
+                },
             ]
         },
         {
             id: 4,
             questionText: 'What is your weight?',
             answerOptions: [
-                { answerText: "kg"},
-                { answerText: "lbs"},
+                { answerText1: "kg"},
+                { answerText2: "lbs"},
             ]
         },
         {

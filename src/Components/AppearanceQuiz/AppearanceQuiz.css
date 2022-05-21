@@ -141,27 +141,32 @@
 .outer-container-hair {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    column-count: 2;
 }
 
-.container-hair-color {
-    display: flex;
-}
+/*.container-hair-color {*/
+/*    display: flex;*/
+/*}*/
 
 .inner-container-hair-color {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    margin: 10px;
-    width: 300px;
+    justify-content: center;
+    margin: 5px 0;
+    /*width: 350px;*/
 }
 
-.table-hair-color {
-    width: 350px;
-}
-
-td{
-    border: 1px solid lightgray;
-    padding: 5px;
+label {
+    margin: 0 10px;
     font-family: "Roboto Condensed",cursive;
     color: #14363C;
     font-size: 15px;
+}
+
+input {
+    margin: 0 5px;
 }
