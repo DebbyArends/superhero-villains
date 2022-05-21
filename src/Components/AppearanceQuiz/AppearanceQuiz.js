@@ -42,7 +42,7 @@ function getQuestions(){
                             <div className="inner-container-gender">
                                 {questions[currentQuestion].answerOptions.map((answerOption) =>
                                     <>
-                                        <label htmlFor={answerOption.answerText}>
+                                        <label key={questions.id}>
                                             <input
                                                 type="radio"
                                                 id={answerOption.answerText}
@@ -69,7 +69,7 @@ function getQuestions(){
                 <>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
                         <>
-                            <label htmlFor={answerOption.answerText1}>
+                            <label htmlFor={answerOption.answerText1} key={questions.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText1}
@@ -80,7 +80,7 @@ function getQuestions(){
                                 />
                                 {answerOption.answerText1}
                             </label >
-                            <label htmlFor={answerOption.answerText2}>
+                            <label htmlFor={answerOption.answerText2} key={questions.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText2}
@@ -102,10 +102,10 @@ function getQuestions(){
                     <div className="outer-container-hair">
                         {questions[currentQuestion].answerOptions.map((answerOption) =>
                             <>
-                                <div className="container-hair-color">
-                                    <div className="inner-container-hair-color">
+                                <div className="container-hair-color" key={questions.id}>
+                                    <div className="inner-container-hair-color" >
                                         {answerOption.image}
-                                                    <label htmlFor={answerOption.answerText1}>
+                                                    <label htmlFor={answerOption.answerText} >
                                                         <input
                                                             type="radio"
                                                             id={answerOption.answerText}
@@ -130,7 +130,7 @@ function getQuestions(){
                 <>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
                     <>
-                        <label htmlFor={answerOption.answerText1}>
+                        <label htmlFor={answerOption.answerText1} key={questions.id}>
                             <input
                                 type="numbers"
                                 id={answerOption.answerText1}
@@ -141,7 +141,7 @@ function getQuestions(){
                             />
                             {answerOption.answerText1}
                         </label >
-                        <label htmlFor={answerOption.answerText2}>
+                        <label htmlFor={answerOption.answerText2} key={questions.id}>
                             <input
                                 type="numbers"
                                 id={answerOption.answerText2}
@@ -164,7 +164,7 @@ function getQuestions(){
 
                         {questions[currentQuestion].answerOptions.map((answerOption) =>
                             <>
-                                <div>
+                                <div key={questions.id}>
                                     <div>
                                         {answerOption.image}
                                         <label htmlFor={answerOption.answerText1}>
@@ -238,28 +238,24 @@ function getQuestions(){
         }
     }
 
-    // const specificCharacter = character.find((character) => {
-    //     return (
-    //         character.appearance.gender === {gender}
-    //         // && character.appearance.height === {weightKg} | {weightLbs}
-    //     )
-    // })
-    // console.log(specificCharacter);
+
     const specificCharacter = character && character.map((character) => {
         // return (
         //     console.log(character.appearance.weight[0])
         // )
-        if (character.appearance.gender === gender
+        if (  character.appearance.gender === gender
             && character.appearance.eyeColor === eyeColor
             && character.appearance.hairColor === hairColor
-            // && character.appearance.height[0] === heightInch
             && character.appearance.height[1] === heightCm + " cm"
-            && character.appearance.weight[0] === weightKg + " kg"
-            // | character.appearance.weight[1] === weightLbs + "lb"
-        ){
+            && character.appearance.weight[1] === weightKg + " kg"){
                 return(
                     <>
-                        <p>{character.name}</p>
+                        <div className="border5">
+                            <p>{character.name}</p>
+                            <img src={character.images.lg} alt={character.name}/>
+                            <p>{character.biography.fullName}</p>
+                            <p>{character.id}</p>
+                        </div>
                     </>
                 )
         }
@@ -270,8 +266,12 @@ function getQuestions(){
         ){
                 return(
                     <>
-                        <p>{character.name}</p>
-                        <img src={character.images.lg} alt={character.name}/>
+                        <div className="border4">
+                            <p>{character.name}</p>
+                            <img src={character.images.lg} alt={character.name}/>
+                            <p>{character.biography.fullName}</p>
+                            <p>{character.id}</p>
+                        </div>
                     </>
                 )
         }
@@ -282,10 +282,16 @@ function getQuestions(){
         ){
             return(
                 <>
-                    <p>{character.name}</p>
-                    <img src={character.images.lg} alt={character.name}/>
-                    <p>{character.biography.fullName}</p>
-                    <p>{character.id}</p>
+                    <div className="character-result" key={character.id}>
+                        <div className="outer-image-stats-container">
+                            <div className="inner-image-stats-container">
+                                <p>{character.name}</p>
+                                <img src={character.images.lg} alt={character.name} className='image'/>
+                                <p>{character.biography.fullName}</p>
+                                <p>{character.id}</p>
+                            </div>
+                        </div>
+                    </div>
                 </>
             )
         }
@@ -302,7 +308,10 @@ function getQuestions(){
                         <p>Hair color: {hairColor}</p>
                         <p>Weight:{weightCheck()}</p>
                         <p>Eye color: {eyeColor} </p>
-                        <p>{specificCharacter}</p>
+                        <h1>These character(s) match your appearance!</h1>
+                        <div className="outer-container-character">
+                            {specificCharacter}
+                        </div>
                         <button onClick={() => restartQuiz()}>Restart quiz</button>
                     </div>
                 ) :

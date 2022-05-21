@@ -46,20 +46,23 @@ import React from "react";
 
  export const questions = [
         {
+            id: 1,
             questionText: 'What is your gender?',
             answerOptions: [
-                {id: 0, answerText: 'Male', image: <img src={superhero} alt="superhero male pop art" className="gender-image"/>},
-                {id: 1, answerText: 'Female', image: <img src={superwoman} alt="superhero female pop art" className="gender-image"/>},
+                {answerText: 'Male', image: <img src={superhero} alt="superhero male pop art" className="gender-image"/>},
+                {answerText: 'Female', image: <img src={superwoman} alt="superhero female pop art" className="gender-image"/>},
             ]
         },
         {
+            id: 2,
             questionText: 'What is your height?',
             answerOptions: [
-                {id: 3, answerText1: "cm"},
-                {id: 4, answerText2: "inch"},
+                {answerText1: "cm"},
+                { answerText2: "inch"},
             ]
         },
         {
+            id: 3,
             questionText: 'What is your hair color?',
             answerOptions: [
                 {answerText: 'Black',

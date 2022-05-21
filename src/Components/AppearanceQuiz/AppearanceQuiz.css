@@ -170,3 +170,51 @@ label {
 input {
     margin: 0 5px;
 }
+
+.border3 {
+    border: 2px solid red;
+}
+
+.border4 {
+    border: 2px solid blue;
+}
+
+.border5 {
+    border: 2px solid darkgreen;
+}
+
+.character-result {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../assets/banner_1_appearance_202204_1.0.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.image {
+    width: 250px;
+    height: 340px;
+}
+
+.outer-container-character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 600px;
+}
+
+.outer-image-stats-container {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    /*background-image: url("../../assets/blue-banner.png");*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    margin: 5px;
+    padding: 15px 15px 15px 15px;
+    position: relative;
+}
