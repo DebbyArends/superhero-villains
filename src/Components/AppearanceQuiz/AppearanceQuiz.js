@@ -9,10 +9,10 @@ function AppearanceQuiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const {handleSubmit} = useForm();
     const [showResult, setShowResult] = useState("")
-    const [heightCm, setHeightCm]= useState(0)
+    const [heightCm, setHeightCm]= useState("")
     const [gender, setGender] = useState("")
     const [hairColor, setHairColor]=useState("")
-    const [weightKg, setWeightKg]=useState(0)
+    const [weightKg, setWeightKg]=useState("")
     const [eyeColor, setEyeColor]=useState("")
     const [character, setCharacter] =useState("")
 
@@ -47,6 +47,7 @@ function getQuestions(){
                                                 onChange={(e) => setGender(e.target.value)}
                                                 value={answerOption.answerText}
                                                 checked={gender === answerOption.answerText}
+                                                // required= {true}
                                             />
                                             {answerOption.answerText}
                                             <div>
@@ -74,6 +75,8 @@ function getQuestions(){
                                     onChange={(e) => setHeightCm(e.target.value)}
                                     value={heightCm}
                                     checked={heightCm === answerOption.answerText}
+                                    placeholder= "0"
+                                    required={true}
                                 />
                                 {answerOption.answerText}
                             </label >
@@ -90,7 +93,6 @@ function getQuestions(){
                             <>
                                 <div className="container-hair-color" key={questions.id}>
                                     <div className="inner-container-hair-color" >
-                                        {answerOption.image}
                                                     <label htmlFor={answerOption.answerText} >
                                                         <input
                                                             type="radio"
@@ -102,7 +104,6 @@ function getQuestions(){
                                                         />
                                                         {answerOption.answerText}
                                                     </label>
-                                        {answerOption.image1}
                                     </div>
                                 </div>
                             </>
@@ -124,6 +125,8 @@ function getQuestions(){
                                 onChange={(e) => setWeightKg(e.target.value)}
                                 value={weightKg}
                                 checked={weightKg === answerOption.answerText}
+                                placeholder= "0"
+                                required={true}
                             />
                             {answerOption.answerText}
                         </label >
@@ -136,7 +139,6 @@ function getQuestions(){
         else if (questions[currentQuestion].questionText === 'What is your eye color?') {
             return(
                 <>
-
                         {questions[currentQuestion].answerOptions.map((answerOption) =>
                             <>
                                 <div key={questions.id}>
@@ -177,19 +179,17 @@ function getQuestions(){
 
     const restartQuiz = () => {
         setCurrentQuestion(0);
-        setHeightCm(0)
+        setHeightCm("")
         setGender("")
         setHairColor("")
-        setWeightKg(0)
+        setWeightKg("")
         setEyeColor("")
         setShowResult("")
     };
 
 
-    const specificCharacter = character && character.map((character) => {
-        // return (
-        //     console.log(character.appearance.weight[0])
-        // )
+    const specificCharacter =
+        character && character.map((character) => {
         if (  character.appearance.gender === gender
             && character.appearance.eyeColor === eyeColor
             && character.appearance.hairColor === hairColor
@@ -513,7 +513,9 @@ function getQuestions(){
                             <div className="question-text">{questions[currentQuestion].questionText}</div>
                         </div>
                         <div className="answer-section">
-                            <form onSubmit={handleSubmit(handleAnswerInput)}>
+                            <form
+                                onSubmit={handleSubmit(handleAnswerInput)}
+                            >
                                 {getQuestions()}
                                 <div className="button-container-quiz">
                                     <button
