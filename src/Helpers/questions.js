@@ -57,8 +57,7 @@ import React from "react";
             id: 2,
             questionText: 'What is your height?',
             answerOptions: [
-                {answerText1: "cm"},
-                { answerText2: "inch"},
+                {answerText: "cm"},
             ]
         },
         {
@@ -159,8 +158,7 @@ import React from "react";
             id: 4,
             questionText: 'What is your weight?',
             answerOptions: [
-                { answerText1: "kg"},
-                { answerText2: "lbs"},
+                { answerText: "kg"},
             ]
         },
         {
