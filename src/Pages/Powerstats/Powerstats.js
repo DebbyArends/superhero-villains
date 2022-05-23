@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {questions} from "../../Helpers/questions";
 import {useForm} from "react-hook-form";
 import "./Powerstats.css"
 import axios from "axios";
-import {questionsPower} from "../../Helpers/questionsPower";
+import {questionsPower} from "../../data/questionsPower";
 
 
 function Powerstats() {
@@ -16,8 +15,7 @@ function Powerstats() {
     const [durability, setDurability] = useState("")
     const [power, setPower] = useState("")
     const [combat, setCombat] = useState("")
-    const [character, setCharacter] =useState("")
-
+    const [character, setCharacter] =useState([])
 
     useEffect(()=> {
         async function getData(){
@@ -36,10 +34,8 @@ function Powerstats() {
     function getQuestions(){
         if (questionsPower[currentQuestion].questionText === 'What is your intelligence?') {
             return(
-                <>
-                    {questionsPower[currentQuestion].answerOptions.map((answerOption) =>
-                        <>
-                            <label htmlFor={answerOption.answerText} key={questions.id}>
+                    questionsPower[currentQuestion].answerOptions.map((answerOption) =>
+                            <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText}
@@ -52,16 +48,12 @@ function Powerstats() {
                                 />
                                 {answerOption.answerText}
                             </label >
-                        </>
-                    )}
-                </>
+                    )
             )}
         else if (questionsPower[currentQuestion].questionText === 'What is your strength?') {
             return(
-                <>
-                    {questionsPower[currentQuestion].answerOptions.map((answerOption) =>
-                        <>
-                            <label htmlFor={answerOption.answerText} key={questions.id}>
+                    questionsPower[currentQuestion].answerOptions.map((answerOption) =>
+                            <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText}
@@ -74,16 +66,12 @@ function Powerstats() {
                                 />
                                 {answerOption.answerText}
                             </label >
-                        </>
-                    )}
-                </>
+                    )
             )}
         else if (questionsPower[currentQuestion].questionText === 'What is your speed?') {
             return(
-                <>
-                    {questionsPower[currentQuestion].answerOptions.map((answerOption) =>
-                        <>
-                            <label htmlFor={answerOption.answerText} key={questions.id}>
+                    questionsPower[currentQuestion].answerOptions.map((answerOption) =>
+                            <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText}
@@ -96,16 +84,13 @@ function Powerstats() {
                                 />
                                 {answerOption.answerText}
                             </label >
-                        </>
-                    )}
-                </>
+                    )
             )}
         else if (questionsPower[currentQuestion].questionText === 'What is your durability?') {
             return(
-                <>
+                <div>
                     {questionsPower[currentQuestion].answerOptions.map((answerOption) =>
-                        <>
-                            <label htmlFor={answerOption.answerText} key={questions.id}>
+                            <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText}
@@ -118,16 +103,14 @@ function Powerstats() {
                                 />
                                 {answerOption.answerText}
                             </label >
-                        </>
                     )}
-                </>
+                </div>
             )}
         else if (questionsPower[currentQuestion].questionText === 'What is your power?') {
             return(
-                <>
+                <div>
                     {questionsPower[currentQuestion].answerOptions.map((answerOption) =>
-                        <>
-                            <label htmlFor={answerOption.answerText} key={questions.id}>
+                            <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText}
@@ -140,16 +123,14 @@ function Powerstats() {
                                 />
                                 {answerOption.answerText}
                             </label >
-                        </>
                     )}
-                </>
+                </div>
             )}
         else if (questionsPower[currentQuestion].questionText === 'What is your combat?') {
             return(
-                <>
+                <div>
                     {questionsPower[currentQuestion].answerOptions.map((answerOption) =>
-                        <>
-                            <label htmlFor={answerOption.answerText} key={questions.id}>
+                            <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
                                     type="numbers"
                                     id={answerOption.answerText}
@@ -162,9 +143,8 @@ function Powerstats() {
                                 />
                                 {answerOption.answerText}
                             </label >
-                        </>
                     )}
-                </>
+                </div>
             )}
     }
 
@@ -173,7 +153,7 @@ function Powerstats() {
         if (currentQuestion + 1 < questionsPower.length) {
             setCurrentQuestion(currentQuestion + 1)
             // setResponse(response + 1)
-            console.log(intelligence, strength, speed, durability, power, combat);
+            console.log( specificCharacter, intelligence, strength, speed, durability, power, combat);
             // setResponse(response+1)
         }
         else{
@@ -193,15 +173,14 @@ function Powerstats() {
     };
 
 
-    const specificCharacter =
-        character && character.map((character) => {
-            if (  character.powerstats.intelligence === intelligence
-                && character.powerstats.strength === strength
-                && character.powerstats.speed === speed
-                && character.powerstats.durability === durability
-                && character.powerstats.power === power
-                && character.powerstats.combat === combat
-            ){
+    const specificCharacter = character && character.map((character) => {
+            if (character.powerstats.intelligence === intelligence
+                // && character.powerstats.strength === strength
+                // && character.powerstats.speed === speed
+                // && character.powerstats.durability === durability
+                // && character.powerstats.power === power
+                // && character.powerstats.combat === combat
+            )
                 return (
                     <>
                         <div className="character-result" key={character.id}>
@@ -293,9 +272,8 @@ function Powerstats() {
                         </div>
                     </>
                 )
-            }
-
         })
+
 
     return (
         <>

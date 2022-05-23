@@ -49,108 +49,162 @@ import React from "react";
             id: 1,
             questionText: 'What is your gender?',
             answerOptions: [
-                {answerText: 'Male', image: <img src={superhero} alt="superhero male pop art" className="gender-image"/>},
-                {answerText: 'Female', image: <img src={superwoman} alt="superhero female pop art" className="gender-image"/>},
+                {
+                    id: 1,
+                    answerText: 'Male',
+                    image: <img src={superhero} alt="superhero male pop art" className="gender-image"/>},
+                {
+                    id: 2,
+                    answerText: 'Female',
+                    image: <img src={superwoman} alt="superhero female pop art" className="gender-image"/>},
             ]
         },
         {
             id: 2,
             questionText: 'What is your height?',
             answerOptions: [
-                {answerText: "cm"},
+                {
+                    id: 3,
+                    answerText: "cm"},
             ]
         },
         {
             id: 3,
             questionText: 'What is your hair color?',
             answerOptions: [
-                {answerText: 'Black',
+                {
+                    id: 4,
+                    answerText: 'Black',
                     image: <img src={femaleBlack} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleBlack} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Blond',
+                {
+                    id: 5,
+                    answerText: 'Blond',
                     image: <img src={femaleBlond} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleBlond} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Brown',
+                {
+                    id: 6,
+                    answerText: 'Brown',
                     image: <img src={femaleBrown} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleBrown} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'White',
+                {
+                    id: 7,
+                    answerText: 'White',
                     image: <img src={femaleWhite} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleWhite} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Purple',
+                {
+                    id: 8,
+                    answerText: 'Purple',
                     image: <img src={femalePurple} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={malePurple} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Orange',
+                {
+                    id: 9,
+                    answerText: 'Orange',
                     image: <img src={femaleOrange} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleOrange} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Pink',
+                {
+                    id: 10,
+                    answerText: 'Pink',
                     image: <img src={femalePink} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={malePink} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Red',
+                {
+                    id: 11,
+                    answerText: 'Red',
                     image: <img src={femaleRed} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleRed} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Auburn',
+                {
+                    id: 12,
+                    answerText: 'Auburn',
                     image: <img src={femaleAuburn} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleAuburn} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Strawberry Blond',
+                {
+                    id: 13,
+                    answerText: 'Strawberry Blond',
                     image: <img src={femaleStrawberryBlond} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleStrawberryBlond} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Blue',
+                {
+                    id: 14,
+                    answerText: 'Blue',
                     image: <img src={femaleBlue} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleBlue} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Green',
+                {
+                    id: 15,
+                    answerText: 'Green',
                     image: <img src={femaleGreen} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleGreen} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Magenta',
+                {
+                    id: 16,
+                    answerText: 'Magenta',
                     image: <img src={femaleMagenta} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleMagenta} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Silver',
+                {
+                    id: 17,
+                    answerText: 'Silver',
                     image: <img src={femaleSilver} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleSilver} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Grey',
+                {
+                    id: 18,
+                    answerText: 'Grey',
                     image: <img src={femaleGrey} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleGrey} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Orange / White',
+                {
+                    id: 19,
+                    answerText: 'Orange / White',
                     image: <img src={femaleOrangeWhite} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleOrangeWhite} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Brown / White',
+                {
+                    id: 20,
+                    answerText: 'Brown / White',
                     image: <img src={femaleBrownWhite} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleBrownWhite} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Yellow',
+                {
+                    id: 21,
+                    answerText: 'Yellow',
                     image: <img src={femaleYellow} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleYellow} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Gold',
+                {
+                    id: 22,
+                    answerText: 'Gold',
                     image: <img src={femaleGold} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleGold} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'Red / Orange',
+                {
+                    id: 23,
+                    answerText: 'Red / Orange',
                     image: <img src={femaleOrangeRed} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleOrangeRed} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: 'indigo',
+                {
+                    id: 24,
+                    answerText: 'indigo',
                     image: <img src={femaleIndigo} alt="Hairstyle black female silhouette" className="hair"/>,
                     image1: <img src={maleIndigo} alt="Hairstyle black male silhouette" className="hair"/>
                 },
-                {answerText: '-'
+                {
+                    id: 25,
+                    answerText: '-'
                 },
-                {answerText: 'No Hair'
+                {
+                    id: 26,
+                    answerText: 'No Hair'
                 },
             ]
         },
@@ -158,35 +212,81 @@ import React from "react";
             id: 4,
             questionText: 'What is your weight?',
             answerOptions: [
-                { answerText: "kg"},
+                {
+                    id: 27,
+                    answerText: "kg"},
             ]
         },
         {
             id: 5,
             questionText: 'What is your eye color?',
             answerOptions: [
-                { answerText: "-"},
-                { answerText: "Amber"},
-                { answerText: "Black"},
-                { answerText: "Blue"},
-                { answerText: "Blue / White"},
-                { answerText: "Brown"},
-                { answerText: "Gold"},
-                { answerText: "Green"},
-                { answerText: "Green / Blue"},
-                { answerText: "Grey"},
-                { answerText: "Hazel"},
-                { answerText: "Indigo"},
-                { answerText: "Purple"},
-                { answerText: "Red"},
-                { answerText: "Silver"},
-                { answerText: "Violet"},
-                { answerText: "White"},
-                { answerText: "White / Red"},
-                { answerText: "Yellow"},
-                { answerText: "Yellow (without irises)"},
-                { answerText: "Yellow / Red"},
-                { answerText: "Yellow / Blue"},
+                {
+                    id: 28,
+                    answerText: "-"},
+                {
+                    id: 29,
+                    answerText: "Amber"},
+                {
+                    id: 30,
+                    answerText: "Black"},
+                {
+                    id: 31,
+                    answerText: "Blue"},
+                {
+                    id: 32,
+                    answerText: "Blue / White"},
+                {
+                    id: 33,
+                    answerText: "Brown"},
+                {
+                    id: 34,
+                    answerText: "Gold"},
+                {
+                    id: 35,
+                    answerText: "Green"},
+                {
+                    id: 36,
+                    answerText: "Green / Blue"},
+                {
+                    id: 37,
+                    answerText: "Grey"},
+                {
+                    id: 38,
+                    answerText: "Hazel"},
+                {
+                    id: 39,
+                    answerText: "Indigo"},
+                {
+                    id: 40,
+                    answerText: "Purple"},
+                {
+                    id: 41,
+                    answerText: "Red"},
+                {
+                    id: 42,
+                    answerText: "Silver"},
+                {
+                    id: 43,
+                    answerText: "Violet"},
+                {
+                    id: 44,
+                    answerText: "White"},
+                {
+                    id: 45,
+                    answerText: "White / Red"},
+                {
+                    id: 46,
+                    answerText: "Yellow"},
+                {
+                    id: 47,
+                    answerText: "Yellow (without irises)"},
+                {
+                    id: 48,
+                    answerText: "Yellow / Red"},
+                {
+                    id: 49,
+                    answerText: "Yellow / Blue"},
 
             ]
         },

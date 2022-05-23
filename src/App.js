@@ -5,7 +5,6 @@ import HomePage from "./Pages/Homepage/Homepage";
 import Appearance from "./Pages/Appearance/Appearance";
 import Powerstats from "./Pages/Powerstats/Powerstats";
 import Characters from "./Pages/Characters/Characters";
-import SearchCharacter from "./Components/SearchCharacter/SearchCharacter";
 import Footer from "./Components/Footer/Footer";
 
 
