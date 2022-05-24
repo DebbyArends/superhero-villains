@@ -174,7 +174,7 @@ function Powerstats() {
 
 
     const specificCharacter = character && character.map((character) => {
-            if (character.powerstats.intelligence === intelligence
+            if (character.powerstats.intelligence == intelligence
                 // && character.powerstats.strength === strength
                 // && character.powerstats.speed === speed
                 // && character.powerstats.durability === durability

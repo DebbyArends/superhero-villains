@@ -6,8 +6,29 @@ import powFist from "../../assets/pow-fist.jpg";
 import Banner from "../../Components/Banner/Banner";
 import headbanner from "../../assets/hoofdbanner3.1.png";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
+// import axios from "axios";
+// import {useParams} from "react-router-dom";
 
 function HomePage() {
+    // const [character, setCharacter]=useState('')
+    // const apiKey="10228880912034222"
+    // const {characterId} = useParams()
+    //
+    // useEffect(()=> {
+    //     async function getData(){
+    //         try{
+    //             const result = await axios.get(`https://superheroapi.com/api/${apiKey}/${characterId}`)
+    //             console.log(result)
+    //             setCharacter(result.data)
+    //         }catch (e) {
+    //             console.error(e)
+    //         }
+    //     }
+    //     getData()
+    // }, [])
+    //
+    // console.log(character);
+
 
     return (
         <>
