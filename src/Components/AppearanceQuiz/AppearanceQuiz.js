@@ -199,36 +199,22 @@ function getQuestions(){
     };
 
 
-// function fetchCharacter(){
-//     if(   character.appearance.gender === gender
-//         && character.appearance.hairColor === hairColor
-//         && character.appearance.eyeColor === eyeColor)
-//         return fetchAppearanceCharacter5
-//     else if (character.appearance.gender === gender
-//         && character.appearance.hairColor === hairColor
-//         && character.appearance.eyeColor != eyeColor)
-//         return fetchAppearanceCharacterHair
-// }
-
-
-    function getClosestHeight(height) {
-        let heightCharacters = test && test.map((character) => {
+    function getClosestHeight() {
+        let heightCharacters = filter1 && filter1.map((character) => {
             return(
                 parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10)
             )
         })
-        // const numbers = heightCharacters.map((number) =>{
-        //     return parseInt(numbers, 10)
-        // })
-        //
-        let goal = heightCm
+
+        let goal = parseInt(heightCm, 10)
 
         let closest = heightCharacters.reduce(function(prev, curr) {
             return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
         });
+
         return(
             closest
-            // console.log(heightCharacters, closest)
+            // console.log(heightCharacters, closest, test)
         )
     }
 
@@ -257,245 +243,124 @@ function getQuestions(){
 
 
 
-    // let numberHeight = parseInt(heightCm)
-    // console.log(heightCm, numberHeight);
-let test= []
 
+    const filter1 = character.filter((character) => {
+        return character.appearance.gender === gender
+        && character.appearance.hairColor === hairColor
+        && character.appearance.eyeColor === eyeColor
+    })
 
-    const fetchAppearanceCharacter5 = character && character.map((character) => {
-        if (
-            character.appearance.gender === gender
+    const filter2 = character.filter((character) => {
+        return character.appearance.gender === gender
             && character.appearance.hairColor === hairColor
+            && character.appearance.eyeColor != eyeColor
+    })
+
+    const filter3 = character.filter((character) => {
+        return character.appearance.gender === gender
+            && character.appearance.hairColor != hairColor
             && character.appearance.eyeColor === eyeColor
-            // && getClosestHeight()
-            // && character.appearance.weight[1] === weightKg + " kg"
-            // && getClosestWeight()
-        )
-            return (
-                    // console.log(character.join(character))
-                test=test.concat(character),
-                test === getClosestHeight()
-                // console.log(Object.values(character))
-            )
+    })
 
-        // getClosestHeight(test) || getClosestWeight(test)
-        // return (
-        //         <>
-        //             <div className="character-result" key={character.id}>
-        //                 <div className="inner-character-container">
-        //                     <img src={character.images.lg} alt={character.name} className='image'/>
-        //                     <div className="border5">
-        //                         <table className="table">
-        //                             <tbody>
-        //                             <tr>
-        //                                 <td className="data-center">Intelligence:</td>
-        //                                 <td>{character.powerstats.intelligence}</td>
-        //                             </tr>
-        //                             <tr>
-        //                                 <td className="data-center">Strength:</td>
-        //                                 <td>{character.powerstats.strength}</td>
-        //                             </tr>
-        //                             <tr>
-        //                                 <td className="data-center">Speed:</td>
-        //                                 <td>{character.powerstats.speed}</td>
-        //                             </tr>
-        //                             <tr>
-        //                                 <td className="data-center">Durability:</td>
-        //                                 <td>{character.powerstats.durability}</td>
-        //                             </tr>
-        //                             <tr>
-        //                                 <td className="data-center">Power:</td>
-        //                                 <td>{character.powerstats.power}</td>
-        //                             </tr>
-        //                             <tr>
-        //                                 <td className="data-center">Combat:</td>
-        //                                 <td>{character.powerstats.combat}</td>
-        //                             </tr>
-        //                             </tbody>
-        //                         </table>
-        //                     </div>
-        //                 </div>
-        //                 <div className="right" key={character.id}>
-        //                     <div className="inner-container-biography">
-        //                         <h1>{character.name}</h1>
-        //                         <span className="full-name">{character.biography.fullName}</span>
-        //                         <div className="biography">
-        //                             <table className="table-biography">
-        //                                 <tbody>
-        //                                 <tr>
-        //                                     <td className="data-biography">Gender:</td>
-        //                                     <td>{character.appearance.gender}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Height:</td>
-        //                                     <td>{character.appearance.height[1]}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Hair color:</td>
-        //                                     <td>{character.appearance.hairColor}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Weight:</td>
-        //                                     <td>{character.appearance.weight[1]}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Eye color:</td>
-        //                                     <td>{character.appearance.eyeColor}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Aliases:</td>
-        //                                     <td>{character.biography.aliases.join(', ')}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Place of birth:</td>
-        //                                     <td>{character.biography.placeOfBirth}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Relatives:</td>
-        //                                     <td>{character.connections.relatives}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">First appearance:</td>
-        //                                     <td>{character.biography.firstAppearance}</td>
-        //                                 </tr>
-        //                                 <tr>
-        //                                     <td className="data-biography">Publisher:</td>
-        //                                     <td>{character.biography.publisher}</td>
-        //                                 </tr>
-        //                                 </tbody>
-        //                             </table>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </>
-        // )
-        })
-    //
-    // console.log(character);
-    // const fetchAppearanceCharacterHair = character && character.map((character) => {
-    //     if (
-    //         character.appearance.gender === gender
-    //         && character.appearance.hairColor === hairColor
-    //         && character.appearance.eyeColor != eyeColor
-    //         // getClosestHeight()
-    //         // && getClosestWeight()
-    //     )
-    //         return (
-    //             console.log(character.name)
-    //         )})
 
-    // const fetchAppearanceCharacterEye = character && character.map((character) => {
-    //     if (
-    //         character.appearance.gender === gender
-    //         && character.appearance.eyeColor === eyeColor
-    //         && character.appearance.eyeColor != hairColor
-    //         // getClosestHeight()
-    //         // && getClosestWeight()
-    //     )
-    //         return (
-    //             //     let a=[character], b={}
-    //             // a.push(b)
-    //             console.log(character)
-    //
-    //         )})
 
-    //
-    //
-    // const specificCharacter =
-    //     character && character.map((character) => {
-    //         return (
-    //             <>
-    //                 <div className="character-result" key={character.id}>
-    //                     <div className="inner-character-container">
-    //                         <img src={character.images.lg} alt={character.name} className='image'/>
-    //                         <div className="border5">
-    //                             <table className="table">
+const find1 = filter1.find((character) => {
+    return parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10) === getClosestHeight(filter1)
+})
+
+    // const resultQuiz = find1.map((character) => {
+    //     return (
+    //         <>
+    //             <div className="character-result" key={character.id}>
+    //                 <div className="inner-character-container">
+    //                     <img src={character.images.lg} alt={character.name} className='image'/>
+    //                     <div className="border5">
+    //                         <table className="table">
+    //                             <tbody>
+    //                             <tr>
+    //                                 <td className="data-center">Intelligence: </td>
+    //                                 <td>{character.powerstats.intelligence}</td>
+    //                             </tr>
+    //                             <tr>
+    //                                 <td className="data-center">Strength: </td>
+    //                                 <td>{character.powerstats.strength}</td>
+    //                             </tr>
+    //                             <tr>
+    //                                 <td className="data-center">Speed: </td>
+    //                                 <td>{character.powerstats.speed}</td>
+    //                             </tr>
+    //                             <tr>
+    //                                 <td className="data-center">Durability: </td>
+    //                                 <td>{character.powerstats.durability}</td>
+    //                             </tr>
+    //                             <tr>
+    //                                 <td className="data-center">Power: </td>
+    //                                 <td>{character.powerstats.power}</td>
+    //                             </tr>
+    //                             <tr>
+    //                                 <td className="data-center">Combat: </td>
+    //                                 <td>{character.powerstats.combat}</td>
+    //                             </tr>
+    //                             </tbody>
+    //                         </table>
+    //                     </div>
+    //                 </div>
+    //                 <div className="right" key={character.id}>
+    //                     <div className="inner-container-biography">
+    //                         <h1>{character.name}</h1>
+    //                         <span className="full-name">{character.biography.fullName}</span>
+    //                         <div className="biography">
+    //                             <table className="table-biography">
     //                                 <tbody>
     //                                 <tr>
-    //                                     <td className="data-center">Intelligence: </td>
-    //                                     <td>{character.powerstats.intelligence}</td>
+    //                                     <td className="data-biography">Gender: </td>
+    //                                     <td>{character.appearance.gender}</td>
     //                                 </tr>
     //                                 <tr>
-    //                                     <td className="data-center">Strength: </td>
-    //                                     <td>{character.powerstats.strength}</td>
+    //                                     <td className="data-biography">Height: </td>
+    //                                     <td>{character.appearance.height[1]}</td>
     //                                 </tr>
     //                                 <tr>
-    //                                     <td className="data-center">Speed: </td>
-    //                                     <td>{character.powerstats.speed}</td>
+    //                                     <td className="data-biography">Hair color: </td>
+    //                                     <td>{character.appearance.hairColor}</td>
     //                                 </tr>
     //                                 <tr>
-    //                                     <td className="data-center">Durability: </td>
-    //                                     <td>{character.powerstats.durability}</td>
+    //                                     <td className="data-biography">Weight: </td>
+    //                                     <td>{character.appearance.weight[1]}</td>
     //                                 </tr>
     //                                 <tr>
-    //                                     <td className="data-center">Power: </td>
-    //                                     <td>{character.powerstats.power}</td>
+    //                                     <td className="data-biography">Eye color: </td>
+    //                                     <td>{character.appearance.eyeColor}</td>
     //                                 </tr>
     //                                 <tr>
-    //                                     <td className="data-center">Combat: </td>
-    //                                     <td>{character.powerstats.combat}</td>
+    //                                     <td className="data-biography">Aliases: </td>
+    //                                     <td>{character.biography.aliases.join(', ')}</td>
+    //                                 </tr>
+    //                                 <tr>
+    //                                     <td className="data-biography">Place of birth: </td>
+    //                                     <td>{character.biography.placeOfBirth}</td>
+    //                                 </tr>
+    //                                 <tr>
+    //                                     <td className="data-biography">Relatives: </td>
+    //                                     <td>{character.connections.relatives}</td>
+    //                                 </tr>
+    //                                 <tr>
+    //                                     <td className="data-biography">First appearance: </td>
+    //                                     <td>{character.biography.firstAppearance}</td>
+    //                                 </tr>
+    //                                 <tr>
+    //                                     <td className="data-biography">Publisher: </td>
+    //                                     <td>{character.biography.publisher}</td>
     //                                 </tr>
     //                                 </tbody>
     //                             </table>
     //                         </div>
     //                     </div>
-    //                     <div className="right" key={character.id}>
-    //                         <div className="inner-container-biography">
-    //                             <h1>{character.name}</h1>
-    //                             <span className="full-name">{character.biography.fullName}</span>
-    //                             <div className="biography">
-    //                                 <table className="table-biography">
-    //                                     <tbody>
-    //                                     <tr>
-    //                                         <td className="data-biography">Gender: </td>
-    //                                         <td>{character.appearance.gender}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Height: </td>
-    //                                         <td>{character.appearance.height[1]}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Hair color: </td>
-    //                                         <td>{character.appearance.hairColor}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Weight: </td>
-    //                                         <td>{character.appearance.weight[1]}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Eye color: </td>
-    //                                         <td>{character.appearance.eyeColor}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Aliases: </td>
-    //                                         <td>{character.biography.aliases.join(', ')}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Place of birth: </td>
-    //                                         <td>{character.biography.placeOfBirth}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Relatives: </td>
-    //                                         <td>{character.connections.relatives}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">First appearance: </td>
-    //                                         <td>{character.biography.firstAppearance}</td>
-    //                                     </tr>
-    //                                     <tr>
-    //                                         <td className="data-biography">Publisher: </td>
-    //                                         <td>{character.biography.publisher}</td>
-    //                                     </tr>
-    //                                     </tbody>
-    //                                 </table>
-    //                             </div>
-    //                         </div>
-    //                     </div>
     //                 </div>
-    //             </>
-    //         )
-    //     })
+    //             </div>
+    //         </>
+    //     )
+    // })
 
     return (
         <>
@@ -508,8 +373,10 @@ let test= []
                         <p>Weight:{weightKg}</p>
                         <p>Eye color: {eyeColor} </p>
                         <h1>These character(s) match your appearance!</h1>
-                       <p>{fetchAppearanceCharacter5}</p>
-                        {console.log(test)}
+                        {console.log(filter1)}
+                        {console.log(getClosestHeight(filter1))}
+                        {console.log(find1)}
+                        {/*{resultQuiz}*/}
                         <button
                             onClick={() => restartQuiz()}
                             className="button-banner-quiz"
