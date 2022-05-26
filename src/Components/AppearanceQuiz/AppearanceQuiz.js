@@ -3,7 +3,7 @@ import {questions} from "../../data/questions";
 import {useForm} from "react-hook-form";
 import "./AppearanceQuiz.css"
 import axios from "axios";
-import {logDOM} from "@testing-library/react";
+
 
 
 function AppearanceQuiz() {
@@ -17,6 +17,7 @@ function AppearanceQuiz() {
     const [eyeColor, setEyeColor]=useState("")
     const [character, setCharacter] =useState([])
     const [radioCheck, setRadioCheck] = useState( true)
+    const [findCharacter, setFindCharacter]= useState('')
 
     useEffect(()=> {
         async function getData(){
@@ -199,7 +200,7 @@ function getQuestions(){
     };
 
 
-    function getClosestHeight() {
+    function getClosestHeight1() {
         let heightCharacters = filter1 && filter1.map((character) => {
             return(
                 parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10)
@@ -218,31 +219,76 @@ function getQuestions(){
         )
     }
 
+    function getClosestHeight2() {
+        let heightCharacters = filter2 && filter2.map((character) => {
+            return(
+                parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10)
+            )
+        })
 
-    // function getClosestWeight() {
-    //     let weightCharacters = character && character.map((character) => {
-    //         return(
-    //             character.appearance.weight[1].replaceAll(" kg", "")
-    //         )
-    //     })
-    //
-    //     const numbers = weightCharacters.map((number) =>{
-    //         return parseInt(number, 10)
-    //     })
-    //
-    //     // let goal = weightKg
-    //
-    //     let closest = numbers.reduce(function(prev, curr) {
-    //         return (Math.abs(curr - weightKg) < Math.abs(prev - weightKg) ? curr : prev);
-    //     });
-    //     return(
-    //         closest
-    //         // console.log(heightCharacters, numbers, closest)
+        let goal = parseInt(heightCm, 10)
+
+        let closest = heightCharacters.reduce(function(prev, curr) {
+            return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+        });
+
+        return(
+            closest
+            // console.log(heightCharacters, closest, test)
+        )
+    }
+
+
+    function getClosestWeight1() {
+        let weightCharacters = filter1 && filter1.map((character) => {
+            return(
+                parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10)
+            )
+        })
+
+        let goal = parseInt(weightKg, 10)
+
+        let closest = weightCharacters.reduce(function(prev, curr) {
+            return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+        });
+        return(
+            closest
+            // console.log(heightCharacters, numbers, closest)
+        )
+    }
+
+    function getClosestWeight2() {
+        let weightCharacters = filter2 && filter2.map((character) => {
+            return(
+                parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10)
+            )
+        })
+
+        let goal = parseInt(weightKg, 10)
+
+        let closest = weightCharacters.reduce(function(prev, curr) {
+            return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+        });
+        return(
+            closest
+            // console.log(heightCharacters, numbers, closest)
+        )
+    }
+
+
+
+function fetchCharacterQuiz() {
+    if (filter1){
+        return(
+            find1
+        )
+    }
+    // if (filter2){
+    //     return (
+    //         find2
     //     )
     // }
-
-
-
+}
 
     const filter1 = character.filter((character) => {
         return character.appearance.gender === gender
@@ -250,26 +296,36 @@ function getQuestions(){
         && character.appearance.eyeColor === eyeColor
     })
 
+
+    let find1 = filter1.find((character) => {
+    return parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10) === getClosestHeight1(filter1)
+        ||
+        parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight1(filter1)
+    })
+
+
     const filter2 = character.filter((character) => {
         return character.appearance.gender === gender
-            && character.appearance.hairColor === hairColor
-            && character.appearance.eyeColor != eyeColor
+        &&  character.appearance.eyeColor === eyeColor
     })
 
-    const filter3 = character.filter((character) => {
-        return character.appearance.gender === gender
-            && character.appearance.hairColor != hairColor
-            && character.appearance.eyeColor === eyeColor
+    let find2 = filter2.find((character) => {
+        return parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10) === getClosestHeight2(filter2)
+            ||
+            parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight2(filter2)
     })
 
+    // const filter3 = character.filter((character) => {
+    //     return character.appearance.gender === gender
+    //         && character.appearance.eyeColor !== eyeColor
+    //         && character.appearance.hairColor === hairColor
+    // })
 
-
-const find1 = filter1.find((character) => {
-    return parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10) === getClosestHeight(filter1)
-})
-
-    // const resultQuiz = find1.map((character) => {
+    // const resultQuiz = find1 && find1.map((character) => {
     //     return (
+    //         character.name
+    //     )
+    // })
     //         <>
     //             <div className="character-result" key={character.id}>
     //                 <div className="inner-character-container">
@@ -373,9 +429,11 @@ const find1 = filter1.find((character) => {
                         <p>Weight:{weightKg}</p>
                         <p>Eye color: {eyeColor} </p>
                         <h1>These character(s) match your appearance!</h1>
-                        {console.log(filter1)}
-                        {console.log(getClosestHeight(filter1))}
-                        {console.log(find1)}
+                        {/*{console.log(filter1)}*/}
+                        {/*{console.log(getClosestHeight(filter1))}*/}
+                        {/*{console.log(find1)}*/}
+                        {console.log(fetchCharacterQuiz())}
+                        {/*{console.log(filter2)}*/}
                         {/*{resultQuiz}*/}
                         <button
                             onClick={() => restartQuiz()}
