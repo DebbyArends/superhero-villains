@@ -4,7 +4,14 @@ import {useForm} from "react-hook-form";
 import "./AppearanceQuiz.css"
 import axios from "axios";
 import {Link} from "react-router-dom";
-
+import starlord from "../../assets/starlord-mugshot.jpg"
+import gamora from "../../assets/gamora_mugshot.jpg"
+import hairstylesMan from "../../assets/comic-hairstyles-man.jpg"
+import hairstylesWoman from "../../assets/comic-hairstyles-woman.jpg"
+import weightFemale from "../../assets/weight-pop-art-female.jpg"
+import weightMale from "../../assets/weight-pop-art-male.jpg"
+import blueEyes from "../../assets/blue-eyes.jpg"
+import brownEyes from "../../assets/brown-eyes.jpg"
 
 
 function AppearanceQuiz() {
@@ -18,7 +25,6 @@ function AppearanceQuiz() {
     const [eyeColor, setEyeColor]=useState("")
     const [character, setCharacter] =useState([])
     const [radioCheck, setRadioCheck] = useState( true)
-    const [findCharacter, setFindCharacter]= useState('')
 
     useEffect(()=> {
         async function getData(){
@@ -61,7 +67,8 @@ function handleChange(e) {
         else if (questions[currentQuestion].questionText === 'What is your eye color?'){
             return (
                 setEyeColor(e.target.value),
-                    setRadioCheck(false)
+                    setRadioCheck(false),
+                console.log(eyeColor)
             )
         }
     }
@@ -74,18 +81,15 @@ function getQuestions(){
                                 {questions[currentQuestion].answerOptions.map((answerOption) =>
                                         <label key={answerOption.id}>
                                             <input
-                                                type="radio"
-                                                id={answerOption.answerText}
+                                                type="image"
+                                                src={answerOption.image}
+                                                id="gender-image"
+                                                alt={answerOption.answerText}
                                                 name={answerOption.answerText}
                                                 onChange={handleChange}
                                                 value={answerOption.answerText}
                                                 checked={gender === answerOption.answerText}
                                             />
-                                            {answerOption.answerText}
-                                            <div>
-                                                {answerOption.image}
-                                                {answerOption.image1}
-                                            </div>
                                         </label>
                                 )}
                             </div>
@@ -93,7 +97,8 @@ function getQuestions(){
             )}
         if (questions[currentQuestion].questionText === "What is your height?") {
             return(
-                <div>
+                <div className="outer-container-height">
+                    <img src={starlord} alt="Starlord comic style mug shot" className="mugshot"/>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
                             <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
@@ -109,33 +114,36 @@ function getQuestions(){
                                 {answerOption.answerText}
                             </label >
                     )}
+                    <img src={gamora} alt="Gamora comic style mug shot" className="mugshot"/>
                 </div>
             )}
 
         else if (questions[currentQuestion].questionText === 'What is your hair color?') {
             return(
                     <div className="outer-container-hair">
-                        {questions[currentQuestion].answerOptions.map((answerOption) =>
-                            <div className="inner-container-hair-color" key={answerOption.id}>
-                                <label htmlFor={answerOption.answerText} >
-                                    <input
-                                        type="radio"
-                                        id={answerOption.answerText}
-                                        name={answerOption.answerText}
-                                        onChange={handleChange}
-                                        value={answerOption.answerText}
-                                        checked={hairColor === answerOption.answerText}
-                                    />
-                                    {answerOption.answerText}
-                                </label>
-                            </div>
-                        )}
+                        <div className="inner-container-hair-color">
+                            <img src={hairstylesMan} alt="Comic book hair style man" className="image-hair-weight-eye"/>
+                            <label htmlFor="hair-color">
+                                <select id="hair-color" name="hair-color" onChange={handleChange}>
+                                    {questions[currentQuestion].answerOptions.map((answerOption) =>
+                                        <option
+                                                value={answerOption.answerText}
+                                                key={answerOption.id}
+                                        >
+                                            {answerOption.answerText}
+                                        </option>
+                                    )}
+                                </select>
+                            </label>
+                            <img src={hairstylesWoman} alt="Comic book hair style woman" className="image-hair-weight-eye"/>
+                        </div>
                     </div>
             )}
 
         else if (questions[currentQuestion].questionText === "What is your weight?"){
             return (
-                <div>
+                <div className="outer-container-weight">
+                    <img src={weightMale} alt="Weight difference male pop art" className="image-hair-weight-eye"/>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
                             <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
@@ -151,39 +159,39 @@ function getQuestions(){
                                 {answerOption.answerText}
                             </label >
                     )}
+                    <img src={weightFemale} alt="Weight difference female pop art" className="image-hair-weight-eye"/>
                 </div>
             )
         }
-
         else if (questions[currentQuestion].questionText === 'What is your eye color?') {
             return(
                 <div className="outer-container-hair">
-                    {questions[currentQuestion].answerOptions.map((answerOption) =>
-                        <div className="inner-container-hair-color" key={answerOption.id}>
-                            <label htmlFor={answerOption.answerText}>
-                                <input
-                                    type="radio"
-                                    id={answerOption.answerText}
-                                    name={answerOption.answerText}
-                                    onChange={handleChange}
-                                    value={answerOption.answerText}
-                                    checked={eyeColor === answerOption.answerText}
-                                />
-                                {answerOption.answerText}
-                            </label>
-                        </div>
-                    )}
+                    <div className="inner-container-hair-color">
+                        <img src={brownEyes} alt="Drawing eye multi colors" className="image-hair-weight-eye"/>
+                        <label htmlFor="eye-color">
+                            <select id="eye-color" name="eye-color" onChange={handleChange}>
+                                {questions[currentQuestion].answerOptions.map((answerOption) =>
+                                    <option
+                                        value={answerOption.answerText}
+                                        key={answerOption.id}
+                                    >
+                                        {answerOption.answerText}
+                                    </option>
+                                )}
+                            </select>
+                        </label>
+                        <img src={blueEyes} alt="Drawing eye multi colors" className="image-hair-weight-eye"/>
+                    </div>
                 </div>
             )}
     }
 
 
-    function handleAnswerInput(e) {
+    function handleAnswerInput() {
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1)
             setRadioCheck(true)
             console.log(gender,heightCm , hairColor, weightKg, eyeColor);
-            // console.log(specificCharacter);
         }
         else{
             setShowResult(gender, heightCm , hairColor, weightKg, eyeColor)
@@ -387,7 +395,7 @@ function getQuestions(){
                             </table>
                     </div>
                     <div className="right" key={character.id}>
-                        <div className="inner-container-biography">
+                        <div className="inner-container-appearance">
                             <h1>{character.name}</h1>
                             <span className="full-name">{character.biography.fullName}</span>
                             <div className="biography">
@@ -479,7 +487,7 @@ function getQuestions(){
                                 </div>
                             </div>
                             <div className="right" key={character.id}>
-                                <div className="inner-container-biography">
+                                <div className="inner-container-appearance">
                                     <h1>{character.name}</h1>
                                     <span className="full-name">{character.biography.fullName}</span>
                                     <div className="biography">
@@ -571,7 +579,7 @@ function getQuestions(){
                             </div>
                         </div>
                         <div className="right" key={character.id}>
-                            <div className="inner-container-biography">
+                            <div className="inner-container-appearance">
                                 <h1>{character.name}</h1>
                                 <span className="full-name">{character.biography.fullName}</span>
                                 <div className="biography">
@@ -625,15 +633,14 @@ function getQuestions(){
                     </div>
                 </>
             )
-        else if (find1 === undefined)
-            return(
-            <>
-                <h1>Sorry...</h1>
-                <p>There is no character that matches your appearance</p>
-                <h4>Try out our <Link to="/powerstats" className="back-link">Powerstats</Link> quiz</h4>
-            </>
-            )
     })
+
+    const noCharacterFound =
+        <>
+            <h1>Sorry...</h1>
+            <p>There is no character that matches your appearance</p>
+            <h4>Try out our <Link to="/powerstats" className="back-link">Powerstats</Link> quiz</h4>
+        </>
 
 
     return (
@@ -646,9 +653,8 @@ function getQuestions(){
                         {/*<p>Hair color: {hairColor}</p>*/}
                         {/*<p>Weight:{weightKg}</p>*/}
                         {/*<p>Eye color: {eyeColor} </p>*/}
-                        <h1>These characters match your appearance!</h1>
-                        {/*{console.log(fetchCharacterQuiz())}*/}
-                        {resultQuiz}
+                        <h1 className="titel-appearance">These character(s) match your appearance!</h1>
+                        {resultQuiz?resultQuiz:noCharacterFound}
                         <button
                             onClick={() => restartQuiz()}
                             className="button-banner-quiz"
