@@ -95,7 +95,7 @@ td{
     padding: 5px;
     font-family: "Roboto Condensed",cursive;
     color: #14363C;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .data-center {
@@ -104,14 +104,14 @@ td{
     font-family: Neucha, cursive;
     font-weight: bolder;
     color: #14363C;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .data-biography {
     font-family: Neucha, cursive;
     font-weight: bolder;
     color: #14363C;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 h1  {
@@ -220,7 +220,7 @@ h1  {
         padding: 5px;
         font-family: "Roboto Condensed",cursive;
         color: #14363C;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .data-center {
@@ -229,14 +229,14 @@ h1  {
         font-family: Neucha, cursive;
         font-weight: bolder;
         color: #14363C;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .data-biography {
         font-family: Neucha, cursive;
         font-weight: bolder;
         color: #14363C;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     h1  {
@@ -355,6 +355,7 @@ h1  {
         font-family: Neucha, cursive;
         font-weight: bolder;
         color: #14363C;
+        font-size: 15px;
     }
 
     .data-biography {

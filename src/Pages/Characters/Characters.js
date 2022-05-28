@@ -186,7 +186,7 @@ function Characters() {
             </section>
 
             <div className="container-link-back">
-                <p id="link-back">Go <Link to="/" className="back-link">back</Link> to homepage</p>
+                <p id="link-back">Go <Link to="/" className="back-link">back</Link> to the homepage</p>
             </div>
         </>
     )
