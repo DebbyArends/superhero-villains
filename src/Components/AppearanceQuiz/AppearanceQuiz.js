@@ -73,29 +73,35 @@ function handleChange(e) {
 function getQuestions(){
         if (questions[currentQuestion].questionText === 'What is your gender?') {
             return(
-                        <div className="outer-container-gender">
-                            <div className="inner-container-gender">
-                                <div className="outer-load-bar">
-                                    <div className="inner-load-bar-20">
-                                        <p>20%</p>
-                                    </div>
-                                </div>
-                                {questions[currentQuestion].answerOptions.map((answerOption) =>
-                                        <label key={answerOption.id}>
-                                            <input
-                                                type="image"
-                                                src={answerOption.image}
-                                                id="gender-image"
-                                                alt={answerOption.answerText}
-                                                name={answerOption.answerText}
-                                                onClick={handleChange}
-                                                value={answerOption.answerText}
-                                                // checked={gender === answerOption.answerText}
-                                            />
-                                        </label>
-                                )}
+                <>
+                    <div className="outer-container-load-bar">
+                        <div className="outer-load-bar">
+                            <div className="inner-load-bar-20">
+                                <p>20%</p>
                             </div>
                         </div>
+                    </div>
+                    <div className="outer-container-gender">
+                        <div className="inner-container-gender">
+                            {questions[currentQuestion].answerOptions.map((answerOption) =>
+                                <div className="inner-container-images">
+                                    <label key={answerOption.id}>
+                                        <input
+                                            type="image"
+                                            src={answerOption.image}
+                                            id="gender-image"
+                                            alt={answerOption.answerText}
+                                            name={answerOption.answerText}
+                                            onClick={handleChange}
+                                            value={answerOption.answerText}
+                                            // checked={gender === answerOption.answerText}
+                                        />
+                                    </label>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </>
             )}
         if (questions[currentQuestion].questionText === "What is your height?") {
             return(
@@ -126,20 +132,21 @@ function getQuestions(){
 
         else if (questions[currentQuestion].questionText === 'What is your hair color?') {
             return(
-                    <div className="outer-container-hair">
-                        <div className="inner-container-hair-color">
-                            <div className="outer-load-bar">
-                                <div className="inner-load-bar-60">
-                                    <p>60%</p>
-                                </div>
+                <>
+                    <div className="inner-container-hair-color">
+                        <div className="outer-load-bar">
+                            <div className="inner-load-bar-60">
+                                <p>60%</p>
                             </div>
+                        </div>
+                        <div className="outer-container-hair">
                             <img src={hairstylesMan} alt="Comic book hair style man" className="image-hair"/>
                             <label htmlFor="hair-color">
                                 <select id="hair-color" name="hair-color" onChange={handleChange}>
                                     {questions[currentQuestion].answerOptions.map((answerOption) =>
                                         <option
-                                                value={answerOption.answerText}
-                                                key={answerOption.id}
+                                            value={answerOption.answerText}
+                                            key={answerOption.id}
                                         >
                                             {answerOption.answerText}
                                         </option>
@@ -149,11 +156,17 @@ function getQuestions(){
                             <img src={hairstylesWoman} alt="Comic book hair style woman" className="image-hair"/>
                         </div>
                     </div>
+                </>
             )}
 
         else if (questions[currentQuestion].questionText === "What is your weight?"){
             return (
                 <div className="outer-container-weight">
+                    <div className="outer-load-bar">
+                        <div className="inner-load-bar-80">
+                            <p>80%</p>
+                        </div>
+                    </div>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
                             <label htmlFor={answerOption.answerText} key={answerOption.id}>
                                 <input
@@ -177,6 +190,11 @@ function getQuestions(){
             return(
                 <div className="outer-container-eye">
                     <div className="inner-container-eye-color">
+                        <div className="outer-load-bar">
+                            <div className="inner-load-bar-100">
+                                <p>100%</p>
+                            </div>
+                        </div>
                         <label htmlFor="eye-color">
                             <select id="eye-color" name="eye-color" onChange={handleChange}>
                                 {questions[currentQuestion].answerOptions.map((answerOption) =>
@@ -666,35 +684,38 @@ function getQuestions(){
                         </div>
                     </div>
                 ) :
-                <div className="shadow-box-quiz">
-                    <div className="container-quiz">
-                        <div className="inner-container-quiz">
+                <div className="outer-container-quiz">
+                    <div className="shadow-box-quiz">
+                        <div className="container-quiz">
+                            <div className="inner-container-quiz">
                                 <h4>Do the quiz to find out which superhero or villain has your looks!</h4>
-                        </div>
-                        <div className="question-section">
-                            <div className="question-text">{questions[currentQuestion].questionText}</div>
-                        </div>
-                        <div className="answer-section">
-                            <form
-                                onSubmit={handleSubmit(handleAnswerInput)}
-                            >
-                                {getQuestions()}
-                                <div className="button-container-quiz">
-                                    <button>
+                            </div>
+                            <div className="question-section">
+                                <div className="question-text">{questions[currentQuestion].questionText}</div>
+                            </div>
+                            <div className="answer-section">
+                                <form
+                                    onSubmit={handleSubmit(handleAnswerInput)}
+                                >
+                                    {getQuestions()}
+                                    <div className="button-container-quiz">
+                                        <button>
 
-                                    </button>
-                                    <button
-                                        type="submit"
-                                        className="button-banner-quiz"
-                                        disabled={radioCheck}
-                                    >
-                                        Next
-                                    </button>
-                                </div>
-                            </form>
+                                        </button>
+                                        <button
+                                            type="submit"
+                                            className="button-banner-quiz"
+                                            disabled={radioCheck}
+                                        >
+                                            Next
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>}
+                </div>
+                }
         </>
     )
 }
