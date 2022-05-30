@@ -7,7 +7,7 @@ function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
     const [superheroData, setSuperheroData] = useState([]);
     const apiKey="10228880912034222"
-    const {register} = useForm()
+    const {register,formState:{errors}} = useForm()
 
     async function searchSuperHeroes(){
             try{
@@ -26,35 +26,34 @@ function SearchCharacter() {
         if (searchTerm.length === 0) {
             setSuperheroData([]);
         }
-        else if (searchTerm.length > 2) {
+        if (searchTerm.length > 2) {
             searchSuperHeroes();
         }
     }
 
-    // function aliases() {
-    //     superheroData.map.split(',')((oneCharacter) =>
-    //         <div className="search-result" key={oneCharacter.id}>
-    //             <td>{oneCharacter.biography.aliases}</td>
-    //         </div>)
-    //     }
 
 
     return(
         <>
             <div className="main">
                     <input
-                        id="search-bar"
+                        id="searchBar"
                         type="search"
                         placeholder="Search your superhero or villain..."
                         autoComplete="off"
-                        {...register("search-bar",
+                        {...register("searchBar",
                             {onChange:(e) => handleChange(e),
                                 value:searchText,
+                                minLength:{
+                                value:3,
+                                  message: "Search name must be longer than 2 characters"
+                                },
                             })}
                     />
+                {errors.searchBar && <p className="error">{errors.searchBar.message}</p> }
             </div>
             <div className="outer-container-character" >
-                {superheroData.map((oneCharacter) =>
+                {superheroData && superheroData.map((oneCharacter) =>
                             <div className="search-result" key={oneCharacter.id}>
                                 <div className="outer-image-stats-container">
                                     <div className="inner-image-stats-container">

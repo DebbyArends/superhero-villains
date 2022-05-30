@@ -758,4 +758,9 @@ input {
         padding: 15px;
         position: relative;
     }
+    .error {
+        font-family: "Roboto Condensed",cursive;
+        font-size: 14px;
+        color: red;
+    }
 }

@@ -1,50 +1,42 @@
 export const questionsPower = [
     {
-        questionText: 'What is your intelligence?',
+        questionText: 'What is your knowledge?',
         answerOptions: [
             {
                 id: 1,
-                answerText: 'intelligence',},
+                answerText: 'Intelligence between 0-100',},
         ]
     },
     {
-        questionText: 'What is your strength?',
+        questionText: 'How strong are you?',
         answerOptions: [
             {
                 id: 2,
-                answerText: 'strength',},
+                answerText: 'Strength between 0-100',},
         ]
     },
     {
-        questionText: 'What is your speed?',
+        questionText: 'How fast are you?',
         answerOptions: [
             {
                 id: 3,
-                answerText: 'speed',},
+                answerText: 'Speed between 0-100',},
         ]
     },
     {
-        questionText: 'What is your durability?',
+        questionText: 'How are your fighting skills?',
         answerOptions: [
             {
                 id: 4,
-                answerText: 'durability',},
+                answerText: 'Combat between 0-100',},
         ]
     },
     {
-        questionText: 'What is your power?',
+        questionText: 'How long would you last in a fight?',
         answerOptions: [
             {
                 id: 5,
-                answerText: 'power',},
-        ]
-    },
-    {
-        questionText: 'What is your combat?',
-        answerOptions: [
-            {
-                id: 6,
-                answerText: 'combat',},
+                answerText: 'Durability between 0-100',},
         ]
     },
 ]

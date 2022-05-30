@@ -63,8 +63,7 @@ function Appearance() {
         else if (questions[currentQuestion].questionText === 'What is your eye color?'){
             return (
                 setEyeColor(e.target.value),
-                    setRadioCheck(false),
-                    console.log(eyeColor)
+                    setRadioCheck(false)
             )
         }
     }
@@ -83,8 +82,8 @@ function Appearance() {
                     <div className="outer-container-gender">
                         <div className="inner-container-gender">
                             {questions[currentQuestion].answerOptions.map((answerOption) =>
-                                <div className="inner-container-images">
-                                    <label key={answerOption.id}>
+                                <div className="inner-container-images" key={answerOption.id}>
+                                    <label>
                                         <input
                                             type="image"
                                             src={answerOption.image}
@@ -657,6 +656,8 @@ function Appearance() {
             )
     })
 
+
+
     const noCharacterFound =
         <>
             <h1>Sorry...</h1>
@@ -698,9 +699,6 @@ function Appearance() {
                                 >
                                     {getQuestions()}
                                     <div className="button-container-quiz">
-                                        <button>
-
-                                        </button>
                                         <button
                                             type="submit"
                                             className="button-banner-quiz"
@@ -708,6 +706,7 @@ function Appearance() {
                                         >
                                             Next
                                         </button>
+
                                     </div>
                                 </form>
                             </div>
