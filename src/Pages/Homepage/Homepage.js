@@ -69,16 +69,6 @@ function HomePage() {
                 buttonTitle="Do the quiz"
             />
             <Banner
-                classname="outer-container-article-2"
-                image={powFist}
-                alternateText="Power fist"
-                title="Superhero or Villain"
-                description="Find out based on your"
-                pageTitle="Powerstats"
-                location={"/powerstats"}
-                buttonTitle="Do the quiz"
-            />
-            <Banner
                 classname="outer-container-article-3"
                 image={dcMarvelMultiverse}
                 alternateText="Dc and Marvel characters"

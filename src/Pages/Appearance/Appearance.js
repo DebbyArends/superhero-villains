@@ -714,6 +714,9 @@ function Appearance() {
                     </div>
                 </div>
             }
+            <div className="container-link-back">
+                <p id="link-back">Go <Link to="/" className="back-link">back</Link> to the homepage</p>
+            </div>
         </>
     )
 }

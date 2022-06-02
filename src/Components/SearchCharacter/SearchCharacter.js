@@ -26,8 +26,11 @@ function SearchCharacter() {
         if (searchTerm.length === 0) {
             setSuperheroData([]);
         }
-        if (searchTerm.length > 2) {
+        if (searchTerm.length > 3) {
             searchSuperHeroes();
+        }
+        if (searchText !== searchTerm){
+            console.log("dit karakter bestaat niet");
         }
     }
 
@@ -50,7 +53,7 @@ function SearchCharacter() {
                                 },
                             })}
                     />
-                {errors.searchBar && <p className="error">{errors.searchBar.message}</p> }
+                {errors.searchBar && <p className="error">{errors.searchBar.message}</p>}
             </div>
             <div className="outer-container-character" >
                 {superheroData && superheroData.map((oneCharacter) =>

@@ -11,14 +11,14 @@
 
 .image-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .inner-container-image {
     display: flex;
-    width: 600px;
+    width: 375px;
     justify-content: center;
     align-items: center;
 }
@@ -74,6 +74,11 @@ a {
     color: hsl(189, 50%, 16%);
     text-decoration: underline 2px solid hsl(0, 100%, 45%);
 }
+.user-icon {
+    font-size: 2rem;
+    color: hsl(189, 50%, 16%);
+    cursor: pointer;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -112,6 +117,23 @@ a {
         background-color: hsl(185, 60%, 67%);
         color:  hsl(189, 50%, 16%);
     }
+    .user-icon {
+        font-size: 2.5rem;
+        color: hsl(189, 50%, 16%);
+        cursor: pointer;
+    }
+    .inner-container-image {
+        display: flex;
+        width: 650px;
+        justify-content: center;
+        align-items: center;
+    }
+    .image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -149,5 +171,22 @@ a {
         justify-content: flex-start;
         background-color: hsl(185, 60%, 67%);
         color:  hsl(189, 50%, 16%);
+    }
+    .user-icon {
+        font-size: 3rem;
+        color: hsl(189, 50%, 16%);
+        cursor: pointer;
+    }
+    .inner-container-image {
+        display: flex;
+        width: 850px;
+        justify-content: center;
+        align-items: center;
+    }
+    .image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 }

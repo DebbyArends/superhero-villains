@@ -2,6 +2,7 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import './Navigation.css'
 import superheroVsVillainsLogo from "../../assets/superhero-vs-villains.png"
+import {BiUserCircle} from 'react-icons/bi'
 
 
 
@@ -13,6 +14,11 @@ function Navigation() {
                         <NavLink exact to="/" activeClassName="active-link">
                             <img src={superheroVsVillainsLogo} className="logo-superhero-vs-villains-nav" alt="logo"/>
                         </NavLink>
+                    </div>
+                    <div className="inner-container-user">
+                        <NavLink to="/user" activeClassName="active-link"><BiUserCircle
+                        className="user-icon"
+                        /></NavLink>
                     </div>
                 </div>
                 <div className="outer-container-nav-links">
@@ -26,12 +32,6 @@ function Navigation() {
                             </li>
                             <li>
                                 <NavLink to="/appearance" activeClassName="active-link">Appearance</NavLink>
-                            </li>
-                            <li>
-                                |
-                            </li>
-                            <li>
-                                <NavLink to="/powerstats" activeClassName="active-link">Powerstats</NavLink>
                             </li>
                             <li>
                                 |

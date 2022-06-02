@@ -364,25 +364,14 @@ h4 {
         margin: 50px;
         border: 5px solid whitesmoke;
     }
-    .outer-container-article-2 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: url("../../assets/banner_2_powerstats.png");
-        background-position: center;
-        background-size: cover;
-        margin: 50px;
-        border: 5px solid whitesmoke;
-    }
 
     .outer-container-article-3 {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        flex-direction: row;
+        justify-content: flex-end;
         background-image: url("../../assets/banner_3_characters.png");
         background-position: center;
         background-size: cover;
-        margin: 50px;
         border: 5px solid whitesmoke;
     }
     .title-article {
