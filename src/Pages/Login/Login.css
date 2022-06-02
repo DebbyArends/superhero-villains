@@ -1,13 +1,16 @@
 .input-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family:Roboto, cursive;
     font-weight: 500;
-    margin: 10px;
+    margin: 5px;
 }
-.outer-container-user {
+.outer-container-login {
     display: flex;
     justify-content: center;
 }
-.inner-container-user {
+.inner-container-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,33 +18,31 @@
     background-position: center;
     background-size: cover;
     width: 800px;
-    height: 300px;
+    height: 350px;
     margin-top: 50px;
     border: 5px solid #ffffff;
 }
 .input-fields {
     display: flex;
-    border: 1px solid #14363C;
     flex-direction: column;
     width: 300px;
-    height: 200px;
-    justify-content: center;
+    height: 250px;
+    justify-content: flex-start;
     align-items: center;
     background-color: #ffffff;
 }
 #details-username {
-    width: 150px;
-    border: 1px solid #14363C;
+    width: 200px;
+    border: 1px solid lightgrey;
+    margin-top: 5px;
 }
 
 #details-password {
-    width: 150px;
-    border: 1px solid #14363C;
+    width: 200px;
+    border: 1px solid lightgrey;
+    margin-top: 5px;
 }
 
-.error {
- margin: 5px 0 0 90px;
-}
 
 .button-user {
     background-color: #14363C;

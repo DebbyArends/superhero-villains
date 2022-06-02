@@ -1,0 +1,63 @@
+.input-fields-register {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /*border: 1px solid #14363C;*/
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    background-color: #ffffff;
+}
+.outer-container-register {
+    display: flex;
+    justify-content: center;
+}
+.inner-container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/banner_2_powerstats.png");
+    background-position: center;
+    background-size: cover;
+    width: 800px;
+    height: 440px;
+    margin-top: 50px;
+    border: 5px solid #ffffff;
+}
+
+#details-email {
+    width: 200px;
+    border: 1px solid lightgrey;
+    margin-top: 5px;
+}
+#details-confirmPassword {
+    width: 200px;
+    border: 1px solid lightgrey;
+    margin-top: 5px;
+}
+
+.input-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff;
+}
+.user-title {
+    font-family: "Roboto Condensed",cursive;
+    font-size: 24px;
+}
+
+p.error {
+    font-family: "Roboto Condensed",cursive;
+    font-size: 12px;
+    margin-top: 2px;
+    color: red;
+}
+.button-container-user {
+    margin-top: 10px;
+}

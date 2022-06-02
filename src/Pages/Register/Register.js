@@ -24,31 +24,36 @@ function Register() {
 
     return (
 
-        <div className="outer-container-user">
-            <div className="inner-container-user">
+        <div className="outer-container-register">
+            <div className="inner-container-register">
                     <form onSubmit={handleSubmit(onFormRegister)}>
-                        <div className="input-fields">
-                            <label htmlFor="details-username"
-                                   className="input-label">
-                                Username:
-                                <input
-                                    className="fields"
-                                    type="text"
-                                    id="details-username"
-                                    {...register("username", {
-                                        required:"Username must be filled in",
-                                        minLength:{
-                                            value:6,
-                                            message:"Username must be longer than 5 chars"
-                                        },
-                                        pattern: {
-                                            value: /^[A-Z0-9_\-.]{6,}$/i,
-                                            message: "No special chars are aloud"
-                                        }
-                                    })}
-                                />
-                                {errors.username && <p className="error">{errors.username.message}</p>}
-                            </label>
+                        <div className="user-container">
+                            <h2 className="user-title">Register here!</h2>
+                        </div>
+                        <div className="input-fields-register">
+                            <div className="input-column">
+                                <label htmlFor="details-username"
+                                       className="input-label">
+                                    Username:
+                                    <input
+                                        className="fields"
+                                        type="text"
+                                        id="details-username"
+                                        {...register("username", {
+                                            required:"Username must be filled in",
+                                            minLength:{
+                                                value:6,
+                                                message:"Username must be longer than 5 chars"
+                                            },
+                                            pattern: {
+                                                value: /^[A-Z0-9_\-.]{6,}$/i,
+                                                message: "No special chars are aloud"
+                                            }
+                                        })}
+                                    />
+                                    {errors.username && <p className="error">{errors.username.message}</p>}
+                                </label>
+                            </div>
                             <label htmlFor="details-email"
                                    className="input-label">
                                 E-mail:
@@ -91,28 +96,29 @@ function Register() {
                             <label htmlFor="details-confirmPassword"
                                    className="input-label">
                                 Confirm Password:
-                                <input
-                                    className="fields"
-                                    type="password"
-                                    id="details-confirmPassword"
-                                    onPaste={(e) =>{
-                                        e.preventDefault()
-                                        return false;
-                                    }}
-                                    {...register("confirmPassword", {
-                                        required:true,
-                                        validate:(value) => value === password || "The password do not match",
-                                    })}
-                                />
-
+                                    <input
+                                        className="fields"
+                                        type="password"
+                                        id="details-confirmPassword"
+                                        onPaste={(e) =>{
+                                            e.preventDefault()
+                                            return false;
+                                        }}
+                                        {...register("confirmPassword", {
+                                            required:true,
+                                            validate:(value) => value === password || "The password do not match",
+                                        })}
+                                    />
                                 {errors.confirmPassword && <p className="error">{errors.confirmPassword.message}</p>}
                             </label>
-                            <button
-                                className="submit-button"
-                                type="submit"
+                            <div className="button-container-user">
+                                <button
+                                    className="button-user"
+                                    type="submit"
                                 >
-                                Register
-                            </button>
+                                    Register
+                                </button>
+                            </div>
                         </div>
                     </form>
             </div>

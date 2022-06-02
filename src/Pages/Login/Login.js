@@ -17,10 +17,13 @@ function LoginPage() {
     }
 
     return (
-        <div className="outer-container-user">
-            <div className="inner-container-user">
+        <div className="outer-container-login">
+            <div className="inner-container-login">
                     <form onSubmit={handleSubmit(onFormLogin)}>
-                        <fieldset className="input-fields">
+                        <div className="user-container">
+                            <h2 className="user-title">Login</h2>
+                        </div>
+                        <div className="input-fields">
                             <label htmlFor="details-username"
                                    className="input-label">
                                 Username:
@@ -53,7 +56,7 @@ function LoginPage() {
                                 type="submit">
                                 Login
                             </button>
-                        </fieldset>
+                        </div>
                     </form>
             </div>
         </div>
