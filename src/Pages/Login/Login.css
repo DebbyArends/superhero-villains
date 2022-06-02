@@ -1,0 +1,56 @@
+.input-label {
+    font-family:Roboto, cursive;
+    font-weight: 500;
+    margin: 10px;
+}
+.outer-container-user {
+    display: flex;
+    justify-content: center;
+}
+.inner-container-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/banner_2_powerstats.png");
+    background-position: center;
+    background-size: cover;
+    width: 800px;
+    height: 300px;
+    margin-top: 50px;
+    border: 5px solid #ffffff;
+}
+.input-fields {
+    display: flex;
+    border: 1px solid #14363C;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+#details-username {
+    width: 150px;
+    border: 1px solid #14363C;
+}
+
+#details-password {
+    width: 150px;
+    border: 1px solid #14363C;
+}
+
+.error {
+ margin: 5px 0 0 90px;
+}
+
+.button-user {
+    background-color: #14363C;
+    color: white;
+    font-family: "Roboto Condensed", cursive;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px;
+    padding: 7px 7px;
+    cursor: pointer;
+}
