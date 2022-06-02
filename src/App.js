@@ -5,7 +5,8 @@ import HomePage from "./Pages/Homepage/Homepage";
 import Appearance from "./Pages/Appearance/Appearance";
 import Characters from "./Pages/Characters/Characters";
 import Footer from "./Components/Footer/Footer";
-
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
 
 function App() {
   return (
@@ -20,6 +21,12 @@ function App() {
               </Route>
               <Route exact path="/characters">
                   <Characters/>
+              </Route>
+              <Route exact path="/login">
+                  <Login/>
+              </Route>
+              <Route exact path="/register">
+                  <Register/>
               </Route>
           </Switch>
           <Footer/>

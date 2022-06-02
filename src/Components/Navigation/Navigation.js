@@ -15,10 +15,12 @@ function Navigation() {
                             <img src={superheroVsVillainsLogo} className="logo-superhero-vs-villains-nav" alt="logo"/>
                         </NavLink>
                     </div>
-                    <div className="inner-container-user">
-                        <NavLink to="/user" activeClassName="active-link"><BiUserCircle
-                        className="user-icon"
-                        /></NavLink>
+                    <div className="dropdown">
+                        <BiUserCircle className="user-dropdown-menu"/>
+                        <div className="dropdown-content">
+                            <NavLink to="/login" activeClassName="active-link">Login</NavLink>
+                            <NavLink to="/register" activeClassName="active-link">Register</NavLink>
+                        </div>
                     </div>
                 </div>
                 <div className="outer-container-nav-links">
