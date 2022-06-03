@@ -6,72 +6,24 @@
     height: 160px;
     justify-content: flex-start;
     background-color: hsl(185, 60%, 67%);
-    color:  hsl(189, 50%, 16%);
+    color: hsl(189, 50%, 16%);
 }
-
 .image-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
 .inner-container-image {
     display: flex;
     width: 375px;
     justify-content: center;
     align-items: center;
 }
-
 .logo-superhero-vs-villains-nav {
     margin: 10px 0 10px 0;
     width: 200px;
     display: flex;
-}
-
-.outer-container-nav-links {
-    background: rgba(255,255,255,0.5);
-    color:  hsl(189, 50%, 16%);
-    display: flex;
-    flex-direction: row;
-    flex-basis: 30px;
-    justify-content: center;
-    align-items: center;
-}
-
-.inner-container-nav-links{
-    display: flex;
-    width: 600px;
-    justify-content: center;
-    align-items: center;
-}
-
-.list-nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-basis: 350px;
-    width: 450px;
-    margin: 0 10px 0 10px;
-    font-family: 'Neucha', cursive;
-    font-weight: bolder;
-    list-style-type: none;
-    padding: 0;
-}
-
-a:hover {
-    color:hsl(189, 50%, 35%);
-}
-
-a {
-    font-size: 16px;
-    color: hsl(189, 50%, 16%);
-    text-decoration: none
-}
-
-.active-link {
-    color: hsl(189, 50%, 16%);
-    text-decoration: underline 2px solid hsl(0, 100%, 45%);
 }
 .dropdown {
     position: relative;
@@ -87,7 +39,7 @@ a {
     position: absolute;
     background-color: #f1f1f1;
     min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
 }
 .dropdown-content a {
@@ -112,35 +64,47 @@ a {
     background-color: rgba(255,255,255,0.5);
     border-radius: 30px;
 }
-
+.outer-container-nav-links {
+    background: rgba(255,255,255,0.5);
+    color:  hsl(189, 50%, 16%);
+    display: flex;
+    flex-direction: row;
+    flex-basis: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.inner-container-nav-links{
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+.list-nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-basis: 350px;
+    width: 450px;
+    margin: 0 10px 0 10px;
+    font-family: 'Neucha', cursive;
+    font-weight: bolder;
+    list-style-type: none;
+    padding: 0;
+}
+a:hover {
+    color:hsl(189, 50%, 35%);
+}
+a {
+    font-size: 16px;
+    color: hsl(189, 50%, 16%);
+    text-decoration: none
+}
+.active-link {
+    color: hsl(189, 50%, 16%);
+    text-decoration: underline 2px solid hsl(0, 100%, 45%);
+}
 
 @media screen and (min-width: 768px) {
-    a {
-        font-size: 18px;
-        color: hsl(189, 50%, 16%);
-        text-decoration: none
-    }
-    .active-link {
-        color: hsl(189, 50%, 16%);
-        text-decoration: underline 3px solid hsl(0, 100%, 45%);
-    }
-    .list-nav-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-basis: 450px;
-        width: 450px;
-        margin: 0 10px 0 10px;
-        font-family: 'Neucha', cursive;
-        font-weight: bolder;
-        list-style-type: none;
-        padding: 0;
-    }
-    .logo-superhero-vs-villains-nav {
-        margin: 10px 0 10px 0;
-        width: 225px;
-        display: flex;
-    }
     .main-header {
         display: flex;
         flex-direction: column;
@@ -149,10 +113,11 @@ a {
         background-color: hsl(185, 60%, 67%);
         color:  hsl(189, 50%, 16%);
     }
-    .user-dropdown-menu {
-        font-size: 2.5rem;
-        color: hsl(189, 50%, 16%);
-        cursor: pointer;
+    .image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
     .inner-container-image {
         display: flex;
@@ -160,11 +125,15 @@ a {
         justify-content: center;
         align-items: center;
     }
-    .image-container {
+    .logo-superhero-vs-villains-nav {
+        margin: 10px 0 10px 0;
+        width: 225px;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+    }
+    .user-dropdown-menu {
+        font-size: 2.5rem;
+        color: hsl(189, 50%, 16%);
+        cursor: pointer;
     }
     .dropdown {
         position: relative;
@@ -175,7 +144,7 @@ a {
         position: absolute;
         background-color: #f1f1f1;
         min-width: 100px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         z-index: 1;
     }
     .dropdown-content a {
@@ -200,23 +169,20 @@ a {
         background-color: rgba(255,255,255,0.5);
         border-radius: 30px;
     }
-}
-
-@media screen and (min-width: 992px) {
     a {
-        font-size: 20px;
+        font-size: 18px;
         color: hsl(189, 50%, 16%);
         text-decoration: none
     }
     .active-link {
         color: hsl(189, 50%, 16%);
-        text-decoration: underline 4px solid hsl(0, 100%, 45%);
+        text-decoration: underline 3px solid hsl(0, 100%, 45%);
     }
     .list-nav-links {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        flex-basis: 550px;
+        flex-basis: 450px;
         width: 450px;
         margin: 0 10px 0 10px;
         font-family: 'Neucha', cursive;
@@ -224,11 +190,9 @@ a {
         list-style-type: none;
         padding: 0;
     }
-    .logo-superhero-vs-villains-nav {
-        margin: 10px 0 10px 0;
-        width: 250px;
-        display: flex;
-    }
+}
+
+@media screen and (min-width: 992px) {
     .main-header {
         display: flex;
         flex-direction: column;
@@ -237,10 +201,11 @@ a {
         background-color: hsl(185, 60%, 67%);
         color:  hsl(189, 50%, 16%);
     }
-    .user-dropdown-menu {
-        font-size: 3rem;
-        color: hsl(189, 50%, 16%);
-        cursor: pointer;
+    .image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
     .inner-container-image {
         display: flex;
@@ -248,11 +213,15 @@ a {
         justify-content: center;
         align-items: center;
     }
-    .image-container {
+    .logo-superhero-vs-villains-nav {
+        margin: 10px 0 10px 0;
+        width: 250px;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+    }
+    .user-dropdown-menu {
+        font-size: 3rem;
+        color: hsl(189, 50%, 16%);
+        cursor: pointer;
     }
     .dropdown {
         position: relative;
@@ -263,7 +232,7 @@ a {
         position: absolute;
         background-color: #f1f1f1;
         min-width: 100px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         z-index: 1;
     }
     .dropdown-content a {
@@ -287,5 +256,26 @@ a {
     .dropdown:hover .user-dropdown-menu {
         background-color: rgba(255,255,255,0.5);
         border-radius: 30px;
+    }
+    a {
+        font-size: 20px;
+        color: hsl(189, 50%, 16%);
+        text-decoration: none
+    }
+    .active-link {
+        color: hsl(189, 50%, 16%);
+        text-decoration: underline 4px solid hsl(0, 100%, 45%);
+    }
+    .list-nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-basis: 550px;
+        width: 450px;
+        margin: 0 10px 0 10px;
+        font-family: 'Neucha', cursive;
+        font-weight: bolder;
+        list-style-type: none;
+        padding: 0;
     }
 }

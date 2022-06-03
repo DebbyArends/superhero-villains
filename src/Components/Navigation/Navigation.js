@@ -10,7 +10,7 @@ function Navigation() {
         <nav className="main-header">
             <div className="image-container">
                 <div className="inner-container-image">
-                    <NavLink exact to="/" activeClassName="active-link">
+                    <NavLink exact to="/">
                         <img src={superheroVsVillainsLogo} className="logo-superhero-vs-villains-nav" alt="logo"/>
                     </NavLink>
                 </div>

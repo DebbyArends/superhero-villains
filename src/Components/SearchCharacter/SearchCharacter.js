@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import "./SearchCharacter.css";
-import {useForm} from "react-hook-form";
 import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiographyCard";
 
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
     const [superheroData, setSuperheroData] = useState([]);
     const apiKey = "10228880912034222";
-    const {register, formState: {errors}} = useForm();
 
     async function searchSuperHeroes() {
         try {
@@ -27,14 +25,13 @@ function SearchCharacter() {
         if (searchTerm.length === 0) {
             setSuperheroData([]);
         }
-        if (searchTerm.length > 3) {
+        if (searchTerm.length > 2) {
             searchSuperHeroes();
         }
         if (searchText !== searchTerm) {
             console.log("dit karakter bestaat niet");
         }
     }
-
 
     return (
         <>
@@ -44,17 +41,11 @@ function SearchCharacter() {
                     type="search"
                     placeholder="Search your superhero or villain..."
                     autoComplete="off"
-                    {...register("searchBar",
-                        {
-                            onChange: (e) => handleChange(e),
-                            value: searchText,
-                            minLength: {
-                                value: 3,
-                                message: "Search name must be longer than 2 characters"
-                            },
-                        })}
+                    name="searchBar"
+                    onChange={handleChange}
+                    value={searchText}
+                    minLength="3"
                 />
-                {errors.searchBar && <p className="error">{errors.searchBar.message}</p>}
             </div>
             <div className="outer-container-character">
                 {superheroData && superheroData.map((character) =>

@@ -5,13 +5,13 @@
     align-items: center;
     background-color: white;
     margin: 15px 0;
-    border: 1px solid #14363C;
+    border: 1px solid hsl(189, 50%, 16%);
 }
 .image-appearance {
     width: 250px;
     height: 250px;
     margin: 20px 20px 0 20px;
-    border: 1px solid #14363C;
+    border: 1px solid hsl(189, 50%, 16%);
 }
 .container-article-text {
     display: flex;
@@ -19,19 +19,19 @@
     padding: 20px;
 }
 .title-article {
-    color: #14363C;
+    color: hsl(189, 50%, 16%);
     font-family: Neucha, cursive;
     padding: 10px 0;
 }
 .description {
-    color: #14363C;
+    color: hsl(189, 50%, 16%);
     font-family: Neucha, cursive;
     font-size: 14px;
     padding-left: 20px;
     margin-bottom: 10px;
 }
 .page-title {
-    color: #14363C;
+    color: hsl(189, 50%, 16%);
     font-family: Roboto, cursive;
     font-weight: bold;
     font-size: 30px;
@@ -44,7 +44,7 @@
     justify-content: center;
 }
 .button-banner {
-    background-color: #14363C;
+    background-color: hsl(189, 50%, 16%);
     color: white;
     font-family: "Roboto Condensed", cursive;
     font-size: 16px;
@@ -62,13 +62,13 @@
         align-items: center;
         background-color: white;
         margin: 20px;
-        border: 1px solid #14363C;
+        border: 1px solid hsl(189, 50%, 16%);
     }
     .image-appearance {
         width: 300px;
         height: 300px;
         margin: 20px;
-        border: 1px solid #14363C;
+        border: 1px solid hsl(189, 50%, 16%);
     }
     .container-article-text {
         display: flex;
@@ -76,25 +76,30 @@
         padding: 20px;
     }
     .title-article {
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
         font-family: Neucha, cursive;
         font-size: 26px;
         padding: 12px 0;
     }
     .description {
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
         font-family: Neucha, cursive;
         font-size: 16px;
     }
     .page-title {
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
         font-family: Roboto, cursive;
         font-weight: bold;
         font-size: 34px;
         margin-bottom: 30px;
     }
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
     .button-banner {
-        background-color: #14363C;
+        background-color: hsl(189, 50%, 16%);
         color: white;
         font-family: "Roboto Condensed", cursive;
         font-size: 18px;
@@ -113,13 +118,13 @@
         align-items: center;
         background-color: white;
         margin: 20px;
-        border: 1px solid #14363C;
+        border: 1px solid hsl(189, 50%, 16%);
     }
     .image-appearance {
         width: 300px;
         height: 300px;
         margin: 20px;
-        border: 1px solid #14363C;
+        border: 1px solid hsl(189, 50%, 16%);
     }
     .container-article-text {
         display: flex;
@@ -127,25 +132,30 @@
         padding: 20px;
     }
     .title-article {
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
         font-family: Neucha, cursive;
         font-size: 28px;
         padding-bottom: 50px;
     }
     .description {
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
         font-family: Neucha, cursive;
         font-size: 16px;
     }
     .page-title {
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
         font-family: Roboto, cursive;
         font-weight: bold;
         font-size: 34px;
         margin-bottom: 30px;
     }
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
     .button-banner {
-        background-color: #14363C;
+        background-color: hsl(189, 50%, 16%);
         color: white;
         font-family: "Roboto Condensed", cursive;
         font-size: 18px;

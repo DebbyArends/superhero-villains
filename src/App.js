@@ -19,17 +19,17 @@ function App() {
               <Route exact path="/">
                   <HomePage/>
               </Route>
-              <Route exact path="/appearance">
+              <Route path="/appearance">
                   {/*{ isAuth ? <Appearance/> : <NoAccessPrivateRoute/>}*/}
                   <Appearance/>
               </Route>
-              <Route exact path="/characters">
+              <Route path="/characters">
                   <Characters/>
               </Route>
-              <Route exact path="/login">
+              <Route path="/login">
                   <Login/>
               </Route>
-              <Route exact path="/register">
+              <Route path="/register">
                   <Register/>
               </Route>
           </Switch>

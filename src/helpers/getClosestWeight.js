@@ -12,7 +12,6 @@ function getClosestWeight(_WeightInKg, _filter) {
     });
     return(
         closest
-        // console.log(heightCharacters, numbers, closest)
     )
 }
 

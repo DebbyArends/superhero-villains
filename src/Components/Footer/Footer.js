@@ -24,7 +24,7 @@ function Footer() {
                     <div className="inner-container-links">
                         <div className="list-links">
                             <div>
-                                <ul className="list-unstyled">
+                                <ul className="list-not-styled">
                                     <li>
                                         <IoIosArrowForward
                                             className="arrow-forward"/>
@@ -34,7 +34,7 @@ function Footer() {
                                 </ul>
                             </div>
                             <div className="list-links-social">
-                                <ul className="list-unstyled">
+                                <ul className="list-not-styled">
                                     <li>
                                         <IoIosArrowForward
                                             className="arrow-forward"/>
@@ -59,7 +59,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="container-logo">
-                    <NavLink exact to="/" activeClassName="active-link">
+                    <NavLink exact to="/">
                         <img src={superheroVsVillainsLogo} className="logo-superhero-vs-villains-nav" alt="logo"/>
                     </NavLink>
                 </div>

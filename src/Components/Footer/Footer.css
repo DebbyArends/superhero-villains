@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: flex-end;
     background-color: hsl(185, 60%, 67%);
-    color: #ffffff;
+    color: white;
     margin-top: 60px;
 }
-
 .outer-container-title {
     background: rgba(255,255,255,0.5);
     margin-top: 20px;
@@ -17,12 +16,10 @@
     justify-content: flex-end;
     align-items: flex-end;
 }
-
 .inner-container-title {
     width: 600px;
     justify-content: space-around;
 }
-
 .list-title {
     display: flex;
     flex-direction: row;
@@ -35,17 +32,14 @@
     list-style-type: none;
     padding: 0;
 }
-
 .outer-container-links {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
-
 .inner-container-links {
     width: 600px;
 }
-
 .list-links {
     display: flex;
     flex-direction: row;
@@ -54,53 +48,40 @@
     width: 450px;
     padding-top: 10px;
 }
-
-.list-unstyled {
+.list-not-styled {
     display: flex;
     flex-direction: column;
     flex-basis: 30px;
-    color: #ffffff;
+    color: white;
     list-style-type: none
 }
-
+.arrow-forward {
+    width: 11px;
+    height: 11px;
+}
 .list-items {
     color: white;
     padding: 10px;
     font-size: 12px;
 }
-
-
 .list-links-social {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
-
 .container-logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-
 .logo-superhero-vs-villains {
     margin-bottom: 20px;
     width: 200px;
     display: flex;
 }
 
-.arrow-forward {
-    width: 11px;
-    height: 11px;
-}
-
-
 @media screen and (min-width: 768px) {
-    .logo-superhero-vs-villains {
-        margin-bottom: 20px;
-        width: 250px;
-        display: flex;
-    }
     .list-title {
         display: flex;
         flex-direction: row;
@@ -122,15 +103,15 @@
         width: 13px;
         height: 13px;
     }
+    .logo-superhero-vs-villains {
+        margin-bottom: 20px;
+        width: 250px;
+        display: flex;
+    }
 }
 
 
 @media screen and (min-width: 992px) {
-    .logo-superhero-vs-villains {
-        margin-bottom: 20px;
-        width: 300px;
-        display: flex;
-    }
     .list-title {
         display: flex;
         flex-direction: row;
@@ -151,5 +132,10 @@
     .arrow-forward {
         width: 15px;
         height: 15px;
+    }
+    .logo-superhero-vs-villains {
+        margin-bottom: 20px;
+        width: 300px;
+        display: flex;
     }
 }
