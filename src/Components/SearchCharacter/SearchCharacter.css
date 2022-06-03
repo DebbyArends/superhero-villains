@@ -31,9 +31,6 @@
     background-size: cover;
 }
 
-h1  {
-    font-family: "Roboto Condensed", cursive;
-}
 
 @media screen and (min-width: 768px) {
     .main {
@@ -65,9 +62,6 @@ h1  {
         background-position: center;
         background-size: cover;
     }
-    h1  {
-        font-family: "Roboto Condensed", cursive;
-    }
 }
 
 @media screen and (min-width: 992px) {
@@ -96,8 +90,5 @@ h1  {
         background-image: url("../../assets/banner_3_characters.png");
         background-position: center;
         background-size: cover;
-    }
-    h1  {
-        font-family: "Roboto Condensed", cursive;
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
+import './Banner.css'
 
 function Banner({ classname, image, alternateText, title, description, pageTitle, location, buttonTitle}) {
     const history = useHistory()

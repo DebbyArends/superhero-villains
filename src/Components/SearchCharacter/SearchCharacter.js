@@ -1,26 +1,26 @@
 import React, {useState} from 'react';
 import axios from "axios";
-import "./SearchCharacter.css"
+import "./SearchCharacter.css";
 import {useForm} from "react-hook-form";
 import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiographyCard";
 
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
     const [superheroData, setSuperheroData] = useState([]);
-    const apiKey="10228880912034222"
-    const {register,formState:{errors}} = useForm()
+    const apiKey = "10228880912034222";
+    const {register, formState: {errors}} = useForm();
 
-    async function searchSuperHeroes(){
-            try{
-                const response = await axios.get(`https://www.superheroapi.com/api.php/${apiKey}/search/${searchText}`);
-                console.log(response.data.results)
-                setSuperheroData(response.data.results);
-            }catch (e) {
-                console.error(e)
-            }
+    async function searchSuperHeroes() {
+        try {
+            const response = await axios.get(`https://www.superheroapi.com/api.php/${apiKey}/search/${searchText}`);
+            console.log(response.data.results);
+            setSuperheroData(response.data.results);
+        } catch (e) {
+            console.error(e);
         }
+    }
 
-    function handleChange (e) {
+    function handleChange(e) {
         const searchTerm = e.target.value;
 
         setSearchText(searchTerm);
@@ -30,30 +30,30 @@ function SearchCharacter() {
         if (searchTerm.length > 3) {
             searchSuperHeroes();
         }
-        if (searchText !== searchTerm){
+        if (searchText !== searchTerm) {
             console.log("dit karakter bestaat niet");
         }
     }
 
 
-
-    return(
+    return (
         <>
             <div className="main">
-                    <input
-                        id="searchBar"
-                        type="search"
-                        placeholder="Search your superhero or villain..."
-                        autoComplete="off"
-                        {...register("searchBar",
-                            {onChange:(e) => handleChange(e),
-                                value:searchText,
-                                minLength:{
-                                value:3,
-                                  message: "Search name must be longer than 2 characters"
-                                },
-                            })}
-                    />
+                <input
+                    id="searchBar"
+                    type="search"
+                    placeholder="Search your superhero or villain..."
+                    autoComplete="off"
+                    {...register("searchBar",
+                        {
+                            onChange: (e) => handleChange(e),
+                            value: searchText,
+                            minLength: {
+                                value: 3,
+                                message: "Search name must be longer than 2 characters"
+                            },
+                        })}
+                />
                 {errors.searchBar && <p className="error">{errors.searchBar.message}</p>}
             </div>
             <div className="outer-container-character">
@@ -84,7 +84,7 @@ function SearchCharacter() {
                 )}
             </div>
         </>
-    )
+    );
 }
 
-export default SearchCharacter
+export default SearchCharacter;

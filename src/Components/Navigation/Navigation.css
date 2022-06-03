@@ -66,7 +66,6 @@ a:hover {
 a {
     font-size: 16px;
     color: hsl(189, 50%, 16%);
-    border-bottom: hsl(189, 50%, 16%);
     text-decoration: none
 }
 
@@ -74,14 +73,14 @@ a {
     color: hsl(189, 50%, 16%);
     text-decoration: underline 2px solid hsl(0, 100%, 45%);
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 .user-dropdown-menu {
     font-size: 2rem;
     color: hsl(189, 50%, 16%);
     cursor: pointer;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
 }
 .dropdown-content {
     display: none;
@@ -119,7 +118,6 @@ a {
     a {
         font-size: 18px;
         color: hsl(189, 50%, 16%);
-        border-bottom: hsl(189, 50%, 16%);
         text-decoration: none
     }
     .active-link {
@@ -208,7 +206,6 @@ a {
     a {
         font-size: 20px;
         color: hsl(189, 50%, 16%);
-        border-bottom: hsl(189, 50%, 16%);
         text-decoration: none
     }
     .active-link {

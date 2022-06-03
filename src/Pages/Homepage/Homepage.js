@@ -9,7 +9,6 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
 
 
 function HomePage() {
-
     return (
         <>
             <div>
@@ -27,7 +26,7 @@ function HomePage() {
                         <FaQuoteLeft
                             className="quote-icon"
                         />
-                        <h4 className="quote">Me, too!</h4>
+                        <h4>Me, too!</h4>
                         <FaQuoteRight
                             className="quote-icon"
                         />
@@ -49,7 +48,7 @@ function HomePage() {
                 buttonTitle="Do the quiz"
             />
             <Banner
-                classname="outer-container-article-3"
+                classname="outer-container-article-2"
                 image={dcMarvelMultiverse}
                 alternateText="Dc and Marvel characters"
                 description="Search a specific"

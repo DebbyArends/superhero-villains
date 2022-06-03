@@ -31,12 +31,6 @@
     justify-content: center;
 }
 
-/*.quiz-title {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
 
 .question-section {
     display: flex;
@@ -114,12 +108,6 @@ p {
     color: #14363C;
     margin: 20px 0;
 }
-
-/*.answer-section {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    column-count: 2;*/
-/*}*/
 
 .button-container-quiz {
     display: flex;
@@ -287,48 +275,6 @@ input {
     background-size: cover;
 }
 
-.inner-stats-container {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    margin: 35px 35px 10px 35px;
-    padding: 15px;
-    position: relative;
-}
-
-.image {
-    width: 250px;
-    height: 340px;
-}
-
-.outer-biography-container {
-    display: flex;
-    align-items: center;
-}
-
-.inner-biography-container {
-    width: 350px;
-    height: auto;
-    margin-bottom: 15px;
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.border3 {
-    border: 2px solid red;
-}
-
-.border4 {
-    border: 2px solid blue;
-}
-
-.border5 {
-    border: 2px solid green;
-}
-
 
 @media screen and (min-width: 768px) {
     .button-container-quiz {
@@ -346,17 +292,6 @@ input {
         border: none;
         padding: 7px 7px;
         cursor: pointer;
-    }
-    .inner-stats-container {
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
-        margin: 35px 20px 10px 20px;
-        padding: 15px;
-        position: relative;
     }
     #eye-color {
         margin: 15px;
@@ -402,7 +337,6 @@ input {
         justify-content: center;
         align-items: center;
     }
-
     .inner-container-images {
         display: flex;
         flex-direction: row;
@@ -426,10 +360,6 @@ input {
         margin-bottom: 15px;
         padding: 10px 20px;
         background-color: #ffffff;
-    }
-    .right {
-        display: flex;
-        align-items: center;
     }
     .character-result {
         margin: 15px 0;
@@ -501,7 +431,10 @@ input {
     .image-eye {
         width: 150px;
     }
-
+    .right {
+        display: flex;
+        justify-content: flex-start;
+    }
     .result-text {
         background-color: #ffffff;
         margin-top: 20px;
@@ -541,30 +474,10 @@ input {
         width: 225px;
         margin: 20px;
     }
-    .inner-biography-container {
-        width: 350px;
-        height: auto;
-        margin-bottom: 15px;
-        padding: 20px;
-        background-color: #ffffff;
-    }
+
 }
 
 @media screen and (min-width: 992px) {
-    .outer-biography-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-    }
-    .inner-biography-container {
-        width: 500px;
-        height: 650px;
-        padding: 20px;
-        margin: 0;
-        background-color: #ffffff;
-    }
     .image-weight {
         width: 225px;
     }
@@ -744,18 +657,6 @@ input {
         border: none;
         padding: 10px 10px;
         cursor: pointer;
-    }
-    .inner-stats-container {
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
-        height: 650px;
-        margin: 0 20px;
-        padding: 15px;
-        position: relative;
     }
     .error {
         font-family: "Roboto Condensed",cursive;

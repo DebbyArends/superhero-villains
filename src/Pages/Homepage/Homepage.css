@@ -2,12 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Neucha&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .homepage-banner {
-    width: 100%;
+    width: 100vw;
     position: relative;
 }
-
 #banner-h1 {
-    color: white;
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 26px;
     font-weight: bolder;
@@ -15,9 +14,8 @@
     left: 38px;
     top: 26%;
 }
-
 #banner-h2 {
-    color: white;
+    color: #ffffff;
     font-family: 'Neucha', cursive;
     font-size: 13px;
     font-weight: 200;
@@ -25,15 +23,6 @@
     top: 23%;
     position: absolute;
 }
-
-
-.image-appearance {
-    width: 250px;
-    height: 250px;
-    margin: 20px 20px 0 20px;
-    border: 1px solid #14363C;
-}
-
 .outer-container-article-1 {
     display: flex;
     flex-direction: column;
@@ -49,79 +38,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-image: url("../../assets/banner_2_powerstats.png");
-    background-position: center;
-    background-size: cover;
-    margin: 40px;
-    border: 5px solid whitesmoke;
-}
-
-.outer-container-article-3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-image: url("../../assets/banner_3_characters.png");
     background-position: center;
     background-size: cover;
     margin: 40px;
     border: 5px solid whitesmoke;
 }
-.inner-container-article {
-    display: flex;
-    flex-direction: column;
-    flex-basis: auto;
-    align-items: center;
-    background-color: white;
-    margin: 15px 0;
-    border: 1px solid #14363C;
-}
-
-.container-article-text {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-.container-article1 {
-    display: flex;
-    flex-direction: row;
-    background-color: #61dafb;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.button-banner {
-    background-color: #14363C;
-    color: white;
-    font-family: "Roboto Condensed", cursive;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    margin-top: 30px;
-    padding: 10px 10px;
-    cursor: pointer;
-}
-.description {
-    color: #14363C;
-    font-family: Neucha, cursive;
-    font-size: 14px;
-    padding-left: 20px;
-    margin-bottom: 10px;
-}
-
-.page-title {
-    color: #14363C;
-    font-family: Roboto, cursive;
-    font-weight: bold;
-    font-size: 30px;
-    padding-left: 40px;
-    margin-bottom: 20px;
-}
-
 .main-article {
     display: flex;
     flex-direction: column;
@@ -129,40 +51,29 @@
     align-items: center;
     margin: 0 20px;
 }
-
-.title-article {
-    color: #14363C;
-    font-family: Neucha, cursive;
-    padding: 10px 0;
-}
-
 .description-article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #14363C;
+    color: hsl(189, 50%, 16%);
 }
-
 p {
     font-family: Roboto,cursive;
     font-size: 12px;
 }
-
 h2 {
-    color: #14363C;
+    color: hsl(189, 50%, 16%);
     font-family: "Roboto Condensed",cursive;
     font-size: 26px;
     padding: 10px 0;
 }
-
 h4 {
     font-family: Neucha,cursive;
     font-size: 16px;
     padding: 0 10px;
-    color: #14363C;
+    color: hsl(189, 50%, 16%);
 }
-
 .quote-container {
     display: flex;
     flex-direction: row;
@@ -174,8 +85,12 @@ h4 {
 }
 
 @media screen and (min-width: 768px) {
+    .homepage-banner {
+        width: 100vw;
+        position: relative;
+    }
     #banner-h1 {
-        color: white;
+        color: #ffffff;
         font-family: 'Roboto', sans-serif;
         font-size: 40px;
         font-weight: bolder;
@@ -184,7 +99,7 @@ h4 {
         top: 29%;
     }
     #banner-h2 {
-        color: white;
+        color: #ffffff;
         font-family: 'Neucha', cursive;
         font-size: 20px;
         font-weight: 200;
@@ -192,27 +107,6 @@ h4 {
         top: 26%;
         position: absolute;
     }
-    .inner-container-article {
-        display: flex;
-        flex-direction: row;
-        flex-basis: auto;
-        align-items: center;
-        background-color: white;
-        margin: 20px;
-        border: 1px solid #14363C;
-    }
-    .image-appearance {
-        width: 300px;
-        height: 300px;
-        margin: 20px;
-        border: 1px solid #14363C;
-    }
-    .container-article-text {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
-
     .outer-container-article-1 {
         display: flex;
         flex-direction: column;
@@ -227,17 +121,6 @@ h4 {
     .outer-container-article-2 {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        background-image: url("../../assets/banner_2_powerstats.png");
-        background-position: center;
-        background-size: cover;
-        margin: 50px;
-        border: 5px solid whitesmoke;
-    }
-
-    .outer-container-article-3 {
-        display: flex;
-        flex-direction: column;
         align-items: flex-end;
         background-image: url("../../assets/banner_3_characters.png");
         background-position: center;
@@ -245,43 +128,13 @@ h4 {
         margin: 50px;
         border: 5px solid whitesmoke;
     }
-    .description {
-        color: #14363C;
-        font-family: Neucha, cursive;
-        font-size: 16px;
-    }
-
-    .page-title {
-        color: #14363C;
-        font-family: Roboto, cursive;
-        font-weight: bold;
-        font-size: 34px;
-        margin-bottom: 30px;
-    }
-    .button-banner {
-        background-color: #14363C;
-        color: white;
-        font-family: "Roboto Condensed", cursive;
-        font-size: 18px;
-        border-radius: 5px;
-        border: none;
-        margin-top: 30px;
-        padding: 10px 10px;
-    }
-    .title-article {
-        color: #14363C;
-        font-family: Neucha, cursive;
-        font-size: 26px;
-        padding: 12px 0;
-    }
     .description-article {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
     }
-
     .main-article {
         display: flex;
         flex-direction: column;
@@ -292,7 +145,7 @@ h4 {
         font-family: Neucha,cursive;
         font-size: 18px;
         padding: 0 10px;
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
     }
     .quote-container {
         display: flex;
@@ -314,8 +167,12 @@ h4 {
 }
 
 @media screen and (min-width: 992px) {
+    .homepage-banner {
+        width: 100vw;
+        position: relative;
+    }
     #banner-h1 {
-        color: white;
+        color: #ffffff;
         font-family: 'Roboto', sans-serif;
         font-size: 54px;
         font-weight: bolder;
@@ -324,7 +181,7 @@ h4 {
         top: 33%;
     }
     #banner-h2 {
-        color: white;
+        color: #ffffff;
         font-family: 'Neucha', cursive;
         font-size: 27px;
         font-weight: 200;
@@ -332,27 +189,6 @@ h4 {
         top: 29%;
         position: absolute;
     }
-    .inner-container-article {
-        display: flex;
-        flex-direction: row;
-        flex-basis: auto;
-        align-items: center;
-        background-color: white;
-        margin: 20px;
-        border: 1px solid #14363C;
-    }
-    .image-appearance {
-        width: 300px;
-        height: 300px;
-        margin: 20px;
-        border: 1px solid #14363C;
-    }
-    .container-article-text {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
-
     .outer-container-article-1 {
         display: flex;
         flex-direction: column;
@@ -364,8 +200,7 @@ h4 {
         margin: 50px;
         border: 5px solid whitesmoke;
     }
-
-    .outer-container-article-3 {
+    .outer-container-article-2 {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -373,36 +208,6 @@ h4 {
         background-position: center;
         background-size: cover;
         border: 5px solid whitesmoke;
-    }
-    .title-article {
-        color: #14363C;
-        font-family: Neucha, cursive;
-        font-size: 28px;
-        padding-bottom: 50px;
-    }
-
-    .description {
-        color: #14363C;
-        font-family: Neucha, cursive;
-        font-size: 16px;
-    }
-
-    .page-title {
-        color: #14363C;
-        font-family: Roboto, cursive;
-        font-weight: bold;
-        font-size: 34px;
-        margin-bottom: 30px;
-    }
-    .button-banner {
-        background-color: #14363C;
-        color: white;
-        font-family: "Roboto Condensed", cursive;
-        font-size: 18px;
-        border-radius: 5px;
-        border: none;
-        margin-top: 30px;
-        padding: 10px 10px;
     }
     .title-article {
         display: flex;
@@ -418,7 +223,7 @@ h4 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
     }
     .main-article {
         display: flex;
@@ -430,7 +235,7 @@ h4 {
         font-family: Neucha,cursive;
         font-size: 20px;
         padding: 0 10px;
-        color: #14363C;
+        color: hsl(189, 50%, 16%);
     }
     .quote-container {
         display: flex;

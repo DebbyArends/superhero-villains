@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route } from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 import Navigation from "./Components/Navigation/Navigation";
 import HomePage from "./Pages/Homepage/Homepage";
 import Appearance from "./Pages/Appearance/Appearance";
@@ -7,8 +7,11 @@ import Characters from "./Pages/Characters/Characters";
 import Footer from "./Components/Footer/Footer";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+// import {useContext} from "react";
+// import NoAccessPrivateRoute from "./Pages/NoAccessPrivateRoute/NoAccessPrivateRoute";
 
 function App() {
+    // const {isAuth} = useContext();
   return (
       <div>
           <Navigation/>
@@ -17,6 +20,7 @@ function App() {
                   <HomePage/>
               </Route>
               <Route exact path="/appearance">
+                  {/*{ isAuth ? <Appearance/> : <NoAccessPrivateRoute/>}*/}
                   <Appearance/>
               </Route>
               <Route exact path="/characters">
