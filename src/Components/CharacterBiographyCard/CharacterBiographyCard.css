@@ -1,0 +1,137 @@
+.image {
+    width: 250px;
+    height: 340px;
+}
+
+table {
+    width: 250px;
+    margin-top: 5px;
+}
+
+td{
+    border: 1px solid lightgray;
+    padding: 5px;
+    font-family: "Roboto Condensed",cursive;
+    color: #14363C;
+    font-size: 13px;
+}
+
+.data-center {
+    display: flex;
+    justify-content: center;
+    font-family: Neucha, cursive;
+    font-weight: bolder;
+    color: #14363C;
+    font-size: 13px;
+}
+
+.data-biography {
+    font-family: Neucha, cursive;
+    font-weight: bolder;
+    color: #14363C;
+    font-size: 13px;
+}
+
+.table-biography {
+    width: 250px;
+    margin-top: 20px;
+}
+
+.full-name {
+    color: grey;
+    font-family: "Roboto Condensed",cursive;
+    font-size: 16px;
+    margin: 1px;
+}
+
+@media screen and (min-width: 768px) {
+    .image {
+        width: 250px;
+        height: 340px;
+    }
+
+    table {
+        width: 250px;
+        margin-top: 5px;
+    }
+
+    td{
+        border: 1px solid lightgray;
+        padding: 5px;
+        font-family: "Roboto Condensed",cursive;
+        color: #14363C;
+        font-size: 14px;
+    }
+
+    .data-center {
+        display: flex;
+        justify-content: center;
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+        font-size: 14px;
+    }
+
+    .data-biography {
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+        font-size: 14px;
+    }
+    .table-biography {
+        width: 250px;
+        margin-top: 20px;
+    }
+
+    .full-name {
+        color: grey;
+        font-family: "Roboto Condensed",cursive;
+        font-size: 16px;
+        margin: 1px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .image {
+        width: 250px;
+        height: 340px;
+    }
+
+    table {
+        width: 250px;
+        margin-top: 5px;
+    }
+
+    td{
+        border: 1px solid lightgray;
+        padding: 5px;
+        font-family: "Roboto Condensed",cursive;
+        color: #14363C;
+    }
+
+    .data-center {
+        display: flex;
+        justify-content: center;
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+        font-size: 15px;
+    }
+
+    .data-biography {
+        font-family: Neucha, cursive;
+        font-weight: bolder;
+        color: #14363C;
+    }
+    .table-biography {
+        width: 450px;
+        margin-top: 20px;
+    }
+
+    .full-name {
+        color: grey;
+        font-family: "Roboto Condensed",cursive;
+        font-size: 16px;
+        margin: 1px;
+    }
+}

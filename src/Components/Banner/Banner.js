@@ -4,7 +4,6 @@ import {useHistory} from "react-router-dom";
 function Banner({ classname, image, alternateText, title, description, pageTitle, location, buttonTitle}) {
     const history = useHistory()
     return (
-        <>
             <section className={classname}>
                 <article className="inner-container-article">
                     <img src={image} alt={alternateText} className="image-appearance"/>
@@ -24,7 +23,6 @@ function Banner({ classname, image, alternateText, title, description, pageTitle
                     </div>
                 </article>
             </section>
-        </>
     );
 }
 

@@ -1,10 +1,11 @@
 import React from "react";
-import './Footer.css'
-import superheroVsVillainsLogo from "../../assets/superhero-vs-villains.png"
-import { IoIosArrowForward } from 'react-icons/io'
+import './Footer.css';
+import superheroVsVillainsLogo from "../../assets/superhero-vs-villains.png";
+import {IoIosArrowForward} from 'react-icons/io';
+import {NavLink} from "react-router-dom";
 
 function Footer() {
-    return(
+    return (
         <>
             <div className="main-footer">
                 <div className="outer-container-title">
@@ -26,8 +27,9 @@ function Footer() {
                                 <ul className="list-unstyled">
                                     <li>
                                         <IoIosArrowForward
-                                        className="arrow-forward"/>
-                                        <a href="mailto:debby_arends@live.nl?subject=Contact Debby Arends" target="_blank" rel="noreferrer" className="list-items">Mail me !</a>
+                                            className="arrow-forward"/>
+                                        <a href="mailto:debby_arends@live.nl?subject=Contact Debby Arends"
+                                           target="_blank" rel="noreferrer" className="list-items">Mail me !</a>
                                     </li>
                                 </ul>
                             </div>
@@ -36,17 +38,20 @@ function Footer() {
                                     <li>
                                         <IoIosArrowForward
                                             className="arrow-forward"/>
-                                        <a href="https://www.linkedin.com/in/debby-arends-92a97b55/" target="_blank" rel="noreferrer" className="list-items">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/debby-arends-92a97b55/" target="_blank"
+                                           rel="noreferrer" className="list-items">LinkedIn</a>
                                     </li>
                                     <li>
                                         <IoIosArrowForward
                                             className="arrow-forward"/>
-                                        <a href="https://www.instagram.com/kinnaris_manohara/" target="_blank" rel="noreferrer" className="list-items">Instagram</a>
+                                        <a href="https://www.instagram.com/kinnaris_manohara/" target="_blank"
+                                           rel="noreferrer" className="list-items">Instagram</a>
                                     </li>
                                     <li>
                                         <IoIosArrowForward
                                             className="arrow-forward"/>
-                                        <a href="https://www.facebook.com/debby.arends/" target="_blank" rel="noreferrer" className="list-items">Facebook</a>
+                                        <a href="https://www.facebook.com/debby.arends/" target="_blank"
+                                           rel="noreferrer" className="list-items">Facebook</a>
                                     </li>
                                 </ul>
                             </div>
@@ -54,7 +59,9 @@ function Footer() {
                     </div>
                 </div>
                 <div className="container-logo">
-                    <img src={superheroVsVillainsLogo} alt="Logo superhero vs villains" className="logo-superhero-vs-villains"/>
+                    <NavLink exact to="/" activeClassName="active-link">
+                        <img src={superheroVsVillainsLogo} className="logo-superhero-vs-villains-nav" alt="logo"/>
+                    </NavLink>
                 </div>
             </div>
         </>

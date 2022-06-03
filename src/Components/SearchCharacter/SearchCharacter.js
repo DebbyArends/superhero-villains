@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from "axios";
 import "./SearchCharacter.css"
 import {useForm} from "react-hook-form";
+import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiographyCard";
 
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
@@ -55,78 +56,33 @@ function SearchCharacter() {
                     />
                 {errors.searchBar && <p className="error">{errors.searchBar.message}</p>}
             </div>
-            <div className="outer-container-character" >
-                {superheroData && superheroData.map((oneCharacter) =>
-                            <div className="search-result" key={oneCharacter.id}>
-                                <div className="outer-image-stats-container">
-                                    <div className="inner-image-stats-container">
-                                        <img src={oneCharacter.image.url} alt={oneCharacter.name} className="image"/>
-                                        <table className="table">
-                                            <tbody>
-                                            <tr>
-                                                <td className="data-center">Intelligence: </td>
-                                                <td>{oneCharacter.powerstats.intelligence}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="data-center">Strength: </td>
-                                                <td>{oneCharacter.powerstats.strength}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="data-center">Speed: </td>
-                                                <td>{oneCharacter.powerstats.speed}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="data-center">Durability: </td>
-                                                <td>{oneCharacter.powerstats.durability}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="data-center">Power: </td>
-                                                <td>{oneCharacter.powerstats.power}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="data-center">Combat: </td>
-                                                <td>{oneCharacter.powerstats.combat}</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div className="right">
-                                    <div className="inner-container-biography">
-                                        <h1>{oneCharacter.name}</h1>
-                                        <span className="full-name">{oneCharacter.biography['full-name']}</span>
-                                        <div className="biography">
-                                            <table className="table-biography">
-                                                <tbody>
-                                                <tr>
-                                                    <td className="data-biography">Aliases: </td>
-                                                    <td>{oneCharacter.biography.aliases.join(', ')}</td>
-                                                    {/*<td>{aliases()}</td>*/}
-                                                </tr>
-                                                <tr>
-                                                    <td className="data-biography">Place of birth: </td>
-                                                    <td>{oneCharacter.biography["place-of-birth"]}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="data-biography">Relatives: </td>
-                                                    <td>{oneCharacter.connections.relatives}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="data-biography">First appearance: </td>
-                                                    <td>{oneCharacter.biography["first-appearance"]}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="data-biography">Publisher: </td>
-                                                    <td>{oneCharacter.biography.publisher}</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                            </div>
+            <div className="outer-container-character">
+                {superheroData && superheroData.map((character) =>
+                    <CharacterBiographyCard
+                        key={character.id}
+                        classname="search-result"
+                        image={character.image.url}
+                        characterName={character.name}
+                        intelligence={character.powerstats.intelligence}
+                        strength={character.powerstats.strength}
+                        speed={character.powerstats.speed}
+                        durability={character.powerstats.durability}
+                        power={character.powerstats.power}
+                        combat={character.powerstats.combat}
+                        fullName={character.biography['full-name']}
+                        gender={character.appearance.gender}
+                        height={character.appearance.height[1]}
+                        hairColor={character.appearance.hairColor}
+                        weight={character.appearance.weight[1]}
+                        eyeColor={character.appearance.eyeColor}
+                        aliases={character.biography.aliases.join(', ')}
+                        placeOfBirth={character.biography["place-of-birth"]}
+                        relatives={character.connections.relatives}
+                        firstAppearance={character.biography["first-appearance"]}
+                        publisher={character.biography.publisher}
+                    />
+                )}
+            </div>
         </>
     )
 }
