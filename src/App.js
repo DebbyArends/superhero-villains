@@ -10,6 +10,7 @@ import Register from "./Pages/Register/Register";
 import {useContext} from "react";
 import NoAccessPrivateRoute from "./Pages/NoAccessPrivateRoute/NoAccessPrivateRoute";
 import {AuthContext} from "./AuthContext/AuthContext";
+import AveragePeople from "./Pages/AveragePeople/AveragePeople";
 
 function App() {
     const {isAuth} = useContext(AuthContext);
@@ -32,6 +33,9 @@ function App() {
               </Route>
               <Route path="/register">
                   <Register/>
+              </Route>
+              <Route path="/average-people">
+                  <AveragePeople/>
               </Route>
           </Switch>
           <Footer/>
