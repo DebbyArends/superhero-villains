@@ -7,11 +7,12 @@ import Characters from "./Pages/Characters/Characters";
 import Footer from "./Components/Footer/Footer";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
-// import {useContext} from "react";
-// import NoAccessPrivateRoute from "./Pages/NoAccessPrivateRoute/NoAccessPrivateRoute";
+import {useContext} from "react";
+import NoAccessPrivateRoute from "./Pages/NoAccessPrivateRoute/NoAccessPrivateRoute";
+import {AuthContext} from "./AuthContext/AuthContext";
 
 function App() {
-    // const {isAuth} = useContext();
+    const {isAuth} = useContext(AuthContext);
   return (
       <div>
           <Navigation/>
@@ -20,8 +21,8 @@ function App() {
                   <HomePage/>
               </Route>
               <Route path="/appearance">
-                  {/*{ isAuth ? <Appearance/> : <NoAccessPrivateRoute/>}*/}
-                  <Appearance/>
+                  { isAuth ? <Appearance/> : <NoAccessPrivateRoute/>}
+                  {/*<Appearance/>*/}
               </Route>
               <Route path="/characters">
                   <Characters/>
