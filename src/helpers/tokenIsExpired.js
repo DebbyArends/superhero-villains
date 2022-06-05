@@ -9,7 +9,7 @@ function tokenIsValid( _token, _expMin ) {
     const difTime = -dateIat.getTime() + dateNow;
 
     // If token exist and expired it removes it from the storage
-    if (Math.floor(difTime / 60) > _expMin){
+    if (Math.floor(difTime / 30) > _expMin){
         localStorage.removeItem('token');
         return false
     }else{

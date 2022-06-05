@@ -7,7 +7,7 @@ export const AuthContext = createContext(null);
 
 function AuthContextProvider( {children}){
 
-    const [auth, setAuth] = useState( {
+    const [auth, toggleAuth] = useState( {
         isAuth: false,
         user: null,
         status: "pending",
@@ -20,22 +20,20 @@ function AuthContextProvider( {children}){
         if ( token ) {
 
             if ( tokenIsValid( token, 30 ) ){ // in minutes
-                console.log( "Token found and tries to resign" );
+                console.log( "Token is found and signs in" );
                 fetchUserData( token );
             }else{
-                console.log( "Token found but is expired" );
-                setAuth( {
+                console.log( "Token found but timestamp is expired" );
+                toggleAuth( {
                     ...auth,
                     status:'done',
                 })
-
-                // token is expired, go to signIn screen
                 history.push( '/signin');
             }
 
         }else{
             console.log( "No token found" );
-            setAuth( {
+            toggleAuth( {
                 ...auth,
                 status:'done',
             })
@@ -44,7 +42,6 @@ function AuthContextProvider( {children}){
 
     const history = useHistory();
 
-    // API functions to BACKEND
     async function fetchUserData( _token ) {
         try{
             const response = await axios.get( "https://frontend-educational-backend.herokuapp.com/api/user",{
@@ -56,7 +53,7 @@ function AuthContextProvider( {children}){
 
             console.log( response );
 
-            setAuth( {
+            toggleAuth( {
                 ...auth,
                 isAuth: true,
                 user: {
@@ -69,13 +66,7 @@ function AuthContextProvider( {children}){
         }catch(e){
             console.error(e)
 
-            switch( e.response.status ){
-                case 500:
-                    // specific responses
-                    break
-
-            }
-            setAuth( {
+            toggleAuth( {
                 ...auth,
                 status:'done',
             })
@@ -92,14 +83,16 @@ function AuthContextProvider( {children}){
                 "role": ["user"]
             });
 
-            // Automatically signIn after signUp (because no e-mail verification)
+            console.log(response);
+
+            // Automatisch inloggen na registratie
             signIn( _username, _password );
 
         }catch(e){
             console.error(e)
             console.log( e.response );
 
-            setAuth( {
+            toggleAuth( {
                 ...auth,
                 status:'done',
             })
@@ -113,10 +106,9 @@ function AuthContextProvider( {children}){
                 "password": _password,
             });
 
-            // place token in the local storage
             localStorage.setItem( 'token', response.data.accessToken );
 
-            setAuth( {
+            toggleAuth( {
                 ...auth,
                 isAuth: true,
                 user: {
@@ -131,39 +123,36 @@ function AuthContextProvider( {children}){
         }catch (e) {
             console.error(e);
 
-            setAuth( {
+            toggleAuth( {
                 ...auth,
                 status: 'done',
             });
-
             return e
         }
     }
 
 
-    function login( _username, _password ){
-
+    function login( _username, _password, _accesToken ){
         signIn( _username, _password );
         history.push( '/');
     }
 
     function logout() {
-        setAuth( {
+        toggleAuth( {
             ...auth,
             isAuth:false,
             user: null,
         });
 
         history.push( '/');
+        localStorage.clear();
     }
 
     function register( _username, _email, _password ) {
         signUp( _username, _email, _password )
-
         history.push( '/');
     }
 
-    // Populate the contextData for the AuthContext
     const contextData = {
         isAuth: auth.isAuth,
         user: auth.user,

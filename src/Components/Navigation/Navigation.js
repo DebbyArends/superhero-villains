@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import './Navigation.css';
 import superheroVsVillainsLogo from "../../assets/superhero-vs-villains.png";
 import {BiUserCircle} from 'react-icons/bi';
@@ -19,7 +19,7 @@ function Navigation() {
                 <div className="dropdown">
                     <BiUserCircle className="user-dropdown-menu"/>
                     <div className="dropdown-content">
-                        {isAuth? <Link activeClassName="active-link" onClick={logout}>Logout</Link>:
+                        {isAuth? <NavLink to="/" activeClassName="active-link" onClick={logout}>Logout</NavLink>:
                             <>
                                 <NavLink to="/login" activeClassName="active-link">Login</NavLink>
                                 <NavLink to="/register" activeClassName="active-link">Register</NavLink>
@@ -48,7 +48,7 @@ function Navigation() {
                             <li>
                                 <NavLink to="/characters" activeClassName="active-link">Characters</NavLink>
                             </li>
-                        </>: ""
+                        </>: " "
                         }
                     </ul>
                 </div>

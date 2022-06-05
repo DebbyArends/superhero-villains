@@ -5,15 +5,14 @@ import {AuthContext} from "../../AuthContext/AuthContext";
 
 function LoginPage() {
 
-    const authContext = useContext( AuthContext );
+    const {login} = useContext( AuthContext );
 
     const {register, formState:{errors}, handleSubmit} = useForm( {
         mode:'onTouched'
     });
 
     function onFormLogin( _data ){
-        authContext.login( _data.username, _data.password);
-        console.log( authContext );
+        login( _data.username, _data.password);
     }
 
     return (
@@ -36,7 +35,7 @@ function LoginPage() {
                                     })}
                                 />
                             </label>
-                            {(errors.username || errors.username) && <p className="error">Username must be filled in</p>}
+
                             <label htmlFor="details-password"
                                    className="input-label">
                                 Password:
@@ -48,8 +47,7 @@ function LoginPage() {
                                         required: "Password is not set",
                                     })}
                                 />
-                                {(errors.password || errors.password) && <p className="error">Password is not set</p>}
-                                {/*{(errors.password || errors.username) && <p className="error">Account doesn't exist</p>}*/}
+                                {(errors.password || errors.username) && <p className="error">Account doesn't exist</p>}
                             </label>
                             <button
                                 className="button-user"
