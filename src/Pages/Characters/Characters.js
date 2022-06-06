@@ -108,8 +108,9 @@ function Characters() {
         }
     }
 
-    function handleClick() {characters && characters.map((character) => {
-        if (character.id === CharacterBiographyCard.key)
+    function handleClick()
+    {characters && characters.map((character) => {
+        if (character.id === charactersMarvel)
                 return (
                     <CharacterBiographyCard
                         key={character.id}

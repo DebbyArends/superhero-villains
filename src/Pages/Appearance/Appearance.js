@@ -95,7 +95,6 @@ function Appearance() {
                                             name={answerOption.answerText}
                                             onClick={handleChange}
                                             value={answerOption.answerText}
-                                            // checked={gender === answerOption.answerText}
                                         />
                                     </label>
                                 </div>
@@ -143,7 +142,7 @@ function Appearance() {
                         <div className="outer-container-hair">
                             <img src={hairstylesMan} alt="Comic book hair style man" className="image-hair"/>
                             <label htmlFor="hair-color">
-                                <select id="hair-color" name="hair-color" onChange={handleChange}>
+                                <select id="hair-color" name="hair-color" onClick={handleChange}>
                                     {questions[currentQuestion].answerOptions.map((answerOption) =>
                                         <option
                                             value={answerOption.answerText}
@@ -197,7 +196,7 @@ function Appearance() {
                             </div>
                         </div>
                         <label htmlFor="eye-color">
-                            <select id="eye-color" name="eye-color" onChange={handleChange}>
+                            <select id="eye-color" name="eye-color" onClick={handleChange}>
                                 {questions[currentQuestion].answerOptions.map((answerOption) =>
                                     <option
                                         value={answerOption.answerText}
@@ -276,7 +275,7 @@ function Appearance() {
         if (find1 === character)
             return (
                 <CharacterBiographyCard
-                    key={character.id}
+                    key= {character.id}
                     classname="character-result"
                     image={character.images.lg}
                     characterName={character.name}
@@ -302,7 +301,7 @@ function Appearance() {
         if (find2 === character)
             return (
                 <CharacterBiographyCard
-                    key={character.id}
+                    key= {character.id}
                     classname="character-result"
                     image={character.images.lg}
                     characterName={character.name}
@@ -328,7 +327,7 @@ function Appearance() {
         if (find3 === character)
             return (
                 <CharacterBiographyCard
-                    key={character.id}
+                    key= {character.id}
                     classname="character-result"
                     image={character.images.lg}
                     characterName={character.name}
@@ -352,7 +351,6 @@ function Appearance() {
                 />
             )
     })
-
 
     const noCharacterFound =
         <>

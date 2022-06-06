@@ -29,7 +29,7 @@ function SearchCharacter() {
         if (searchTerm.length > 2) {
             searchSuperHeroes();
         }
-        if (searchText !== searchTerm) {
+        if (searchTerm === false) {
             console.log("dit karakter bestaat niet");
         }
     }
@@ -48,6 +48,7 @@ function SearchCharacter() {
                     minLength="2"
                 />
                 {searchText.length >0 && searchText.length<3 && <p className="error">Search text must be longer than 2 characters</p>}
+                {/*{searchText === false?"": <p>character doesn't exist</p>}*/}
             </div>
             <div className="outer-container-character">
                 {superheroData && superheroData.map((character) =>

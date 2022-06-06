@@ -2,7 +2,7 @@ import React from 'react';
 import './CharacterBiographyCard.css'
 
 function CharacterBiographyCard({
-                                    key,
+                                    characterId,
                                     classname,
                                     characterName,
                                     image,
@@ -25,7 +25,7 @@ function CharacterBiographyCard({
                                     publisher
                                 }) {
     return (
-            <section key={key}>
+            <section key={characterId}>
                 <article className={classname}>
                     <div className="inner-stats-container">
                         <img src={image} alt={characterName} className="image"/>

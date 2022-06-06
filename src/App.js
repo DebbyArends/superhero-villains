@@ -12,6 +12,7 @@ import Register from "./Pages/Register/Register";
 // import {AuthContext} from "./AuthContext/AuthContext";
 import AveragePeople from "./Pages/AveragePeople/AveragePeople";
 
+
 function App() {
     // const {isAuth} = useContext(AuthContext);
   return (
