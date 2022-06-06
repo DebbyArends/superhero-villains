@@ -1,6 +1,4 @@
-# README
-
-## Superhero VS Villains
+# README Superhero VS Villains
 
 <h4>An application that allows you to answer questions of a quiz to find out which superhero or villain you would be
 in the multiverse. But wait... there is more!! The application also allows you to search your favorite character
@@ -46,3 +44,22 @@ https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojj
 
  Once installed, click on it in your browser to activate the extension. Make sure the icon’s label goes from
 “off”: to “on”: Refresh your application, and the API request should work now! 🎉
+
+##Testing
+The following accounts are available:
+####Test-account 1
+* `Username: superhero`
+* `Password: Superher0!`
+
+####Test-account 2
+* `Username: testen123`
+* `Password: Testen123!`
+
+
+## Credits
+
+The application is an addition from the final assignment of the Front-end Bootcamp by NOVI.
+
+
+####Debby Arends
+####08-06-2022
