@@ -11,7 +11,7 @@ function AveragePeople() {
             <article className="inner-container-average">
                 <div className="white-background-average">
                     <div className="blue-background-average">
-                        <h1>Average?</h1>
+                        <h1>Average or not?</h1>
                     </div>
                     <p id="article-written">Original article is written by Mark Manson, read the full article <a
                         href="https://markmanson.net/being-average" target="_blank" rel="noreferrer"

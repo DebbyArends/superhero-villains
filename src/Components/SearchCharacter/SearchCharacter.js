@@ -3,6 +3,7 @@ import axios from "axios";
 import "./SearchCharacter.css";
 import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiographyCard";
 
+
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
     const [superheroData, setSuperheroData] = useState([]);
@@ -44,8 +45,9 @@ function SearchCharacter() {
                     name="searchBar"
                     onChange={handleChange}
                     value={searchText}
-                    minLength="3"
+                    minLength="2"
                 />
+                {searchText.length >0 && searchText.length<3 && <p className="error">Search text must be longer than 2 characters</p>}
             </div>
             <div className="outer-container-character">
                 {superheroData && superheroData.map((character) =>

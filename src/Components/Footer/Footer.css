@@ -63,6 +63,7 @@
     color: white;
     padding: 10px;
     font-size: 12px;
+    font-family: "Roboto Condensed",cursive;
 }
 .list-links-social {
     display: flex;
@@ -98,6 +99,7 @@
         color: white;
         padding: 10px;
         font-size: 14px;
+        font-family: "Roboto Condensed",cursive;
     }
     .arrow-forward {
         width: 13px;
@@ -128,6 +130,7 @@
         color: white;
         padding: 10px;
         font-size: 16px;
+        font-family: "Roboto Condensed",cursive;
     }
     .arrow-forward {
         width: 15px;

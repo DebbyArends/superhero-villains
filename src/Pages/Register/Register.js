@@ -40,14 +40,14 @@ function Register() {
                                         type="text"
                                         id="details-username"
                                         {...register("username", {
-                                            required:"Username must be filled in",
+                                            required:"Username must be filled",
                                             minLength:{
                                                 value:6,
-                                                message:"Username must be longer than 5 chars"
+                                                message:"Username must be longer than 5 characters"
                                             },
                                             pattern: {
                                                 value: /^[A-Z0-9_\-.]{6,}$/i,
-                                                message: "No special chars are aloud"
+                                                message: "No special characters are aloud"
                                             }
                                         })}
                                     />
@@ -62,7 +62,7 @@ function Register() {
                                     type="text"
                                     id="details-email"
                                     {...register("email", {
-                                        required:"E-mail must be filled in",
+                                        required:"E-mail must be filled",
                                         pattern: {
                                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                             message: "invalid e-mail address"
@@ -86,7 +86,7 @@ function Register() {
                                         },
                                         pattern: {
                                             value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#~])[A-Za-z\d@$!%*?&#~]+$/gi,
-                                            message: "Need capital- special char and number"
+                                            message: "Needs a capital letter, special character and number"
                                         }
                                     })}
                                 />
@@ -106,7 +106,7 @@ function Register() {
                                         }}
                                         {...register("confirmPassword", {
                                             required:true,
-                                            validate:(value) => value === password || "The password do not match",
+                                            validate:(value) => value === password || "The passwords don't match",
                                         })}
                                     />
                                 {errors.confirmPassword && <p className="error">{errors.confirmPassword.message}</p>}

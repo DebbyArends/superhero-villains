@@ -7,6 +7,7 @@ import{ReactComponent as Marvel} from "../../assets/Marvel_Logo.svg";
 import {ReactComponent as DC} from "../../assets/DC_Comics_logo.svg";
 import {ReactComponent as Divider} from "../../assets/Decorative-Border-Divider.svg";
 import SearchCharacter from "../../Components/SearchCharacter/SearchCharacter";
+import CharacterBiographyCard from "../../Components/CharacterBiographyCard/CharacterBiographyCard";
 
 function Characters() {
     const [characters, setCharacters]=useState('')
@@ -107,10 +108,35 @@ function Characters() {
         }
     }
 
-    // function handleClick() {
-    //     history.push("/character-biography")
-    // }
-
+    function handleClick() {characters && characters.map((character) => {
+        if (character.id === CharacterBiographyCard.key)
+                return (
+                    <CharacterBiographyCard
+                        key={character.id}
+                        classname="character-result"
+                        image={character.images.lg}
+                        characterName={character.name}
+                        intelligence={character.powerstats.intelligence}
+                        strength={character.powerstats.strength}
+                        speed={character.powerstats.speed}
+                        durability={character.powerstats.durability}
+                        power={character.powerstats.power}
+                        combat={character.powerstats.combat}
+                        fullName={character.biography.fullName}
+                        gender={character.appearance.gender}
+                        height={character.appearance.height[1]}
+                        hairColor={character.appearance.hairColor}
+                        weight={character.appearance.weight[1]}
+                        eyeColor={character.appearance.eyeColor}
+                        aliases={character.biography.aliases.join(', ')}
+                        placeOfBirth={character.biography.placeOfBirth}
+                        relatives={character.connections.relatives}
+                        firstAppearance={character.biography.firstAppearance}
+                        publisher={character.biography.publisher}
+                    />
+                )
+        })
+    }
 
     return (
         <>
@@ -134,8 +160,7 @@ function Characters() {
                     {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
                         [
                             <ul key={character.id} className="list-items-marvel">
-                                <li className="character-list-marvel">
-                                    {/*<li className="character-list-marvel" onClick={handleClick}>*/}
+                                <li className="character-list-marvel" onClick={handleClick}>
                                     <div className="character-white">
                                         <img src={character.images.lg} alt={character.name} className="image-character"/>
                                         <h5>{character.name}</h5>
@@ -192,4 +217,4 @@ function Characters() {
     )
 }
 
-export default Characters
+export default Characters;

@@ -274,6 +274,9 @@ input {
     background-position: center;
     background-size: cover;
 }
+.percentage {
+    font-weight: bold;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -474,7 +477,9 @@ input {
         width: 225px;
         margin: 20px;
     }
-
+    .percentage {
+        font-weight: bold;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -662,5 +667,8 @@ input {
         font-family: "Roboto Condensed",cursive;
         font-size: 14px;
         color: red;
+    }
+    .percentage {
+        font-weight: bold;
     }
 }

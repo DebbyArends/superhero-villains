@@ -35,7 +35,7 @@ function LoginPage() {
                                     })}
                                 />
                             </label>
-
+                            {errors.username && <p className="error">Username must be filled in</p>}
                             <label htmlFor="details-password"
                                    className="input-label">
                                 Password:
@@ -47,7 +47,7 @@ function LoginPage() {
                                         required: "Password is not set",
                                     })}
                                 />
-                                {(errors.password || errors.username) && <p className="error">Account doesn't exist</p>}
+                                {errors.password && <p className="error">Password is not set</p>}
                             </label>
                             <button
                                 className="button-user"

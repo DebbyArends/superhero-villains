@@ -31,7 +31,7 @@ function Navigation() {
             <div className="outer-container-nav-links">
                 <div className="inner-container-nav-links">
                     <ul className="list-nav-links">
-                        {isAuth?
+                        {/*{isAuth?*/}
                         <>
                             <li>
                                 <NavLink exact to="/" activeClassName="active-link">Home</NavLink>
@@ -48,8 +48,9 @@ function Navigation() {
                             <li>
                                 <NavLink to="/characters" activeClassName="active-link">Characters</NavLink>
                             </li>
-                        </>: " "
-                        }
+                        </>
+                        {/*: " "*/}
+                        {/*}*/}
                     </ul>
                 </div>
             </div>

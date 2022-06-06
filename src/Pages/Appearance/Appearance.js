@@ -78,7 +78,7 @@ function Appearance() {
                     <div className="outer-container-load-bar">
                         <div className="outer-load-bar">
                             <div className="inner-load-bar-20">
-                                <p>20%</p>
+                                <p className="percentage">20%</p>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ function Appearance() {
                 <div className="outer-container-height">
                     <div className="outer-load-bar">
                         <div className="inner-load-bar-40">
-                            <p>40%</p>
+                            <p className="percentage">40%</p>
                         </div>
                     </div>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
@@ -137,7 +137,7 @@ function Appearance() {
                     <div className="inner-container-hair-color">
                         <div className="outer-load-bar">
                             <div className="inner-load-bar-60">
-                                <p>60%</p>
+                                <p className="percentage">60%</p>
                             </div>
                         </div>
                         <div className="outer-container-hair">
@@ -165,7 +165,7 @@ function Appearance() {
                 <div className="outer-container-weight">
                     <div className="outer-load-bar">
                         <div className="inner-load-bar-80">
-                            <p>80%</p>
+                            <p className="percentage">80%</p>
                         </div>
                     </div>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
@@ -193,7 +193,7 @@ function Appearance() {
                     <div className="inner-container-eye-color">
                         <div className="outer-load-bar">
                             <div className="inner-load-bar-100">
-                                <p>100%</p>
+                                <p className="percentage">100%</p>
                             </div>
                         </div>
                         <label htmlFor="eye-color">
