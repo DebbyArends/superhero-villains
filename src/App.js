@@ -39,7 +39,7 @@ function App() {
               <Route path="/average-people">
                   <AveragePeople/>
               </Route>
-              <Route path="/character-biography">
+              <Route path="/character-biography/:id">
                   <CharacterBiography/>
               </Route>
           </Switch>

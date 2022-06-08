@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './Characters.css'
-import {Link, useHistory} from 'react-router-dom';
+import {Link, useHistory, useParams} from 'react-router-dom';
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import{ReactComponent as Marvel} from "../../assets/Marvel_Logo.svg";
 import {ReactComponent as DC} from "../../assets/DC_Comics_logo.svg";
@@ -17,13 +17,16 @@ function Characters() {
     const [indexDC, setIndexDC] = useState(0)
     const history = useHistory()
     const length = characters.length
+    let {id} = useParams()
 
     useEffect(()=> {
         async function getData(){
             try{
                 const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
-                console.log(result.data)
-                setCharacters(result.data)
+                if (id === characters.id){
+                    console.log(result.data)
+                    setCharacters(result.data)
+                }
             }catch (e) {
                 console.error(e)
             }
@@ -109,41 +112,41 @@ function Characters() {
         }
     }
 
-    function handleClick(){
+    // function handleClick(){
+    //     return(
+    //         charactersMarvel && charactersMarvel.map((character) =>{
+    //             character.name
+    //         })
+    //     )
             // if (character === currentCharacterMarvel){
             //     return(
-                    history.push('/character-biography')
+            //         history.push('/character-biography')
             //     )
             // }
-        //             const characterclick = characters && characters.find((character) => {
-        //                 return character === character.name
-        //             })
-        // console.log(characterclick);
-        //             <CharacterBiographyCard
-        //                 key={character.id}
-        //                 classname="character-result"
-        //                 image={character.images.lg}
-        //                 characterName={character.name}
-        //                 intelligence={character.powerstats.intelligence}
-        //                 strength={character.powerstats.strength}
-        //                 speed={character.powerstats.speed}
-        //                 durability={character.powerstats.durability}
-        //                 power={character.powerstats.power}
-        //                 combat={character.powerstats.combat}
-        //                 fullName={character.biography.fullName}
-        //                 gender={character.appearance.gender}
-        //                 height={character.appearance.height[1]}
-        //                 hairColor={character.appearance.hairColor}
-        //                 weight={character.appearance.weight[1]}
-        //                 eyeColor={character.appearance.eyeColor}
-        //                 aliases={character.biography.aliases.join(', ')}
-        //                 placeOfBirth={character.biography.placeOfBirth}
-        //                 relatives={character.connections.relatives}
-        //                 firstAppearance={character.biography.firstAppearance}
-        //                 publisher={character.biography.publisher}
-        //             />
-
-    }
+            //         <CharacterBiographyCard
+            //             key={character.id}
+            //             classname="character-result"
+            //             image={character.images.lg}
+            //             characterName={character.name}
+            //             intelligence={character.powerstats.intelligence}
+            //             strength={character.powerstats.strength}
+            //             speed={character.powerstats.speed}
+            //             durability={character.powerstats.durability}
+            //             power={character.powerstats.power}
+            //             combat={character.powerstats.combat}
+            //             fullName={character.biography.fullName}
+            //             gender={character.appearance.gender}
+            //             height={character.appearance.height[1]}
+            //             hairColor={character.appearance.hairColor}
+            //             weight={character.appearance.weight[1]}
+            //             eyeColor={character.appearance.eyeColor}
+            //             aliases={character.biography.aliases.join(', ')}
+            //             placeOfBirth={character.biography.placeOfBirth}
+            //             relatives={character.connections.relatives}
+            //             firstAppearance={character.biography.firstAppearance}
+            //             publisher={character.biography.publisher}
+            //         />
+    // }
 
     return (
         <>
@@ -167,9 +170,9 @@ function Characters() {
                     {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
                         [
                             <ul key={character.id} className="list-items-marvel">
-                                <li className="character-list-marvel">
+                                <li className="character-list-marvel" onClick={() => history.push( `/character-biography/${character.id}`)}>
                                     <div className="character-white">
-                                        <img src={character.images.lg} alt={character.name} className="image-character" onClick={() => history.push("/character-biography")}/>
+                                        <img src={character.images.lg} alt={character.name} className="image-character"/>
                                         <h5>{character.name}</h5>
                                     </div>
                                 </li>

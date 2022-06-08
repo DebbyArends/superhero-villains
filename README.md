@@ -45,16 +45,6 @@ https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojj
  Once installed, click on it in your browser to activate the extension. Make sure the icon’s label goes from
 “off”: to “on”: Refresh your application, and the API request should work now! 🎉
 
-##Testing
-The following accounts are available:
-####Test-account 1
-* `Username: superhero`
-* `Password: Superher0!`
-
-####Test-account 2
-* `Username: testen123`
-* `Password: Testen123!`
-
 
 ## Credits
 
