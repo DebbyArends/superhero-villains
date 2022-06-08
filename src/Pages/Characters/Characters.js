@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './Characters.css'
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import{ReactComponent as Marvel} from "../../assets/Marvel_Logo.svg";
 import {ReactComponent as DC} from "../../assets/DC_Comics_logo.svg";
@@ -15,6 +15,7 @@ function Characters() {
     const [indexMarvel, setIndexMarvel] = useState(0)
     const [currentCharacterDC, setCurrentCharacterDC] = useState(5)
     const [indexDC, setIndexDC] = useState(0)
+    const history = useHistory()
     const length = characters.length
 
     useEffect(()=> {
@@ -108,39 +109,39 @@ function Characters() {
         }
     }
 
-    function handleClick(character){
-            if (character === currentCharacterMarvel){
-                return(
-                    console.log(character)
-                )
-            }
+    function handleClick(){
+            // if (character === currentCharacterMarvel){
+            //     return(
+                    history.push('/character-biography')
+            //     )
+            // }
         //             const characterclick = characters && characters.find((character) => {
         //                 return character === character.name
         //             })
         // console.log(characterclick);
-                    // <CharacterBiographyCard
-                    //     key={character.id}
-                    //     classname="character-result"
-                    //     image={character.images.lg}
-                    //     characterName={character.name}
-                    //     intelligence={character.powerstats.intelligence}
-                    //     strength={character.powerstats.strength}
-                    //     speed={character.powerstats.speed}
-                    //     durability={character.powerstats.durability}
-                    //     power={character.powerstats.power}
-                    //     combat={character.powerstats.combat}
-                    //     fullName={character.biography.fullName}
-                    //     gender={character.appearance.gender}
-                    //     height={character.appearance.height[1]}
-                    //     hairColor={character.appearance.hairColor}
-                    //     weight={character.appearance.weight[1]}
-                    //     eyeColor={character.appearance.eyeColor}
-                    //     aliases={character.biography.aliases.join(', ')}
-                    //     placeOfBirth={character.biography.placeOfBirth}
-                    //     relatives={character.connections.relatives}
-                    //     firstAppearance={character.biography.firstAppearance}
-                    //     publisher={character.biography.publisher}
-                    // />
+        //             <CharacterBiographyCard
+        //                 key={character.id}
+        //                 classname="character-result"
+        //                 image={character.images.lg}
+        //                 characterName={character.name}
+        //                 intelligence={character.powerstats.intelligence}
+        //                 strength={character.powerstats.strength}
+        //                 speed={character.powerstats.speed}
+        //                 durability={character.powerstats.durability}
+        //                 power={character.powerstats.power}
+        //                 combat={character.powerstats.combat}
+        //                 fullName={character.biography.fullName}
+        //                 gender={character.appearance.gender}
+        //                 height={character.appearance.height[1]}
+        //                 hairColor={character.appearance.hairColor}
+        //                 weight={character.appearance.weight[1]}
+        //                 eyeColor={character.appearance.eyeColor}
+        //                 aliases={character.biography.aliases.join(', ')}
+        //                 placeOfBirth={character.biography.placeOfBirth}
+        //                 relatives={character.connections.relatives}
+        //                 firstAppearance={character.biography.firstAppearance}
+        //                 publisher={character.biography.publisher}
+        //             />
 
     }
 
@@ -165,10 +166,10 @@ function Characters() {
                 <article className="character-container">
                     {charactersMarvel && charactersMarvel.slice(indexMarvel, currentCharacterMarvel).map((character)=> (
                         [
-                            <ul key={character.id} className="list-items-marvel" onClick={handleClick}>
+                            <ul key={character.id} className="list-items-marvel">
                                 <li className="character-list-marvel">
                                     <div className="character-white">
-                                        <img src={character.images.lg} alt={character.name} className="image-character"/>
+                                        <img src={character.images.lg} alt={character.name} className="image-character" onClick={() => history.push("/character-biography")}/>
                                         <h5>{character.name}</h5>
                                     </div>
                                 </li>

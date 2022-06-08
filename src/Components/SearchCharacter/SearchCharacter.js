@@ -7,6 +7,7 @@ import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiography
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
     const [superheroData, setSuperheroData] = useState([]);
+    const [error, setError]=useState(false)
     const apiKey = "10228880912034222";
 
     async function searchSuperHeroes() {
@@ -30,6 +31,7 @@ function SearchCharacter() {
             searchSuperHeroes();
         }
         if (searchTerm !== searchText) {
+            setError(true)
             console.log("dit karakter bestaat niet");
         }
     }
@@ -49,7 +51,7 @@ function SearchCharacter() {
                     minLength="2"
                 />
                 {searchText.length >0 && searchText.length<3 && <p className="error">Search text must be longer than 2 characters</p>}
-                {searchText.length >2 && false && <p className="error">This character doesn't exist in our database</p>}
+                {searchText.length > 2 && error && <p className="error">This character doesn't exist in our database</p>}
             </div>
             <div className="outer-container-character">
                 {superheroData && superheroData.map((character) =>

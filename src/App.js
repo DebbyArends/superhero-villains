@@ -11,6 +11,7 @@ import Register from "./Pages/Register/Register";
 // import NoAccessPrivateRoute from "./Pages/NoAccessPrivateRoute/NoAccessPrivateRoute";
 // import {AuthContext} from "./AuthContext/AuthContext";
 import AveragePeople from "./Pages/AveragePeople/AveragePeople";
+import CharacterBiography from "./Pages/CharacterBiography/CharacterBiography";
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
               </Route>
               <Route path="/average-people">
                   <AveragePeople/>
+              </Route>
+              <Route path="/character-biography">
+                  <CharacterBiography/>
               </Route>
           </Switch>
           <Footer/>

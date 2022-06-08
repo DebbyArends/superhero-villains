@@ -24,6 +24,7 @@ function Appearance() {
     const [eyeColor, setEyeColor]=useState("")
     const [character, setCharacter] =useState([])
     const [radioCheck, setRadioCheck] = useState( true)
+    const [error, setError] = useState(false)
 
     useEffect(()=> {
         async function getData(){
@@ -215,6 +216,8 @@ function Appearance() {
 
 
     function handleAnswerInput() {
+        if (radioCheck === false){
+            setError(false)
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1)
             setRadioCheck(true)
@@ -222,6 +225,9 @@ function Appearance() {
         }
         else{
             setShowResult(gender, heightCm , hairColor, weightKg, eyeColor)
+        }}
+        else {
+            setError(true)
         }
     }
 
@@ -359,6 +365,14 @@ function Appearance() {
             <h4>Try out our <Link to="/powerstats" className="back-link">Powerstats</Link> quiz</h4>
         </>
 
+    function handleClick(){
+            if (radioCheck === false){
+                handleAnswerInput()
+            }
+            else{
+                setError(true)
+            }
+    }
 
     return (
         <>
@@ -393,11 +407,10 @@ function Appearance() {
                                         <button
                                             type="submit"
                                             className="button-banner-quiz"
-                                            disabled={radioCheck}
                                         >
                                             Next
                                         </button>
-
+                                        {error && <p>error</p>}
                                     </div>
                                 </form>
                             </div>

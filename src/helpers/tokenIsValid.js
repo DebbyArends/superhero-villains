@@ -8,7 +8,7 @@ function tokenIsValid( _token, _expMin ) {
     const dateIat = new Date(decodedToken.iat);
     const difTime = -dateIat.getTime() + dateNow;
 
-    // Als token niet meer goed is dan wordt de token verwijderd uit local storage
+    // Als token niet meer geldig is dan wordt de token verwijderd uit local storage
     if (Math.floor(difTime / 30) > _expMin){
         localStorage.removeItem('token');
         return false

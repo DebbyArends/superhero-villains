@@ -19,7 +19,7 @@ function AuthContextProvider( {children} ){
 
         if ( token ) {
 
-            if ( tokenIsValid( token, 30 )){
+            if ( token){
                 console.log( "Token is found" );
                 fetchUserData( token );
             }else{
