@@ -58,7 +58,7 @@ The following accounts are available:
 
 ## Credits
 
-The application is an addition from the final assignment of the Front-end Bootcamp by NOVI.
+The application is an addition to the final assignment of the Front-end Bootcamp by NOVI.
 
 
 ####Debby Arends

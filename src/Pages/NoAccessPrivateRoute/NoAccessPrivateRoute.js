@@ -21,7 +21,7 @@ function NoAccessPrivateRoute() {
                     </button>
                     <button
                         className='button-private'
-                        onClick={() => history.push("/register")}>
+                        onClick={() => history.push("/login")}>
                         Fellow 'geek'
                     </button>
                     </span>

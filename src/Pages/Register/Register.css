@@ -2,7 +2,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /*border: 1px solid #14363C;*/
     flex-direction: column;
     width: 350px;
     height: 350px;
@@ -19,7 +18,7 @@
     background-image: url("../../assets/banner_2_powerstats.png");
     background-position: center;
     background-size: cover;
-    width: 800px;
+    width: 400px;
     height: 440px;
     margin-top: 50px;
     border: 5px solid #ffffff;
@@ -28,11 +27,15 @@
 #details-email {
     width: 200px;
     border: 1px solid lightgrey;
+    font-family: "Roboto", cursive;
+    font-size: 12px;
     margin-top: 5px;
 }
 #details-confirmPassword {
     width: 200px;
     border: 1px solid lightgrey;
+    font-family: "Roboto", cursive;
+    font-size: 12px;
     margin-top: 5px;
 }
 
@@ -49,7 +52,7 @@
 }
 .user-title {
     font-family: "Roboto Condensed",cursive;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 p.error {
@@ -60,4 +63,83 @@ p.error {
 }
 .button-container-user {
     margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .inner-container-register {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../../assets/banner_2_powerstats.png");
+        background-position: center;
+        background-size: cover;
+        width: 600px;
+        height: 440px;
+        margin-top: 50px;
+        border: 5px solid #ffffff;
+    }
+    .user-title {
+        font-family: "Roboto Condensed",cursive;
+        font-size: 22px;
+    }
+
+    p.error {
+        font-family: "Roboto Condensed",cursive;
+        font-size: 12px;
+        margin-top: 2px;
+        color: red;
+    }
+    #details-email {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+    #details-confirmPassword {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .inner-container-register {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../../assets/banner_2_powerstats.png");
+        background-position: center;
+        background-size: cover;
+        width: 800px;
+        height: 440px;
+        margin-top: 50px;
+        border: 5px solid #ffffff;
+    }
+    .user-title {
+        font-family: "Roboto Condensed",cursive;
+        font-size: 24px;
+    }
+    p.error {
+        font-family: "Roboto Condensed",cursive;
+        font-size: 12px;
+        margin-top: 2px;
+        color: red;
+    }
+    #details-email {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    #details-confirmPassword {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 14px;
+        margin-top: 5px;
+    }
 }

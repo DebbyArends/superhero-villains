@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     font-family:Roboto, cursive;
+    font-size:12px;
     font-weight: 500;
     margin: 5px;
 }
@@ -17,7 +18,7 @@
     background-image: url("../../assets/banner_2_powerstats.png");
     background-position: center;
     background-size: cover;
-    width: 800px;
+    width: 400px;
     height: 350px;
     margin-top: 50px;
     border: 5px solid #ffffff;
@@ -34,24 +35,150 @@
 #details-username {
     width: 200px;
     border: 1px solid lightgrey;
+    font-family: "Roboto", cursive;
+    font-size: 12px;
     margin-top: 5px;
 }
 
 #details-password {
     width: 200px;
     border: 1px solid lightgrey;
+    font-family: "Roboto", cursive;
+    font-size: 12px;
     margin-top: 5px;
 }
-
-
 .button-user {
     background-color: #14363C;
     color: white;
     font-family: "Roboto Condensed", cursive;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 5px;
     border: none;
     margin-top: 15px;
-    padding: 7px 7px;
+    padding: 5px 5px;
     cursor: pointer;
+}
+#account-link {
+    color: grey;
+    font-family: "Roboto",cursive;
+    border-bottom:1px solid grey;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+    #account-link {
+        color: grey;
+        font-family: "Roboto",cursive;
+        border-bottom:1px solid grey;
+        font-weight: bold;
+        font-size: 13px;
+        margin: 10px 0;
+    }
+    .inner-container-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../../assets/banner_2_powerstats.png");
+        background-position: center;
+        background-size: cover;
+        width: 600px;
+        height: 350px;
+        margin-top: 50px;
+        border: 5px solid #ffffff;
+    }
+    .input-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family:Roboto, cursive;
+        font-size:13px;
+        font-weight: 500;
+        margin: 5px;
+    }
+    #details-username {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    #details-password {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+    .button-user {
+        background-color: #14363C;
+        color: white;
+        font-family: "Roboto Condensed", cursive;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 15px;
+        padding: 7px 7px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #account-link {
+        color: grey;
+        font-family: "Roboto",cursive;
+        border-bottom:1px solid grey;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    .inner-container-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../../assets/banner_2_powerstats.png");
+        background-position: center;
+        background-size: cover;
+        width: 800px;
+        height: 350px;
+        margin-top: 50px;
+        border: 5px solid #ffffff;
+    }
+    .input-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family:Roboto, cursive;
+        font-size:14px;
+        font-weight: 500;
+        margin: 5px;
+    }
+    #details-username {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    #details-password {
+        width: 200px;
+        border: 1px solid lightgrey;
+        font-family: "Roboto", cursive;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .button-user {
+        background-color: #14363C;
+        color: white;
+        font-family: "Roboto Condensed", cursive;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 15px;
+        padding: 7px 7px;
+        cursor: pointer;
+    }
 }

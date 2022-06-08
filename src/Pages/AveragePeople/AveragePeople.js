@@ -65,7 +65,7 @@ function AveragePeople() {
                     <img src={superman} alt="superman" className="image-superman"/>
                     <button
                         className='button-average'
-                        onClick={() => history.push("/register")}
+                        onClick={() => history.push("/login")}
                     >
                         Let's go!
                     </button>

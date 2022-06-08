@@ -1,18 +1,19 @@
 import React, {useContext} from 'react';
 import './Login.css';
 import {useForm} from "react-hook-form";
+import {Link} from "react-router-dom";
 import {AuthContext} from "../../AuthContext/AuthContext";
 
 function LoginPage() {
-
-    const {login} = useContext( AuthContext );
+    const authContext = useContext( AuthContext );
 
     const {register, formState:{errors}, handleSubmit} = useForm( {
         mode:'onTouched'
     });
 
     function onFormLogin( _data ){
-        login( _data.username, _data.password);
+        authContext.login( _data.username, _data.password);
+        console.log(authContext);
     }
 
     return (
@@ -49,6 +50,7 @@ function LoginPage() {
                                 />
                                 {errors.password && <p className="error">Password is not set</p>}
                             </label>
+                            <Link to='/register' id="account-link">I don't have an account yet</Link>
                             <button
                                 className="button-user"
                                 type="submit">
