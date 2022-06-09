@@ -78,8 +78,8 @@ function Appearance() {
                 <>
                     <div className="outer-container-load-bar">
                         <div className="outer-load-bar">
-                            <div className="inner-load-bar-20">
-                                <p className="percentage">20%</p>
+                            <div className="inner-load-bar-0">
+                                <p className="percentage">0%</p>
                             </div>
                         </div>
                     </div>
@@ -108,8 +108,8 @@ function Appearance() {
             return(
                 <div className="outer-container-height">
                     <div className="outer-load-bar">
-                        <div className="inner-load-bar-40">
-                            <p className="percentage">40%</p>
+                        <div className="inner-load-bar-20">
+                            <p className="percentage">20%</p>
                         </div>
                     </div>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
@@ -122,7 +122,6 @@ function Appearance() {
                                 value={heightCm}
                                 checked={heightCm === answerOption.answerText}
                                 placeholder= "0"
-                                required={true}
                             />
                             {answerOption.answerText}
                         </label >
@@ -136,8 +135,8 @@ function Appearance() {
                 <>
                     <div className="inner-container-hair-color">
                         <div className="outer-load-bar">
-                            <div className="inner-load-bar-60">
-                                <p className="percentage">60%</p>
+                            <div className="inner-load-bar-40">
+                                <p className="percentage">40%</p>
                             </div>
                         </div>
                         <div className="outer-container-hair">
@@ -164,8 +163,8 @@ function Appearance() {
             return (
                 <div className="outer-container-weight">
                     <div className="outer-load-bar">
-                        <div className="inner-load-bar-80">
-                            <p className="percentage">80%</p>
+                        <div className="inner-load-bar-60">
+                            <p className="percentage">60%</p>
                         </div>
                     </div>
                     {questions[currentQuestion].answerOptions.map((answerOption) =>
@@ -178,7 +177,6 @@ function Appearance() {
                                 value={weightKg}
                                 checked={weightKg === answerOption.answerText}
                                 placeholder= "0"
-                                required={true}
                             />
                             {answerOption.answerText}
                         </label >
@@ -192,8 +190,8 @@ function Appearance() {
                 <div className="outer-container-eye">
                     <div className="inner-container-eye-color">
                         <div className="outer-load-bar">
-                            <div className="inner-load-bar-100">
-                                <p className="percentage">100%</p>
+                            <div className="inner-load-bar-80">
+                                <p className="percentage">80%</p>
                             </div>
                         </div>
                         <label htmlFor="eye-color">
@@ -365,14 +363,6 @@ function Appearance() {
             <h4>Try out our <Link to="/powerstats" className="back-link">Powerstats</Link> quiz</h4>
         </>
 
-    function handleClick(){
-            if (radioCheck === false){
-                handleAnswerInput()
-            }
-            else{
-                setError(true)
-            }
-    }
 
     return (
         <>
@@ -410,7 +400,7 @@ function Appearance() {
                                         >
                                             Next
                                         </button>
-                                        {error && <p>error</p>}
+                                        {error && <p className="error">Please fill out an answer before going to the next question</p>}
                                     </div>
                                 </form>
                             </div>

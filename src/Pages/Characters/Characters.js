@@ -23,7 +23,7 @@ function Characters() {
         async function getData(){
             try{
                 const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
-                if (id === characters.id){
+                if (characters.id === id){
                     console.log(result.data)
                     setCharacters(result.data)
                 }
@@ -37,14 +37,20 @@ function Characters() {
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth > 992) {
+                setIndexMarvel(0)
+                setIndexDC(0)
                 setCurrentCharacterMarvel(5);
                 setCurrentCharacterDC(5);
             }
             else if (window.innerWidth > 768) {
+                setIndexMarvel(0)
+                setIndexDC(0)
                 setCurrentCharacterMarvel(4);
                 setCurrentCharacterDC(4);
             }
             else {
+                setIndexMarvel(0)
+                setIndexDC(0)
                 setCurrentCharacterMarvel(2);
                 setCurrentCharacterDC(2);
             }
@@ -71,9 +77,10 @@ function Characters() {
         return character.biography.publisher === "DC Comics"
     })
 
+
     function nextSlideMarvelCharacters() {
-        setCurrentCharacterMarvel(currentCharacterMarvel + 1)
-        setIndexMarvel(indexMarvel + 1)
+        setCurrentCharacterMarvel(currentCharacterMarvel <269 ? currentCharacterMarvel + 1: currentCharacterMarvel(269))
+        setIndexMarvel(indexMarvel < 269? indexMarvel + 1: indexMarvel(269))
     }
 
    function prevSlideMarvelCharacters() {
@@ -92,8 +99,8 @@ function Characters() {
     }
 
     function nextSlideDCCharacters() {
-        setCurrentCharacterDC(currentCharacterDC + 1)
-        setIndexDC(indexDC + 1)
+        setCurrentCharacterDC(currentCharacterDC <155 ? currentCharacterDC + 1: currentCharacterDC(155))
+        setIndexDC(indexDC < 155? indexDC + 1: indexDC(155))
 
     }
 
@@ -204,7 +211,6 @@ function Characters() {
                         [
                             <ul key={character.id}>
                                 <li className="character-list-dc">
-                                    {/*<li className="character-list-dc" onClick={handleClick}>*/}
                                     <div className="character-white">
                                         <img src={character.images.lg} alt={character.name} className="image-character"/>
                                         <h5>{character.name}</h5>
