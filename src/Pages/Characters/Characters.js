@@ -17,13 +17,13 @@ function Characters() {
     const [indexDC, setIndexDC] = useState(0)
     const history = useHistory()
     const length = characters.length
-    let {id} = useParams()
+    let {characterId} = useParams()
 
     useEffect(()=> {
         async function getData(){
             try{
                 const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
-                if (characters.id === id){
+                if (characters.id === characterId){
                     console.log(result.data)
                     setCharacters(result.data)
                 }
