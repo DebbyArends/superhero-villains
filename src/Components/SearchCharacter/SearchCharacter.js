@@ -7,12 +7,12 @@ import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiography
 
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
-    const [superheroData, setSuperheroData] = useState([]);
+    // const [superheroData, setSuperheroData] = useState([]);
     // const apiKey = "10228880912034222";
     const [characters, setCharacters] = useState('')
 
 
-
+useEffect(()=> {
     async function getData(){
         try{
             const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
@@ -22,6 +22,8 @@ function SearchCharacter() {
             console.error(e)
         }
     }
+    getData()
+}, [])
 
 
     const arrayNamesIds = characters && characters.map((character) =>{
@@ -49,16 +51,19 @@ function SearchCharacter() {
         const searchTerm = e.target.value;
 
         setSearchText(searchTerm);
-        if (searchTerm === arrayNamesIds.id){
-            if (searchTerm.length === 0) {
-                setSuperheroData([]);
-            }
-            if (searchTerm.length > 2) {
-                getData();
-            }
+        if (searchTerm === arrayNamesIds.name){
+           return(
+               arrayNamesIds.id
+           )
         }
+        }
+        // if (searchTerm.length === 0) {
+        //     setSuperheroData([]);
+        // }
+        // if (searchTerm.length > 2) {
+        //     getData();
+        // }
 
-    }
 
     return (
         <>
@@ -78,9 +83,9 @@ function SearchCharacter() {
             <div className="outer-container-character">
                 {characters && characters.map((character) =>
                     <CharacterBiographyCard
-                        key={character.id}
+                        key= {character.id}
                         classname="search-result"
-                        image={character.image.url}
+                        image={character.images.lg}
                         characterName={character.name}
                         intelligence={character.powerstats.intelligence}
                         strength={character.powerstats.strength}
@@ -88,16 +93,16 @@ function SearchCharacter() {
                         durability={character.powerstats.durability}
                         power={character.powerstats.power}
                         combat={character.powerstats.combat}
-                        fullName={character.biography['full-name']}
+                        fullName={character.biography.fullName}
                         gender={character.appearance.gender}
                         height={character.appearance.height[1]}
                         hairColor={character.appearance.hairColor}
                         weight={character.appearance.weight[1]}
                         eyeColor={character.appearance.eyeColor}
                         aliases={character.biography.aliases.join(', ')}
-                        placeOfBirth={character.biography["place-of-birth"]}
+                        placeOfBirth={character.biography.placeOfBirth}
                         relatives={character.connections.relatives}
-                        firstAppearance={character.biography["first-appearance"]}
+                        firstAppearance={character.biography.firstAppearance}
                         publisher={character.biography.publisher}
                     />
                 )}

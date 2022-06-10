@@ -24,7 +24,7 @@ function Characters() {
             try{
                 const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
                 if (characters.id === characterId){
-                    console.log(result.data)
+                    // console.log(result.data)
                     setCharacters(result.data)
                 }
             }catch (e) {
