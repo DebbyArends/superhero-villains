@@ -21,7 +21,7 @@ function CharacterBiography() {
     }, [])
 
 
-    const currentCharacter = characters && characters.find((character) => {
+    const currentCharacter = characters.find((character) => {
         return characterId === character.id
     })
 
