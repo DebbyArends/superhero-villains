@@ -210,7 +210,7 @@ function Characters() {
                     {charactersDC && charactersDC.slice(indexDC, currentCharacterDC).map((character)=> (
                         [
                             <ul key={character.id}>
-                                <li className="character-list-dc">
+                                <li className="character-list-dc" onClick={() => history.push( `/character-biography/${character.id}`)}>
                                     <div className="character-white">
                                         <img src={character.images.lg} alt={character.name} className="image-character"/>
                                         <h5>{character.name}</h5>

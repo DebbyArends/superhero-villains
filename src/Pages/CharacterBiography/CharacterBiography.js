@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import CharacterBiographyCard from "../../Components/CharacterBiographyCard/CharacterBiographyCard";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 function CharacterBiography() {
     const [characters, setCharacters] = useState('');
@@ -33,7 +33,7 @@ function CharacterBiography() {
 
     return (
         <div className="outer-container-character">
-            <h1>Character biography</h1>
+            <h2>Character biography</h2>
             {currentCharacter &&
             <CharacterBiographyCard
                 key={currentCharacter.id}
@@ -59,8 +59,10 @@ function CharacterBiography() {
                 publisher={currentCharacter.biography.publisher}
             />
             }
-
-        </div>)
-}
+            <div className="container-link-back">
+                <p id="link-back">Go <Link to="/" className="back-link">back</Link> to the homepage</p>
+            </div>
+        </div>
+    )}
 
 export default CharacterBiography;
