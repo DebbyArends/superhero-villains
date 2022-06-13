@@ -6,7 +6,6 @@ import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiography
 
 
 function SearchCharacter() {
-    const [searchText, setSearchText] = useState('');
     const [superheroData, setSuperheroData] = useState([]);
     const [oneSuperhero, setOneSuperhero] = useState([])
     const [id , setId]= useState([])
@@ -52,26 +51,30 @@ useEffect(()=> {
     //     }
     // }
 
+    // if (searchTerm.length > 2) {
+    //     searchSuperHeroes();
+    // }
     function handleChange(e) {
-        let arrayNamesIds = superheroData && superheroData.map((character) =>{
-            return(
-                {
-                    name: character.name,
-                    id: character.id
-                }
-            )
-        })
-        console.log(arrayNamesIds);
-
         setSearchTerm( e.target.value);
+        if (searchTerm.length === 0) {
+            setOneSuperhero([]);
+        }
+        if (searchTerm.length > 2) {
+            let arrayNamesIds = superheroData && superheroData.map((character) =>{
+                return(
+                    {
+                        name: character.name,
+                        id: character.id
+                    }
+                )
+            })
+            console.log(arrayNamesIds);
 
-        const test= arrayNamesIds.find(element=> {
-            if (element.name === e.target.value) {
-                return true
-            }
-            return false
-        })
-        setId(test.id);
+            const test= arrayNamesIds.find(character=> {
+                return character.name === e.target.value;
+            })
+            setId(test.id);
+        }
     }
 
 
@@ -88,7 +91,7 @@ useEffect(()=> {
                     value={searchTerm}
                     minLength="2"
                 />
-                {searchText.length >0 && searchText.length<3 && <p className="error">Search text must be longer than 2 characters</p>}
+                {searchTerm.length >0 && searchTerm.length<3 && <p className="error">Search text must be longer than 2 characters</p>}
             </div>
             <div className="outer-container-character">
                 {/*{superheroData.length > 1? superheroData.map((character) =>*/}
