@@ -7,26 +7,40 @@ import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiography
 
 function SearchCharacter() {
     const [searchText, setSearchText] = useState('');
-    // const [superheroData, setSuperheroData] = useState([]);
+    const [superheroData, setSuperheroData] = useState([]);
+    const [id , setId]= useState([])
+    const [searchTerm, setSearchTerm] = useState('')
     // const apiKey = "10228880912034222";
-    const [characters, setCharacters] = useState('')
+
 
 
 useEffect(()=> {
     async function getData(){
         try{
-            const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
+            const result = await axios.get(`https://akabab.github.io/superhero-api/api/id/${id}.json`)
             // console.log(result.data)
-            setCharacters(result.data)
+            // setSuperheroData(result.data)
         }catch (e) {
             console.error(e)
         }
     }
     getData()
-}, [])
+}, [id])
 
+    useEffect(()=> {
+        async function getData(){
+            try{
+                const result = await axios.get(`https://akabab.github.io/superhero-api/api/all.json`)
+                // console.log(result.data)
+                setSuperheroData(result.data)
+            }catch (e) {
+                console.error(e)
+            }
+        }
+        getData()
+    }, [])
 
-    const arrayNamesIds = characters && characters.map((character) =>{
+    let arrayNamesIds = superheroData && superheroData.map((character) =>{
         return(
             {
                 name: character.name,
@@ -34,7 +48,6 @@ useEffect(()=> {
             }
         )
     })
-
     console.log(arrayNamesIds);
 
     // async function searchSuperHeroes() {
@@ -46,23 +59,22 @@ useEffect(()=> {
     //         console.error(e);
     //     }
     // }
-    //
-    function handleChange(e) {
-        const searchTerm = e.target.value;
 
-        setSearchText(searchTerm);
-        if (searchTerm === arrayNamesIds.name){
-           return(
-               arrayNamesIds.id
-           )
-        }
-        }
-        // if (searchTerm.length === 0) {
-        //     setSuperheroData([]);
+    function handleChange(e) {
+        setSearchTerm( e.target.value);
+        // const object = {name: e.target.value}
+        // arrayNamesIds && arrayNamesIds.map(() => {
+        //
+        // })
+        const checkName = object => object.id === e.target.value
+
+        console.log(arrayNamesIds.some(checkName));
+        // if (arrayNamesIds.name.includes(searchTerm)){
+        //     return(
+        //         setId(arrayNamesIds.id)
+        //     )
         // }
-        // if (searchTerm.length > 2) {
-        //     getData();
-        // }
+    }
 
 
     return (
@@ -75,13 +87,13 @@ useEffect(()=> {
                     autoComplete="off"
                     name="searchBar"
                     onChange={handleChange}
-                    value={searchText}
+                    value={searchTerm}
                     minLength="2"
                 />
                 {searchText.length >0 && searchText.length<3 && <p className="error">Search text must be longer than 2 characters</p>}
             </div>
             <div className="outer-container-character">
-                {characters && characters.map((character) =>
+                {superheroData && superheroData.map((character) =>
                     <CharacterBiographyCard
                         key= {character.id}
                         classname="search-result"

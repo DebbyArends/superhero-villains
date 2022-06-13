@@ -11,10 +11,8 @@ function CharacterBiography() {
         async function getData(){
             try{
                 const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
-                if (characterId === characters.id){
                     console.log(result.data)
                     setCharacters(result.data)
-                }
             }catch (e) {
                 console.error(e)
             }
@@ -22,8 +20,9 @@ function CharacterBiography() {
         getData()
     }, [])
 
+
     const currentCharacter = characters && characters.find((character) => {
-        return characterId === character
+        return characterId === character.id
     })
 
     console.log(currentCharacter)
