@@ -7,7 +7,7 @@ import {AuthContext} from "../../AuthContext/AuthContext";
 
 
 function Navigation() {
-    const {isAuth, logout} = useContext(AuthContext)
+    const {isAuth, logout} = useContext(AuthContext);
     return (
         <nav className="main-header">
             <div className="image-container">
@@ -19,7 +19,7 @@ function Navigation() {
                 <div className="dropdown">
                     <BiUserCircle className="user-dropdown-menu"/>
                     <div className="dropdown-content">
-                        {isAuth? <NavLink to="/" activeClassName="active-link" onClick={logout}>Logout</NavLink>:
+                        {isAuth ? <NavLink to="/" activeClassName="active-link" onClick={logout}>Logout</NavLink> :
                             <>
                                 <NavLink to="/login" activeClassName="active-link">Login</NavLink>
                                 <NavLink to="/register" activeClassName="active-link">Register</NavLink>
@@ -31,25 +31,25 @@ function Navigation() {
             <div className="outer-container-nav-links">
                 <div className="inner-container-nav-links">
                     <ul className="list-nav-links">
-                        {isAuth?
-                        <>
-                            <li>
-                                <NavLink exact to="/" activeClassName="active-link">Home</NavLink>
-                            </li>
-                            <li>
-                                |
-                            </li>
-                            <li>
-                                <NavLink to="/appearance" activeClassName="active-link">Appearance</NavLink>
-                            </li>
-                            <li>
-                                |
-                            </li>
-                            <li>
-                                <NavLink to="/characters" activeClassName="active-link">Characters</NavLink>
-                            </li>
-                        </>
-                        : " "
+                        {isAuth ?
+                            <>
+                                <li>
+                                    <NavLink exact to="/" activeClassName="active-link">Home</NavLink>
+                                </li>
+                                <li>
+                                    |
+                                </li>
+                                <li>
+                                    <NavLink to="/appearance" activeClassName="active-link">Appearance</NavLink>
+                                </li>
+                                <li>
+                                    |
+                                </li>
+                                <li>
+                                    <NavLink to="/characters" activeClassName="active-link">Characters</NavLink>
+                                </li>
+                            </>
+                            : " "
                         }
                     </ul>
                 </div>

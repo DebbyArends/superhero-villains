@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../assets/banner_2_powerstats.png");
+    background-image: url("../../assets/banner_yellow-users.png");
     background-position: center;
     background-size: cover;
     width: 400px;
@@ -80,7 +80,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url("../../assets/banner_2_powerstats.png");
+        background-image: url("../../assets/banner_yellow-users.png");
         background-position: center;
         background-size: cover;
         width: 600px;
@@ -138,7 +138,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url("../../assets/banner_2_powerstats.png");
+        background-image: url("../../assets/banner_yellow-users.png");
         background-position: center;
         background-size: cover;
         width: 800px;

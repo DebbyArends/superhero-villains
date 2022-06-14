@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "./Appearance.css"
+import "./Appearance.css";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import {questions} from "../../data/questions";
@@ -14,67 +14,64 @@ import getClosestHeight from "../../helpers/getClosestHeight";
 import getClosestWeight from "../../helpers/getClosestWeight";
 
 function Appearance() {
-    const [currentQuestion, setCurrentQuestion] = useState(0)
+    const [currentQuestion, setCurrentQuestion] = useState(0);
     const {handleSubmit} = useForm();
-    const [showResult, setShowResult] = useState("")
-    const [heightCm, setHeightCm]= useState("")
-    const [gender, setGender] = useState("")
-    const [hairColor, setHairColor]=useState("")
-    const [weightKg, setWeightKg]=useState("")
-    const [eyeColor, setEyeColor]=useState("")
-    const [character, setCharacter] =useState([])
-    const [radioCheck, setRadioCheck] = useState( true)
-    const [error, setError] = useState(false)
+    const [showResult, setShowResult] = useState("");
+    const [heightCm, setHeightCm] = useState("");
+    const [gender, setGender] = useState("");
+    const [hairColor, setHairColor] = useState("");
+    const [weightKg, setWeightKg] = useState("");
+    const [eyeColor, setEyeColor] = useState("");
+    const [character, setCharacter] = useState([]);
+    const [radioCheck, setRadioCheck] = useState(true);
+    const [error, setError] = useState(false);
 
-    useEffect(()=> {
-        async function getData(){
-            try{
-                const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
-                console.log(result.data)
-                setCharacter(result.data)
-            }catch (e) {
-                console.error(e)
+    useEffect(() => {
+        async function getData() {
+            try {
+                const result = await axios.get('https://akabab.github.io/superhero-api/api/all.json');
+                console.log(result.data);
+                setCharacter(result.data);
+            } catch (e) {
+                console.error(e);
             }
         }
-        getData()
-    }, [])
+
+        getData();
+    }, []);
 
     function handleChange(e) {
-        if (questions[currentQuestion].questionText === 'What is your gender?'){
+        if (questions[currentQuestion].questionText === 'What is your gender?') {
             return (
                 setGender(e.target.value),
                     setRadioCheck(false)
-            )
-        }
-        else if (questions[currentQuestion].questionText === 'What is your height?'){
+            );
+        } else if (questions[currentQuestion].questionText === 'What is your height?') {
             return (
                 setHeightCm(e.target.value),
                     setRadioCheck(false)
-            )
-        }
-        else if (questions[currentQuestion].questionText === 'What is your hair color?'){
+            );
+        } else if (questions[currentQuestion].questionText === 'What is your hair color?') {
             return (
                 setHairColor(e.target.value),
                     setRadioCheck(false)
-            )
-        }
-        else if (questions[currentQuestion].questionText === 'What is your weight?'){
+            );
+        } else if (questions[currentQuestion].questionText === 'What is your weight?') {
             return (
                 setWeightKg(e.target.value),
                     setRadioCheck(false)
-            )
-        }
-        else if (questions[currentQuestion].questionText === 'What is your eye color?'){
+            );
+        } else if (questions[currentQuestion].questionText === 'What is your eye color?') {
             return (
                 setEyeColor(e.target.value),
                     setRadioCheck(false)
-            )
+            );
         }
     }
 
-    function getQuestions(){
+    function getQuestions() {
         if (questions[currentQuestion].questionText === 'What is your gender?') {
-            return(
+            return (
                 <>
                     <div className="outer-container-load-bar">
                         <div className="outer-load-bar">
@@ -103,9 +100,10 @@ function Appearance() {
                         </div>
                     </div>
                 </>
-            )}
+            );
+        }
         if (questions[currentQuestion].questionText === "What is your height?") {
-            return(
+            return (
                 <div className="outer-container-height">
                     <div className="outer-load-bar">
                         <div className="inner-load-bar-20">
@@ -121,17 +119,16 @@ function Appearance() {
                                 onChange={handleChange}
                                 value={heightCm}
                                 checked={heightCm === answerOption.answerText}
-                                placeholder= "0"
+                                placeholder="0"
                             />
                             {answerOption.answerText}
-                        </label >
+                        </label>
                     )}
                     <img src={groot} alt="Groot comic mugshot" className="image-height"/>
                 </div>
-            )}
-
-        else if (questions[currentQuestion].questionText === 'What is your hair color?') {
-            return(
+            );
+        } else if (questions[currentQuestion].questionText === 'What is your hair color?') {
+            return (
                 <>
                     <div className="inner-container-hair-color">
                         <div className="outer-load-bar">
@@ -157,9 +154,8 @@ function Appearance() {
                         </div>
                     </div>
                 </>
-            )}
-
-        else if (questions[currentQuestion].questionText === "What is your weight?"){
+            );
+        } else if (questions[currentQuestion].questionText === "What is your weight?") {
             return (
                 <div className="outer-container-weight">
                     <div className="outer-load-bar">
@@ -176,17 +172,16 @@ function Appearance() {
                                 onChange={handleChange}
                                 value={weightKg}
                                 checked={weightKg === answerOption.answerText}
-                                placeholder= "0"
+                                placeholder="0"
                             />
                             {answerOption.answerText}
-                        </label >
+                        </label>
                     )}
                     <img src={feetOnScale} alt="Weight difference female pop art" className="image-weight"/>
                 </div>
-            )
-        }
-        else if (questions[currentQuestion].questionText === 'What is your eye color?') {
-            return(
+            );
+        } else if (questions[currentQuestion].questionText === 'What is your eye color?') {
+            return (
                 <div className="outer-container-eye">
                     <div className="inner-container-eye-color">
                         <div className="outer-load-bar">
@@ -209,77 +204,77 @@ function Appearance() {
                         <img src={drawingEye} alt="Drawing eye multi colors" className="image-eye"/>
                     </div>
                 </div>
-            )}
+            );
+        }
     }
 
 
     function handleAnswerInput() {
-        if (radioCheck === false){
-            setError(false)
-        if (currentQuestion + 1 < questions.length) {
-            setCurrentQuestion(currentQuestion + 1)
-            setRadioCheck(true)
-            console.log(gender,heightCm , hairColor, weightKg, eyeColor);
-        }
-        else{
-            setShowResult(gender, heightCm , hairColor, weightKg, eyeColor)
-        }}
-        else {
-            setError(true)
+        if (radioCheck === false) {
+            setError(false);
+            if (currentQuestion + 1 < questions.length) {
+                setCurrentQuestion(currentQuestion + 1);
+                setRadioCheck(true);
+                console.log(gender, heightCm, hairColor, weightKg, eyeColor);
+            } else {
+                setShowResult(gender, heightCm, hairColor, weightKg, eyeColor);
+            }
+        } else {
+            setError(true);
         }
     }
 
     const restartQuiz = () => {
         setCurrentQuestion(0);
-        setHeightCm("")
-        setGender("")
-        setHairColor("")
-        setWeightKg("")
-        setEyeColor("")
-        setShowResult("")
+        setHeightCm("");
+        setGender("");
+        setHairColor("");
+        setWeightKg("");
+        setEyeColor("");
+        setShowResult("");
     };
 
     const filter1 = character.filter((character) => {
         return character.appearance.gender === gender
             && character.appearance.hairColor === hairColor
-            && character.appearance.eyeColor === eyeColor
-    })
+            && character.appearance.eyeColor === eyeColor;
+    });
 
     let find1 = filter1.find((character) => {
         return parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10) === getClosestHeight(heightCm, filter1)
             ||
-            parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight(weightKg, filter1)
-    })
+            parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight(weightKg, filter1);
+    });
 
     const filter2 = character.filter((character) => {
         return character.appearance.gender === gender
-            &&  character.appearance.eyeColor === eyeColor
-            && character.appearance.hairColor !== hairColor
-    })
+            && character.appearance.eyeColor === eyeColor
+            && character.appearance.hairColor !== hairColor;
+    });
 
     let find2 = filter2.find((character) => {
         return parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10) === getClosestHeight(heightCm, filter2)
             ||
-            parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight(weightKg, filter2)
-    })
+            parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight(weightKg, filter2);
+    });
 
     const filter3 = character.filter((character) => {
         return character.appearance.gender === gender
             && character.appearance.eyeColor !== eyeColor
-            && character.appearance.hairColor === hairColor
-    })
+            && character.appearance.hairColor === hairColor;
+    });
 
     let find3 = filter3.find((character) => {
         return parseInt(character.appearance.height[1].replaceAll(" cm", ""), 10) === getClosestHeight(heightCm, filter3)
             ||
-            parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight(weightKg, filter3)
-    })
+            parseInt(character.appearance.weight[1].replaceAll(" kg", ""), 10) === getClosestWeight(weightKg, filter3);
+    });
 
     const resultQuiz = character && character.map((character) => {
         if (find1 === character)
             return (
                 <CharacterBiographyCard
-                    key= {character.id}
+                    key={character.id}
                     classname="character-result"
                     image={character.images.lg}
                     characterName={character.name}
@@ -301,11 +296,11 @@ function Appearance() {
                     firstAppearance={character.biography.firstAppearance}
                     publisher={character.biography.publisher}
                 />
-            )
+            );
         if (find2 === character)
             return (
                 <CharacterBiographyCard
-                    key= {character.id}
+                    key={character.id}
                     classname="character-result"
                     image={character.images.lg}
                     characterName={character.name}
@@ -327,11 +322,11 @@ function Appearance() {
                     firstAppearance={character.biography.firstAppearance}
                     publisher={character.biography.publisher}
                 />
-            )
+            );
         if (find3 === character)
             return (
                 <CharacterBiographyCard
-                    key= {character.id}
+                    key={character.id}
                     classname="character-result"
                     image={character.images.lg}
                     characterName={character.name}
@@ -353,16 +348,8 @@ function Appearance() {
                     firstAppearance={character.biography.firstAppearance}
                     publisher={character.biography.publisher}
                 />
-            )
-    })
-
-    const noCharacterFound =
-        <>
-            <h1>Sorry...</h1>
-            <p>There is no character that matches your appearance</p>
-            <h4>Try out our <Link to="/powerstats" className="back-link">Powerstats</Link> quiz</h4>
-        </>
-
+            );
+    });
 
     return (
         <>
@@ -372,11 +359,12 @@ function Appearance() {
                             <h1>Congratulations!</h1>
                             <h4>These character(s) match your appearance!</h4>
                         </div>
-                        {resultQuiz?resultQuiz:noCharacterFound}
+                        {resultQuiz}
                         <button
                             onClick={() => restartQuiz()}
                             className="button-banner-quiz"
-                        >Restart quiz</button>
+                        >Restart quiz
+                        </button>
                     </div>
                 ) :
                 <div className="outer-container-quiz">
@@ -400,7 +388,9 @@ function Appearance() {
                                         >
                                             Next
                                         </button>
-                                        {error && <p className="error">Please fill out an answer before going to the next question</p>}
+                                        {error &&
+                                        <p className="error">Please fill out an answer before going to the next
+                                            question</p>}
                                     </div>
                                 </form>
                             </div>
@@ -412,7 +402,7 @@ function Appearance() {
                 <p id="link-back">Go <Link to="/" className="back-link">back</Link> to the homepage</p>
             </div>
         </>
-    )
+    );
 }
 
-export default Appearance
+export default Appearance;

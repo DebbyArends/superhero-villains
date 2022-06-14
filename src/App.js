@@ -16,35 +16,35 @@ import CharacterBiography from "./Pages/CharacterBiography/CharacterBiography";
 
 function App() {
     const {isAuth} = useContext(AuthContext);
-  return (
-      <div>
-          <Navigation/>
-          <Switch>
-              <Route exact path="/">
-                  <HomePage/>
-              </Route>
-              <Route path="/appearance">
-                  { isAuth ? <Appearance/> : <NoAccessPrivateRoute/>}
-              </Route>
-              <Route path="/characters">
-                  { isAuth ? <Characters/> : <NoAccessPrivateRoute/>}
-              </Route>
-              <Route path="/login">
-                  <Login/>
-              </Route>
-              <Route path="/register">
-                  <Register/>
-              </Route>
-              <Route path="/average-people">
-                  <AveragePeople/>
-              </Route>
-              <Route path="/character-biography/:characterId">
-                  <CharacterBiography/>
-              </Route>
-          </Switch>
-          <Footer/>
-      </div>
-  );
+    return (
+        <div>
+            <Navigation/>
+            <Switch>
+                <Route exact path="/">
+                    <HomePage/>
+                </Route>
+                <Route path="/appearance">
+                    {isAuth ? <Appearance/> : <NoAccessPrivateRoute/>}
+                </Route>
+                <Route path="/characters">
+                    {isAuth ? <Characters/> : <NoAccessPrivateRoute/>}
+                </Route>
+                <Route path="/login">
+                    <Login/>
+                </Route>
+                <Route path="/register">
+                    <Register/>
+                </Route>
+                <Route path="/average-people">
+                    <AveragePeople/>
+                </Route>
+                <Route path="/character-biography/:characterId">
+                    <CharacterBiography/>
+                </Route>
+            </Switch>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;

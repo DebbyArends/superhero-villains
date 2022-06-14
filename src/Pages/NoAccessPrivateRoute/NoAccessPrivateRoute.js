@@ -1,9 +1,9 @@
 import React from 'react';
-import './NoAccessPrivateRoute.css'
+import './NoAccessPrivateRoute.css';
 import {useHistory} from "react-router-dom";
 
 function NoAccessPrivateRoute() {
-    const history = useHistory()
+    const history = useHistory();
     return (
         <section className="outer-container-private">
             <article className="inner-container-private">
@@ -15,12 +15,12 @@ function NoAccessPrivateRoute() {
                     <span>
                         <button
                             className="button-private"
-                            onClick= {() => history.push("/average-people")}
+                            onClick={() => history.push("/average-people")}
                         >
                         Average
                     </button>
                     <button
-                        className='button-private'
+                        className="button-private"
                         onClick={() => history.push("/login")}>
                         Fellow 'geek'
                     </button>

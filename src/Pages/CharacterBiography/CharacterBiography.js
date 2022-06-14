@@ -32,37 +32,37 @@ function CharacterBiography() {
 
 
     return (
-        <div className="outer-container-character">
-            <h2>Character biography</h2>
-            {currentCharacter &&
-            <CharacterBiographyCard
-                key={currentCharacter.id}
-                classname="search-result"
-                image={currentCharacter.images.lg}
-                characterName={currentCharacter.name}
-                intelligence={currentCharacter.powerstats.intelligence}
-                strength={currentCharacter.powerstats.strength}
-                speed={currentCharacter.powerstats.speed}
-                durability={currentCharacter.powerstats.durability}
-                power={currentCharacter.powerstats.power}
-                combat={currentCharacter.powerstats.combat}
-                fullName={currentCharacter.biography.fullName}
-                gender={currentCharacter.appearance.gender}
-                height={currentCharacter.appearance.height[1]}
-                hairColor={currentCharacter.appearance.hairColor}
-                weight={currentCharacter.appearance.weight[1]}
-                eyeColor={currentCharacter.appearance.eyeColor}
-                aliases={currentCharacter.biography.aliases.join(', ')}
-                placeOfBirth={currentCharacter.biography.placeOfBirth}
-                relatives={currentCharacter.connections.relatives}
-                firstAppearance={currentCharacter.biography.firstAppearance}
-                publisher={currentCharacter.biography.publisher}
-            />
-            }
-            <div className="container-link-back">
-                <p id="link-back">Go <Link to="/" className="back-link">back</Link> to the homepage</p>
+            <div className="outer-container-character">
+                <h2>Character biography</h2>
+                {currentCharacter &&
+                <CharacterBiographyCard
+                    key={currentCharacter.id}
+                    classname="search-result"
+                    image={currentCharacter.images.lg}
+                    characterName={currentCharacter.name}
+                    intelligence={currentCharacter.powerstats.intelligence}
+                    strength={currentCharacter.powerstats.strength}
+                    speed={currentCharacter.powerstats.speed}
+                    durability={currentCharacter.powerstats.durability}
+                    power={currentCharacter.powerstats.power}
+                    combat={currentCharacter.powerstats.combat}
+                    fullName={currentCharacter.biography.fullName}
+                    gender={currentCharacter.appearance.gender}
+                    height={currentCharacter.appearance.height[1]}
+                    hairColor={currentCharacter.appearance.hairColor}
+                    weight={currentCharacter.appearance.weight[1]}
+                    eyeColor={currentCharacter.appearance.eyeColor}
+                    aliases={currentCharacter.biography.aliases.join(', ')}
+                    placeOfBirth={currentCharacter.biography.placeOfBirth}
+                    relatives={currentCharacter.connections.relatives}
+                    firstAppearance={currentCharacter.biography.firstAppearance}
+                    publisher={currentCharacter.biography.publisher}
+                />
+                }
+                <div className="container-link-back">
+                    <p id="link-back">Go <Link to="/characters" className="back-link">back</Link> to the characters page</p>
+                </div>
             </div>
-        </div>
     )}
 
 export default CharacterBiography;

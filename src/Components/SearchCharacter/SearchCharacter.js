@@ -4,68 +4,63 @@ import "./SearchCharacter.css";
 import CharacterBiographyCard from "../CharacterBiographyCard/CharacterBiographyCard";
 
 
-
 function SearchCharacter() {
     const [allHeroes, setAllHeroes] = useState([]);
     const [searchMatches, setSearchMatches] = useState([]);
     const [heroDetails, setHeroDetails] = useState({});
-    const [id, setId] = useState(0)
-    const [searchTerm, setSearchTerm] = useState('')
-    // Wanneer de id wordt veranderd willen we de gegevens van die specifieke hero ophalen
+    const [id, setId] = useState(0);
+    const [searchTerm, setSearchTerm] = useState('');
+
     useEffect(() => {
         async function getSpecificSuperHero() {
             try {
-                const result = await axios.get(`https://akabab.github.io/superhero-api/api/id/${id}.json`)
-                console.log(result.data)
-                setHeroDetails(result.data)
+                const result = await axios.get(`https://akabab.github.io/superhero-api/api/id/${id}.json`);
+                console.log(result.data);
+                setHeroDetails(result.data);
             } catch (e) {
-                console.error(e)
+                console.error(e);
             }
         }
+
         getSpecificSuperHero();
-        // Reset alle oude matches en de ingevoerde zoekopdracht:
         setSearchMatches([]);
         setSearchTerm('');
-    }, [id])
-    // Wanneer de pagina laadt, halen we alle helden op zodat we deze kunnen doorzoeken
+    }, [id]);
+
     useEffect(() => {
         async function getData() {
             try {
-                const result = await axios.get(`https://akabab.github.io/superhero-api/api/all.json`)
-                console.log(result.data)
-                setAllHeroes(result.data)
+                const result = await axios.get(`https://akabab.github.io/superhero-api/api/all.json`);
+                console.log(result.data);
+                setAllHeroes(result.data);
             } catch (e) {
-                console.error(e)
+                console.error(e);
             }
         }
-        getData()
+
+        getData();
     }, []);
-    // Als we op enter drukken, willen de de ID setten van de eerste match (ongeacht hoeveel matches er over zijn)
+
     function searchHero(e) {
         e.preventDefault();
         setId(searchMatches[0].id);
     }
-    // Wanneer de input veranderd, wordt deze functie uitgevoerd
+
     function handleChange(e) {
-        // We slaan de zoekopdracht op in kleine letters
         const query = e.target.value.toLowerCase();
-        // We zetten de zoekterm in de state;
         setSearchTerm(query);
         if (query.length > 2) {
-            // Filter op alle helden
             const matches = allHeroes.filter((character) => {
-                // En geef een resultaat terug wanneer de naam, in KLEINE letters, een stukje van de zoekterm bevat
                 return character.name.toLowerCase().includes(query);
             });
             console.log(matches);
-            // Zet de resultaten (dit kunnen er 0 of 1 of bijvoorbeeld 5 zijn) in de state zodat we deze kunnen laten zien
             setSearchMatches(matches);
         }
     }
+
     return (
         <>
             <div className="main">
-                {/*Ik heb er een formulier omheen gezet, zodat de gebruiker ook kan zoeken met Enter!*/}
                 <form onSubmit={searchHero}>
                     <input
                         id="searchBar"
@@ -77,15 +72,13 @@ function SearchCharacter() {
                         value={searchTerm}
                         minLength="2"
                     />
-                    {/*Dit is de auto-complete, hierin mappen we over alle huidige matches heen*/}
                     <ul className="auto-complete">
                         {searchMatches.map((searchMatch) => {
                             return (
-                                // De gebruiker kan erop klikken, dan wordt de id van die hero in de state geplaatst en de gegevens daarover opgehaald
                                 <li key={searchMatch.id} onClick={() => setId(searchMatch.id)}>
                                     {searchMatch.name}
                                 </li>
-                            )
+                            );
                         })}
                     </ul>
                     {searchTerm.length > 0 && searchTerm.length < 3 &&
@@ -121,4 +114,5 @@ function SearchCharacter() {
         </>
     );
 }
+
 export default SearchCharacter;

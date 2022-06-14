@@ -1,11 +1,11 @@
 import React from 'react';
 import "./AveragePeople.css";
 import {useHistory} from "react-router-dom";
-import superman from "../../assets/superman-average.png"
+import superman from "../../assets/superman-average.png";
 
 
 function AveragePeople() {
-    const history = useHistory()
+    const history = useHistory();
     return (
         <section className="outer-container-average">
             <article className="inner-container-average">
@@ -21,12 +21,15 @@ function AveragePeople() {
                         carved the fucker himself.</p>
                     <br/>
                     <p>This guy’s got a small fleet of sports cars, a few yachts, and when he’s not giving millions of
-                        dollars to charities, he’s changing out supermodel girlfriends like other people change their socks.</p>
+                        dollars to charities, he’s changing out supermodel girlfriends like other people change their
+                        socks.</p>
                     <br/>
 
                     <p>This guy’s smile can melt the damn room. His charm is so thick you can swim in it. Half of his
-                        friends were TIME’s “Man of the Year.” And the ones who weren’t don’t care, because they could buy the
-                        magazine if they wanted to. When this guy isn’t jetsetting around the world or coming up with the latest
+                        friends were TIME’s “Man of the Year.” And the ones who weren’t don’t care, because they could
+                        buy the
+                        magazine if they wanted to. When this guy isn’t jetsetting around the world or coming up with
+                        the latest
                         technological innovation to save the planet, he spends his time helping the weak and helpless
                         and downtrodden.</p>
                     <br/>
@@ -35,7 +38,8 @@ function AveragePeople() {
                     <br/>
                     <p>It’s an interesting facet of human nature that we seem to have a need to come up with
                         fictional heroes that embody perfection and everything we wish we could be. Medieval Europe had
-                        its tales about gallant knights slaying dragons and saving princesses. Ancient Rome and Greece had
+                        its tales about gallant knights slaying dragons and saving princesses. Ancient Rome and Greece
+                        had
                         their myths about heroes who won wars single-handedly and in some cases confronted the Gods
                         themselves. Every other human culture is replete with such fantastical stories as well.</p>
                     <br/>
@@ -60,11 +64,12 @@ function AveragePeople() {
                         died.
                     </p>
                     <br/>
-                    <h4 id="find-out">So let's not take everything to serious and find out which superhero or villain you would be in
+                    <h4 id="find-out">So let's not take everything to serious and find out which superhero or villain
+                        you would be in
                         the multiverse.</h4>
                     <img src={superman} alt="superman" className="image-superman"/>
                     <button
-                        className='button-average'
+                        className="button-average"
                         onClick={() => history.push("/login")}
                     >
                         Let's go!
