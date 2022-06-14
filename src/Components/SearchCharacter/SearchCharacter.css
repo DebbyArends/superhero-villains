@@ -26,6 +26,15 @@
     background-position: center;
     background-size: cover;
 }
+.auto-complete {
+    list-style: none;
+    background-color: white;
+}
+.auto-complete li {
+    cursor: pointer;
+    padding: 4px 8px;
+    font-family: "Roboto Condensed", cursive;
+}
 
 @media screen and (min-width: 768px) {
     .main {
@@ -57,6 +66,15 @@
         background-position: center;
         background-size: cover;
     }
+    .auto-complete {
+        list-style: none;
+        background-color: white;
+    }
+    .auto-complete li {
+        cursor: pointer;
+        padding: 4px 8px;
+        font-family: "Roboto Condensed", cursive;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -85,5 +103,14 @@
         background-image: url("../../assets/banner_3_characters.png");
         background-position: center;
         background-size: cover;
+    }
+    .auto-complete {
+        list-style: none;
+        background-color: white;
+    }
+    .auto-complete li {
+        cursor: pointer;
+        padding: 4px 8px;
+        font-family: "Roboto Condensed", cursive;
     }
 }
